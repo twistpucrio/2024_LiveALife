@@ -52,3 +52,5 @@ const ProdutosModel = (() => {
         buscarProdutos
     };
 })();
+
+export default ProdutosModel;
