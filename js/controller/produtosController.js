@@ -11,10 +11,30 @@ const ProdutosController = ((model, view, carrinhoController) => {
         const botaoBuscar = document.getElementById('botao-buscar');
         botaoBuscar.addEventListener('click', () => {
             const nome = document.getElementById('busca-nome').value.trim();
-            const precoMin = parseFloat(document.getElementById('busca-preco-min').value);
-            const precoMax = parseFloat(document.getElementById('busca-preco-max').value);
+            let precoMin = parseFloat(document.getElementById('busca-preco-min').value);
+            let precoMax = parseFloat(document.getElementById('busca-preco-max').value);
 
-                       
+            // Verificação se precoMin é maior que precoMax
+            if (precoMin > precoMax) {
+                alert('O preço mínimo não pode ser maior que o preço máximo.');
+                document.getElementById('busca-preco-min').value = ''; // Limpa o campo
+                document.getElementById('busca-preco-max').value = ''; // Limpa o campo
+                return; // Sai da função para evitar busca
+            }
+
+
+            if (precoMin < 0 || precoMax< 0) {
+                alert('Valor inválido! Os preços não podem ser negativos!');
+                if (precoMin < 0) {
+                    document.getElementById('busca-preco-min').value = ''; // Limpa o campo
+                }
+                if (precoMax < 0) {
+                    document.getElementById('busca-preco-max').value = ''; // Limpa o campo
+                }
+                return; // Sai da função para evitar busca
+            }
+
+        
             const criterios = {};
 
             if (nome !== '') {
