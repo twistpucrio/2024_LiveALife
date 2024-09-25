@@ -1,5 +1,5 @@
 [
-    { "id": 1, "nome": "Produto A", "preco": 100 },
+    { "id": 1, "nome": "Rafting", "preco": 100, "imagem": "img/rafting.jpg"},
     { "id": 2, "nome": "Produto B", "preco": 150 },
     { "id": 3, "nome": "Produto C", "preco": 200 }
 ]
