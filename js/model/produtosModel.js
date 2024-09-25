@@ -1,12 +1,18 @@
-// js/model/produtosModel.js
-
 const ProdutosModel = (() => {
-    let produtos = [
-        { id: 1, nome: 'Produto A', preco: 100 },
-        { id: 2, nome: 'Produto B', preco: 150 },
-        { id: 3, nome: 'Produto C', preco: 200 },
-        // ... outros produtos
-    ];
+    let produtos = [];
+
+    // Carregar produtos do arquivo JSON
+    const carregarProdutos = () => {
+        return fetch('produtos.json')
+            .then(response => response.json())
+            .then(data => {
+                produtos = data;
+                return produtos;
+            })
+            .catch(error => {
+                console.error("Erro ao carregar produtos:", error);
+            });
+    };
 
     const getProdutos = () => {
         return produtos;
@@ -16,14 +22,6 @@ const ProdutosModel = (() => {
         produtos.push(produto);
     };
 
-    /**
-     * Função de busca de produtos.
-     * @param {Object} criterios - Objeto contendo os critérios de busca.
-     * @param {string} [criterios.nome] - Nome ou parte do nome do produto.
-     * @param {number} [criterios.precoMin] - Preço mínimo do produto.
-     * @param {number} [criterios.precoMax] - Preço máximo do produto.
-     * @returns {Array} - Lista de produtos que correspondem aos critérios.
-     */
     const buscarProdutos = (criterios) => {
         return produtos.filter(produto => {
             let corresponde = true;
@@ -47,10 +45,9 @@ const ProdutosModel = (() => {
     };
 
     return {
+        carregarProdutos,
         getProdutos,
         adicionarProduto,
         buscarProdutos
     };
 })();
-
-export default ProdutosModel;
