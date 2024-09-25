@@ -1,10 +1,10 @@
-// js/controller/produtosController.js
-
 const ProdutosController = ((model, view, carrinhoController) => {
     const init = () => {
-        const produtos = model.getProdutos();
-        view.renderizarProdutos(produtos, carrinhoController.adicionarAoCarrinho);
-        configurarBusca();
+        model.carregarProdutos().then(() => {
+            const produtos = model.getProdutos();
+            view.renderizarProdutos(produtos, carrinhoController.adicionarAoCarrinho);
+            configurarBusca();
+        });
     };
 
     const configurarBusca = () => {
@@ -36,4 +36,5 @@ const ProdutosController = ((model, view, carrinhoController) => {
     return {
         init
     };
-})(ProdutosModel, ProdutosView, CarrinhoController); 
+})(ProdutosModel, ProdutosView, CarrinhoController);
+     
