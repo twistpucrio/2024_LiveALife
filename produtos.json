@@ -8,11 +8,12 @@
     { "id": 5, "nome": "Passeio de Barco", "preco": 150, "imagem": "img/passeioBarco.jpg", "categoria":["romance"] },
     { "id": 6, "nome": "Piquenique", "preco": 200, "imagem": "img/piquenique.jpg", "categoria":["romance"] },
 
-    { "id": 7, "nome": "Rafting", "preco": 100, "imagem": "img/rafting.jpg", "categoria":[" gastronomico"]},
-    { "id": 8, "nome": "Canyoning", "preco": 150, "imagem": "img/canyoning.jpg", "categoria":["gastronomico"] },
-    { "id": 9, "nome": "Escalada", "preco": 200, "imagem": "img/escalada.jpg", "categoria":["gastronomico"] },
+    { "id": 7, "nome": "Aula de Yoga", "preco": 100, "imagem": "img/aulaYoga", "categoria":["relaxamento"]},
+    { "id": 8, "nome": "Sauna e banho Turco", "preco": 150, "imagem": "img/saunaBanhoTurco", "categoria":["relaxamento"] },
+    { "id": 9, "nome": "jardins Sensorias", "preco": 200, "imagem": "img/jardinsSensoriais", "categoria":["relaxamento"] },
 
-    { "id": 10, "nome": "Rafting", "preco": 100, "imagem": "img/rafting.jpg", "categoria":["familia"]},
-    { "id": 11, "nome": "Canyoning", "preco": 150, "imagem": "img/canyoning.jpg", "categoria":["familia"] },
-    { "id": 12, "nome": "Escalada", "preco": 200, "imagem": "img/escalada.jpg", "categoria":["familia"] }
+    { "id": 10, "nome": "Rafting", "preco": 100, "imagem": "img/rafting.jpg", "categoria":[" gastronomico"]},
+    { "id": 11, "nome": "Canyoning", "preco": 150, "imagem": "img/canyoning.jpg", "categoria":["gastronomico"] },
+    { "id": 12, "nome": "Escalada", "preco": 200, "imagem": "img/escalada.jpg", "categoria":["gastronomico"] }
+
 ]
