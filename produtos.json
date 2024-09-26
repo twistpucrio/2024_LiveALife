@@ -12,8 +12,8 @@
     { "id": 8, "nome": "Sauna e banho Turco", "preco": 150, "imagem": "img/saunaBanhoTurco", "categoria":["relaxamento"] },
     { "id": 9, "nome": "jardins Sensorias", "preco": 200, "imagem": "img/jardinsSensoriais", "categoria":["relaxamento"] },
 
-    { "id": 10, "nome": "Rafting", "preco": 100, "imagem": "img/rafting.jpg", "categoria":[" gastronomico"]},
-    { "id": 11, "nome": "Canyoning", "preco": 150, "imagem": "img/canyoning.jpg", "categoria":["gastronomico"] },
-    { "id": 12, "nome": "Escalada", "preco": 200, "imagem": "img/escalada.jpg", "categoria":["gastronomico"] }
+    { "id": 10, "nome": "Tour Gastronomico", "preco": 100, "imagem": "img/tourGastronomico.jpg", "categoria":[" gastronomico"]},
+    { "id": 11, "nome": "Feira culinária", "preco": 150, "imagem": "img/feiraCulinaria.png", "categoria":["gastronomico"] },
+    { "id": 12, "nome": "Aula de culinária", "preco": 200, "imagem": "img/aulaCulinaria.png", "categoria":["gastronomico"] },
 
 ]
