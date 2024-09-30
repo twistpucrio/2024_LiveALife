@@ -16,7 +16,7 @@
     { "id": 9, "nome": "jardins Sensorias", "preco": 200, "imagem": "img/jardinsSensoriais", "categoria":["relaxamento"]},
 
     { "id": 10, "nome": "Tour Gastronomico", "preco": 100, "imagem": "img/tourGastronomico.jpg", "categoria":[" gastronomico"],
-    "descricao": ["Escalar paredões naturais com diferentes níveis de dificuldade."], "alt":["Pessoa escalando uma montanha alta, mostrando a grande altura pela paisagem ampla, com topos de montanha aparecendo no horizonte."]},
+    "descricao": ["Delicie-se provando pães e queijos no tour gastr"], "alt":["Pessoa escalando uma montanha alta, mostrando a grande altura pela paisagem ampla, com topos de montanha aparecendo no horizonte."]},
     { "id": 11, "nome": "Feira culinária", "preco": 150, "imagem": "img/feiraCulinaria.png", "categoria":["gastronomico"],
     "descricao": ["Escalar paredões naturais com diferentes níveis de dificuldade."], "alt":["Pessoa escalando uma montanha alta, mostrando a grande altura pela paisagem ampla, com topos de montanha aparecendo no horizonte."]},
     { "id": 12, "nome": "Aula de culinária", "preco": 200, "imagem": "img/aulaCulinaria.png", "categoria":["gastronomico"],
