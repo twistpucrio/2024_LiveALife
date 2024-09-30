@@ -11,7 +11,7 @@ const ProdutosView = (() => {
 
             produtoDiv.innerHTML = `
                 <h3>${produto.nome}</h3>
-                <img src=${produto.imagem} width="10%" height="10%">
+                <img src=${produto.imagem} alt = ${produto.alt} width="10%" height="10%">
                 <p>Preço: R$ ${produto.preco}</p>
                 <button data-id="${produto.id}" class="adicionar-carrinho-button">Adicionar ao Carrinho</button>
             `;
