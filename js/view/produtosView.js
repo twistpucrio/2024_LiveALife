@@ -10,10 +10,13 @@ const ProdutosView = (() => {
             produtoDiv.classList.add('produto');
 
             produtoDiv.innerHTML = `
-                <h3>${produto.nome}</h3>
-                <img src=${produto.imagem} alt = ${produto.alt} width="10%" height="10%">
-                <p>Preço: R$ ${produto.preco}</p>
-                <button data-id="${produto.id}" class="adicionar-carrinho-button">Adicionar ao Carrinho</button>
+                <div id="produtoExibido"  aria-labelledby="nome preco descricao">
+                    <h3 id="nome">${produto.nome}</h3>
+                    <img src=${produto.imagem} alt=${produto.alt} width="10%" height="10%">
+                    <p id="preco">Preço: R$ ${produto.preco}</p>
+                    <p id="descricao">${produto.descricao}</p>
+                    <button aria-label="Clique aqui para adicionar ao carrinho" data-id="${produto.id}" class="adicionar-carrinho-button">Adicionar ao Carrinho</button>
+                </div>
             `;
 
             container.appendChild(produtoDiv);
