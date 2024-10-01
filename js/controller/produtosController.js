@@ -2,7 +2,7 @@ const ProdutosController = ((model, view, carrinhoController) => {
     const init = () => {
         model.carregarProdutos().then(() => {
             const produtos = model.getProdutos();
-            view.renderizarProdutos(produtos, carrinhoController.adicionarAoCarrinho);
+            view.renderizarProdutos(produtos, carrinhoController.adicionarAoCarrinho,'produtos-container');
             configurarBusca();
         });
     };
@@ -50,7 +50,7 @@ const ProdutosController = ((model, view, carrinhoController) => {
             }
 
             const resultados = model.buscarProdutos(criterios);
-            view.renderizarProdutos(resultados, carrinhoController.adicionarAoCarrinho);
+            view.renderizarProdutos(resultados, carrinhoController.adicionarAoCarrinho,"carrinho-container");
         });
     };
 
