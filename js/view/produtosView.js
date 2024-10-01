@@ -1,8 +1,8 @@
 // js/view/produtosView.js
 
 const ProdutosView = (() => {
-    const renderizarProdutos = (produtos, adicionarAoCarrinhoCallback) => {
-        const container = document.getElementById('produtos-container');
+    const renderizarProdutos = (produtos, adicionarAoCarrinhoCallback, divProcurada) => {
+        const container = document.getElementById(divProcurada);
         container.innerHTML = '';
 
         produtos.forEach(produto => {
@@ -10,6 +10,7 @@ const ProdutosView = (() => {
             produtoDiv.classList.add('produto');
 
             produtoDiv.innerHTML = `
+
             <div id="produtoExibido-${produto.id}" tabindex = "0" aria-labelledby="nome-${produto.id} preco-${produto.id} descricao-${produto.id}">
                 <h3 id="nome-${produto.id}">${produto.nome}</h3>
                 <img tabindex = "0" src="${produto.imagem}" alt="${produto.alt}" width="10%" height="10%">
@@ -20,6 +21,7 @@ const ProdutosView = (() => {
                 </button>
             </div>
         `;
+
 
             container.appendChild(produtoDiv);
         });
