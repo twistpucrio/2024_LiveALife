@@ -1,8 +1,8 @@
 // js/view/produtosView.js
 
 const ProdutosView = (() => {
-    const renderizarProdutos = (produtos, adicionarAoCarrinhoCallback, divProcurada) => {
-        const container = document.getElementById(divProcurada);
+    const renderizarProdutos = (produtos, adicionarAoCarrinhoCallback) => {
+        const container = document.getElementById('produtos-container');
         container.innerHTML = '';
 
         produtos.forEach(produto => {
