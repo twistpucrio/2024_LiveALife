@@ -11,6 +11,7 @@ const ProdutosController = ((model, view, carrinhoController) => {
         const botaoBuscar = document.getElementById('botao-buscar');
         botaoBuscar.addEventListener('click', () => {
             const nome = document.getElementById('busca-nome').value.trim();
+            const categoria = document.getElementById('busca-categoria').value.trim();
             let precoMin = parseFloat(document.getElementById('busca-preco-min').value);
             let precoMax = parseFloat(document.getElementById('busca-preco-max').value);
 
@@ -39,6 +40,10 @@ const ProdutosController = ((model, view, carrinhoController) => {
 
             if (nome !== '') {
                 criterios.nome = nome;
+            }
+
+            if (categoria !== '') {
+                criterios.categoria = categoria;
             }
 
             if (!isNaN(precoMin)) {
