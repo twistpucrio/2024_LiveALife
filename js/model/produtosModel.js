@@ -47,15 +47,10 @@ const ProdutosModel = (() => {
                 
                 produto.categorias.forEach( categoria => {
                     categoria_lower = categoria.toLowerCase();
-                    console.log(`${categoria_lower}`)
-                    match = categoria_lower.includes(nomeCatBusca);
-                    console.log(`match = ${match}`)
-                    if(!match)
-                        corresponde = false;
+                    corresponde = corresponde && categoria_lower.includes(nomeCatBusca);
                 } );
                 
             }
-            console.log(`match = ${match}`)
             return corresponde;
         });
     };
