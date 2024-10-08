@@ -1,8 +1,7 @@
 
-
-nav ul {
+/* nav ul {
     list-style: none;
-    padding: 0;
+    padding: 10;
 }
 
 nav ul li {
@@ -13,22 +12,33 @@ nav ul li {
 nav ul li a {
     color: white;
     text-decoration: none;
-}
+} */
+
+
+
+
+/* NAVIGATOR */
+
+
 
 #produtos-container {
-    padding: 20px;
+    padding: 20px; 
 }
 
+/* título */
 .categoria {
     margin-bottom: 40px;
 }
 
+
+/* coloca os itens em carrossel */
 .carrossel-container {
     display: flex;
     overflow-x: auto;
     scroll-behavior: smooth;
 }
 
+/* caixinha */
 .produto {
     background-color: #f4f4f4;
     border: 1px solid #ddd;
@@ -37,6 +47,7 @@ nav ul li a {
     min-width: 200px;
     text-align: center;
 }
+
 
 .prev-button, .next-button {
     cursor: pointer;
