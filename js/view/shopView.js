@@ -7,13 +7,15 @@ const ShopView = (() => {
         Object.keys(produtosPorCategoria).forEach(categoria => {
             const categoriaDiv = document.createElement('div');
             categoriaDiv.classList.add('categoria');
-            categoriaDiv.innerHTML = `<h2>${categoria}</h2>`;
+            categoriaDiv.innerHTML = `<h1>${categoria}</h1>`;
 
+            /* coloca os itens em carrossel */
             const carrosselDiv = document.createElement('div');
             carrosselDiv.classList.add('carrossel-container');
 
             const produtos = produtosPorCategoria[categoria];
 
+            /* adiciona a 'descrição' do item na caixinha */
             produtos.forEach(produto => {
                 const produtoDiv = document.createElement('div');
                 produtoDiv.classList.add('produto');
@@ -25,7 +27,7 @@ const ShopView = (() => {
                         <p id="descricao-${produto.id}">${produto.descricao}</p>
                     </div>
                 `;
-                carrosselDiv.appendChild(produtoDiv);
+                carrosselDiv.appendChild(produtoDiv); /* adiciona o item ao carrossel de sua categoria */
             });
 
             // Adicionar setas de navegação
@@ -36,8 +38,9 @@ const ShopView = (() => {
             nextButton.classList.add('next-button');
             nextButton.textContent = '→';
 
-            categoriaDiv.appendChild(prevButton);
+            // alterei a posição dos botões de scroll
             categoriaDiv.appendChild(carrosselDiv);
+            categoriaDiv.appendChild(prevButton);
             categoriaDiv.appendChild(nextButton);
             container.appendChild(categoriaDiv);
 
