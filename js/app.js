@@ -12,5 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
         CarrinhoController.init();
     }
 
+    if (page === 'favorito.html') {
+        FavoritoController.init();
+    }
+
     CarrinhoButtonController.init();
+    FavoritoButtonController.init();
 });
