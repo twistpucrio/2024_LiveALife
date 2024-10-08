@@ -5,6 +5,8 @@ const CarrinhoModel = (() => {
 
     const salvarCarrinho = () => {
         localStorage.setItem('carrinho', JSON.stringify(carrinho));
+        const event = new Event('carrinhoAtualizado');
+        document.dispatchEvent(event);
     };
 
     const getCarrinho = () => carrinho;
@@ -36,6 +38,10 @@ const CarrinhoModel = (() => {
         }
     };
 
+    const getTotalItens = () => {
+        return carrinho.reduce((total, item) => total + item.quantidade, 0);
+    };
+
     const limparCarrinho = () => {
         carrinho = [];
         salvarCarrinho();
@@ -46,6 +52,7 @@ const CarrinhoModel = (() => {
         adicionarItem,
         removerItem,
         atualizarQuantidade,
-        limparCarrinho
+        limparCarrinho,
+        getTotalItens
     };
 })();

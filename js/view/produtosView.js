@@ -10,18 +10,16 @@ const ProdutosView = (() => {
             produtoDiv.classList.add('produto');
 
             produtoDiv.innerHTML = `
-
-            <div id="produtoExibido-${produto.id}" tabindex = "0" aria-labelledby="nome-${produto.id} preco-${produto.id} descricao-${produto.id}">
-                <h3 id="nome-${produto.id}">${produto.nome}</h3>
-                <img tabindex = "0" src="${produto.imagem}" alt="${produto.alt}" width="10%" height="10%">
-                <p id="preco-${produto.id}">Preço: R$ ${produto.preco}</p>
-                <p id="descricao-${produto.id}">${produto.descricao}</p>
-                <button aria-label="Clique aqui para adicionar ao carrinho" data-id="${produto.id}" class="adicionar-carrinho-button">
-                    Adicionar ao Carrinho
-                </button>
-            </div>
-        `;
-
+                <div id="produtoExibido-${produto.id}" tabindex="0" aria-labelledby="nome-${produto.id} preco-${produto.id} descricao-${produto.id}">
+                    <h3 id="nome-${produto.id}">${produto.nome}</h3>
+                    <img tabindex="0" src="${produto.imagem}" alt="${produto.alt}" width="10%" height="10%">
+                    <p id="preco-${produto.id}">Preço: R$ ${produto.preco}</p>
+                    <p id="descricao-${produto.id}">${produto.descricao}</p>
+                    <button aria-label="Clique aqui para adicionar ao carrinho" data-id="${produto.id}" class="adicionar-carrinho-button">
+                        Adicionar ao Carrinho
+                    </button>
+                </div>
+            `;
 
             container.appendChild(produtoDiv);
         });
