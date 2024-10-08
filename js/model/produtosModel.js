@@ -47,10 +47,15 @@ const ProdutosModel = (() => {
                 
                 produto.categorias.forEach( categoria => {
                     categoria_lower = categoria.toLowerCase();
-                    corresponde = corresponde && categoria_lower.includes(nomeCatBusca);
+                    console.log(`${categoria_lower}`)
+                    match = categoria_lower.includes(nomeCatBusca);
+                    console.log(`match = ${match}`)
+                    if(!match)
+                        corresponde = false;
                 } );
                 
             }
+            console.log(`match = ${match}`)
             return corresponde;
         });
     };
@@ -62,3 +67,5 @@ const ProdutosModel = (() => {
         buscarProdutos
     };
 })();
+
+//ola

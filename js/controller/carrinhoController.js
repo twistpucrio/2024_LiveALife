@@ -45,7 +45,6 @@ const CarrinhoController = ((model, view) => {
     };
 
     return {
-        init,
-        adicionarAoCarrinho
+        init
     };
 })(CarrinhoModel, CarrinhoView);

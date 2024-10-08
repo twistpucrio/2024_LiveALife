@@ -1,10 +1,15 @@
 const ProdutosController = ((model, view, carrinhoController) => {
+
     const init = () => {
         model.carregarProdutos().then(() => {
             const produtos = model.getProdutos();
-            view.renderizarProdutos(produtos, carrinhoController.adicionarAoCarrinho);
+            view.renderizarProdutos(produtos, adicionarAoCarrinho);
             configurarBusca();
         });
+    };
+
+    const adicionarAoCarrinho = (produto) => {
+        CarrinhoModel.adicionarItem(produto);        
     };
 
     const configurarBusca = () => {
@@ -62,5 +67,5 @@ const ProdutosController = ((model, view, carrinhoController) => {
     return {
         init
     };
-})(ProdutosModel, ProdutosView, CarrinhoController);
+})(ProdutosModel, ProdutosView, CarrinhoModel);
      
