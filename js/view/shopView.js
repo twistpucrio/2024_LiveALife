@@ -1,5 +1,5 @@
 const ShopView = (() => {
-    const renderizarCategorias = (produtosPorCategoria, adicionarAoCarrinhoCallback,adicionarAoFavoritoCallback) => {
+    const renderizarCategorias = (produtosPorCategoria, adicionarAoCarrinhoCallback) => {
         const container = document.getElementById('produtos-container');
         container.innerHTML = '';  // Limpa o container
 
@@ -27,9 +27,6 @@ const ShopView = (() => {
                         <p id="descricao-${produto.id}">${produto.descricao}</p>
                         <button aria-label="Clique aqui para adicionar ao carrinho" data-id="${produto.id}" class="adicionar-carrinho-button">
                         Adicionar ao Carrinho
-                    </button>
-                    <button aria-label="Clique aqui para adicionar ao favorito" data-id="${produto.id}" class="adicionar-favorito-button">
-                        Adicionar ao Favorito
                     </button>
                     </div>
                 `;
@@ -68,18 +65,6 @@ const ShopView = (() => {
                     const produtoBusca = produtosPorCategoria[categoria].find(p => p.id === produtoId);
                     if (produtoBusca) {
                         adicionarAoCarrinhoCallback(produtoBusca);
-                    }
-                });
-            });
-        });
-        const botoesAdicionarFavorito = document.querySelectorAll('.adicionar-favorito-button');
-        botoesAdicionarFavorito.forEach(botao => {
-            botao.addEventListener('click', (event) => {
-                const produtoId = parseInt(event.target.getAttribute('data-id'));
-                Object.keys(produtosPorCategoria).forEach(categoria => {
-                    const produtoBusca = produtosPorCategoria[categoria].find(p => p.id === produtoId);
-                    if (produtoBusca) {
-                        adicionarAoFavoritoCallback(produtoBusca);
                     }
                 });
             });
