@@ -10,6 +10,7 @@
     <a href="index.html">Home</a>
     <a href = "produtos.html"> produtos</a>
     <a href="shop.html">shop</a>
+    <a href="teste.html">Form2</a>
     <div id="botao-carrinho"></div>
     <div id="botao-favorito"></div>
 
@@ -24,6 +25,21 @@
         <input type="number" id="busca-preco-max" placeholder="Preço Máximo" min="0">
         <button id="botao-buscar">Buscar</button>
 
+    </div>
+
+    <div id = "filtro-container">
+        <label for="Classificacao"> Classificação Indicativa: </label>
+                     <input list="indicativa" 
+                            name="classInd"
+                            id="classInd">
+                     <datalist id="indicativa">
+                        <option value="Livre"></option>
+                        <option value="10+"></option>
+                        <option value="12+"></option>
+                        <option value="14+"></option>
+                        <option value="16+"></option>
+                        <option value="18+"></option>
+                     </datalist>
     </div>
     
     <div id="produtos-container"></div>
