@@ -34,10 +34,6 @@ const CarrinhoController = ((model, view) => {
         });
     };
 
-    const adicionarAoCarrinho = (produto) => {
-        model.adicionarItem(produto);
-        atualizarView();
-    };
 
     const atualizarView = () => {
         const carrinho = model.getCarrinho();
