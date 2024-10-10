@@ -1,7 +1,7 @@
 // js/view/produtosView.js
 
 const ProdutosView = (() => {
-    const renderizarProdutos = (produtos, adicionarAoCarrinhoCallback) => {
+    const renderizarProdutos = (produtos, adicionarAoCarrinhoCallback,adicionarAoFavoritoCallback) => {
         const container = document.getElementById('produtos-container');
         container.innerHTML = '';
 
@@ -18,6 +18,9 @@ const ProdutosView = (() => {
                     <button aria-label="Clique aqui para adicionar ao carrinho" data-id="${produto.id}" class="adicionar-carrinho-button">
                         Adicionar ao Carrinho
                     </button>
+                    <button aria-label="Clique aqui para adicionar aos favoritos" data-id="${produto.id}" class="adicionar-favorito-button">
+                        Adicionar aos Favoritos
+                    </button>
                 </div>
             `;
 
@@ -31,6 +34,13 @@ const ProdutosView = (() => {
                 const produto = produtos.find(p => p.id === produtoId);
                 if (produto) {
                     adicionarAoCarrinhoCallback(produto);
+                }
+            }
+            if (event.target.classList.contains('adicionar-favorito-button')) {
+                const produtoId = parseInt(event.target.getAttribute('data-id'));
+                const produto = produtos.find(p => p.id === produtoId);
+                if (produto) {
+                    adicionarAoFavoritoCallback(produto);
                 }
             }
         });
