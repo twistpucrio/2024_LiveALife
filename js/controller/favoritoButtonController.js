@@ -18,7 +18,7 @@ const FavoritoButtonController = ((model, view) => {
 
     const atualizarView = () => {
         const totalItens = model.getTotalItens();
-        view.renderizarBotaoFavorito(totalItens);
+        view.renderizarBotaoFavorito();
     };
 
     return {

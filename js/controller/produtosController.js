@@ -14,6 +14,8 @@ const ProdutosController = ((model, view, carrinhoController) => {
     };
 
     const adicionarAoFavorito = (produto) => {
+        alert("Adicionado com sucesso!");
+
         FavoritoModel.adicionarItem(produto);        
     };
 
