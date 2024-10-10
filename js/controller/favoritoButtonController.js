@@ -4,9 +4,12 @@ const FavoritoButtonController = ((model, view) => {
 
         // Adicionar evento de clique para ir à página do carrinho
         document.addEventListener('click', (event) => {
+           
+
             if (event.target && event.target.id === 'ver-favorito') {
                 window.location.href = 'favorito.html';
             }
+
         });
 
         // Escutar mudanças no carrinho para atualizar o número de itens

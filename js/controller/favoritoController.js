@@ -40,7 +40,7 @@ const FavoritoController = ((model, view) => {
     };
 
     const atualizarView = () => {
-        const favorito = model.getCarrinho();
+        const favorito = model.getFavorito();
         view.renderizarFavorito(favorito);
     };
 

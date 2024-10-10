@@ -1,15 +1,20 @@
+
 const ProdutosController = ((model, view, carrinhoController) => {
 
     const init = () => {
         model.carregarProdutos().then(() => {
             const produtos = model.getProdutos();
-            view.renderizarProdutos(produtos, adicionarAoCarrinho);
+            view.renderizarProdutos(produtos, adicionarAoCarrinho, adicionarAoFavorito);
             configurarBusca();
         });
     };
 
     const adicionarAoCarrinho = (produto) => {
         CarrinhoModel.adicionarItem(produto);        
+    };
+
+    const adicionarAoFavorito = (produto) => {
+        FavoritoModel.adicionarItem(produto);        
     };
 
     const configurarBusca = () => {
@@ -60,7 +65,7 @@ const ProdutosController = ((model, view, carrinhoController) => {
             }
 
             const resultados = model.buscarProdutos(criterios);
-            view.renderizarProdutos(resultados, carrinhoController.adicionarAoCarrinho);
+            view.renderizarProdutos(resultados, carrinhoController.adicionarAoCarrinho, FavoritoController.adicionarAoFavorito);
         });
     };
 

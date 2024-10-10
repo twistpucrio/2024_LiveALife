@@ -4,7 +4,6 @@ const FavoritoView = (() => {
     const renderizarFavorito = (favorito) => {
         const container = document.getElementById('favorito-container');
         container.innerHTML = '';
-
         if (favorito.length === 0) {
             container.innerHTML = '<p>Seu favorito está vazio.</p>';
             return;
