@@ -12,5 +12,9 @@ document.addEventListener('DOMContentLoaded', () => {
         CarrinhoController.init();
     }
 
+    if (page === 'aventura.html'){
+        Aventura.init();
+    }
+
     CarrinhoButtonController.init();
 });
