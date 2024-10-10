@@ -8,6 +8,10 @@ document.addEventListener('DOMContentLoaded', () => {
         ProdutosController.init();
     }
 
+    if (page === 'shop.html' || page === '') {
+        ShopController.init();
+    }
+
     if (page === 'carrinho.html') {
         CarrinhoController.init();
     }
