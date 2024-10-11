@@ -19,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (page === 'index.html' || page === '') {
         ProdutosController.init();
+    }
 
     if (page === 'favorito.html') {
         FavoritoController.init();
@@ -27,5 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     CarrinhoButtonController.init();
     FavoritoButtonController.init();
-}
+
+
 });
+

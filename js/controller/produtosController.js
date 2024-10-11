@@ -26,6 +26,7 @@ const ProdutosController = ((model, view, carrinhoController) => {
             const categoria = document.getElementById('busca-categoria').value.trim();
             let precoMin = parseFloat(document.getElementById('busca-preco-min').value);
             let precoMax = parseFloat(document.getElementById('busca-preco-max').value);
+            let classInd = document.getElementById('classInd').value;
 
             // Verificação se precoMin é maior que precoMax
             if (precoMin > precoMax) {
@@ -56,6 +57,10 @@ const ProdutosController = ((model, view, carrinhoController) => {
 
             if (categoria !== '') {
                 criterios.categoria = categoria;
+            }
+
+            if (classInd !== ''){
+                criterios.classInd = classInd;
             }
 
             if (!isNaN(precoMin)) {
