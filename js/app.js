@@ -28,5 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     CarrinhoButtonController.init();
     FavoritoButtonController.init();
-    }
-);
+
+
+});
+
