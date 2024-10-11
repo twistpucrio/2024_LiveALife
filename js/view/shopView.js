@@ -1,5 +1,5 @@
 const ShopView = (() => {
-    const renderizarCategorias = (produtosPorCategoria) => {
+    const renderizarCategorias = (produtosPorCategoria, adicionarAoCarrinhoCallback,adicionarAoFavoritoCallback) => {
         const container = document.getElementById('produtos-container');
         container.innerHTML = '';  // Limpa o container
 
@@ -25,6 +25,12 @@ const ShopView = (() => {
                         <img tabindex="0" src="${produto.imagem}" alt="${produto.alt}" width="100" height="100">
                         <p id="preco-${produto.id}">Preço: R$ ${produto.preco}</p>
                         <p id="descricao-${produto.id}">${produto.descricao}</p>
+                        <button aria-label="Clique aqui para adicionar ao carrinho" data-id="${produto.id}" class="adicionar-carrinho-button">
+                        Adicionar ao Carrinho
+                        </button>
+                        <button aria-label="Clique aqui para adicionar ao favorito" data-id="${produto.id}" class="adicionar-favorito-button">
+                            Adicionar ao Favorito
+                        </button>
                     </div>
                 `;
                 carrosselDiv.appendChild(produtoDiv); /* adiciona o item ao carrossel de sua categoria */
@@ -38,7 +44,7 @@ const ShopView = (() => {
             nextButton.classList.add('next-button');
             nextButton.textContent = '→';
 
-            // alterei a posição dos botões de scroll
+            // adiciona carrossel e botões de navegação
             categoriaDiv.appendChild(carrosselDiv);
             categoriaDiv.appendChild(prevButton);
             categoriaDiv.appendChild(nextButton);
@@ -50,6 +56,33 @@ const ShopView = (() => {
             });
             nextButton.addEventListener('click', () => {
                 carrosselDiv.scrollLeft += 200;
+            });
+        });
+
+        // Adicionar eventos de clique em todos os botões "Adicionar ao Carrinho"
+        const botoesAdicionarCarrinho = document.querySelectorAll('.adicionar-carrinho-button');
+        botoesAdicionarCarrinho.forEach(botao => {
+            botao.addEventListener('click', (event) => {
+                const produtoId = parseInt(event.target.getAttribute('data-id'));
+                Object.keys(produtosPorCategoria).forEach(categoria => {
+                    const produtoBusca = produtosPorCategoria[categoria].find(p => p.id === produtoId);
+                    if (produtoBusca) {
+                        adicionarAoCarrinhoCallback(produtoBusca);
+                    }
+                });
+            });
+        });
+
+        const botoesAdicionarFavorito = document.querySelectorAll('.adicionar-favorito-button');
+        botoesAdicionarFavorito.forEach(botao => {
+            botao.addEventListener('click', (event) => {
+                const produtoId = parseInt(event.target.getAttribute('data-id'));
+                Object.keys(produtosPorCategoria).forEach(categoria => {
+                    const produtoBusca = produtosPorCategoria[categoria].find(p => p.id === produtoId);
+                    if (produtoBusca) {
+                        adicionarAoFavoritoCallback(produtoBusca);
+                    }
+                });
             });
         });
     };
