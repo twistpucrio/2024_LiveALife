@@ -44,18 +44,18 @@ const ProdutosModel = (() => {
                 console.log(`${criterios.categoria}`)
                 
                 const nomeCatBusca = criterios.categoria.toLowerCase();
-                
-                produto.categorias.forEach( categoria => {
-                    categoria_lower = categoria.toLowerCase();
-                    console.log(`${categoria_lower}`)
-                    match = categoria_lower.includes(nomeCatBusca);
-                    console.log(`match = ${match}`)
-                    if(!match)
-                        corresponde = false;
-                } );
+                const temCategoria = produto.categorias.some(categoria =>
+                    categoria.toLowerCase().includes(nomeCatBusca)
+                );
+                corresponde = corresponde && temCategoria
                 
             }
-            console.log(`match = ${match}`)
+            if (criterios.classInd) {
+                const classIndBusca = criterios.classInd.toLowerCase();
+                const classIndProduto = produto.classificacao.toLowerCase();
+                corresponde = corresponde && classIndProduto.includes(classIndBusca);
+            }
+
             return corresponde;
         });
     };
