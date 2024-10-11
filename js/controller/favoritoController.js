@@ -15,6 +15,7 @@ const FavoritoController = ((model, view) => {
             }
         });
 
+        
        
 
         container.addEventListener('click', (event) => {
