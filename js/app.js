@@ -16,8 +16,13 @@ document.addEventListener('DOMContentLoaded', () => {
         CarrinhoController.init();
     }
 
+
+    if (page === 'index.html' || page === '') {
+        ProdutosController.init();
+
     if (page === 'favorito.html') {
         FavoritoController.init();
+
     }
 
     CarrinhoButtonController.init();
