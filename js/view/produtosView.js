@@ -34,11 +34,30 @@ const ProdutosView = (() => {
             const imagemProduto = produtoDiv.querySelector('.img_pro');
 
 
-            // Adicionar evento de clique apenas na imagem para redirecionar à página de detalhes
-            imagemProduto.addEventListener('click', () => {
-                window.location.href = 'desc_prod.html';
-            });
+            
 
+            imagemProduto.addEventListener('click', () => {
+                
+                // Adicionar evento de clique apenas na imagem para redirecionar à página de detalhes
+            
+                if (produto.id && produto.nome && produto.preco && produto.imagem && produto.descricao) {
+                    // Salva as informações do produto no localStorage
+                    const produtoInfo = {
+                        id: produto.id,
+                        nome: produto.nome,
+                        preco: produto.preco,
+                        imagem: produto.imagem,
+                        alt: produto.alt,
+                        descricao: produto.descricao // Certifique-se que a descrição está presente
+                    };
+
+                     // Armazenar no localStorage como uma string JSON
+                    localStorage.setItem('produtoSelecionado', JSON.stringify(produtoInfo));
+                    
+                }
+                window.location.href = 'desc_prod.html';         
+                
+            });
 
             // produtoDiv.innerHTML = `
             // <div id="produtoExibido-${produto.id}" tabindex="0" aria-labelledby="nome-${produto.id} preco-${produto.id} descricao-${produto.id}">
@@ -66,12 +85,12 @@ const ProdutosView = (() => {
 
             botaoCarrinho.addEventListener('click', () => {
                 adicionarAoCarrinhoCallback(produto);
-        });
+            });
 
 
-        botaoFavorito.addEventListener('click', () => {
-            adicionarAoFavoritoCallback(produto);
-        });
+            botaoFavorito.addEventListener('click', () => {
+                adicionarAoFavoritoCallback(produto);
+            });
 
 
         // // Adiciona os eventos dos botões
