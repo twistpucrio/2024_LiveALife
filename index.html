@@ -3,33 +3,122 @@
 <head>
     <meta charset="UTF-8">
     <title>E-commerce MVC</title>
+   
     <link rel="stylesheet" href="css/index.css">
     <!-- <link rel="stylesheet" href="css/estilos.css"> -->
+    <link rel="stylesheet" href="css/carrinho.css">
+
 
     <!-- icones -->
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
     rel="stylesheet">
 
+
 </head>
 <body>
 
+
     <!-- Header -->
-     <section id="header">
+    <header id="header">
         <a href="#"> <img src="img/logo.png" class="logo" alt="logo"> </a>
      
-        <div>
+        <nav>
             <ul id="navbar">
                 <li> <a class="active" href="index.html">Home</a> </li>
                 <li> <a href="shop.html">Shop</a> </li>
-                <li> <a href="">Blog</a> </li>
-                <li> <a href="">About</a> </li>
-                <li> <a href="">Contact</a> </li>
-                
-                <li> <a href=""><img src="img/icones/sacola_compra.png" class="carrinho_icon" alt="logo"></a> </li>
+                <li> <a href="blog.html">Blog</a> </li>
+                <li> <a href="about.html">About</a> </li>
+                <li> <a href="contact.html">Contact</a> </li>
+               
+                <!-- <li> <a href=""><img src="img/icones/sacola_compra.png" class="carrinho_icon" alt="logo"></a> </li> -->
+                <li id="botao-carrinho"></li>
+                <li id="botao-favorito"> <a href=""></a></li>
+               
+                <!-- <div id="botao-carrinho"></div>
+                <div id="botao-favorito"></div> -->
             </ul>
-        </div>
+        </nav>
+
+
+    </header>
+
+
+    <!-- Pop-ups | Carrinho e Favoritos -->
+    <section>
+        <div id="carrinho-container"></div>
+
+
+        <!-- como o vídeo estiliza -->
+         <section id="cart" class="section-p1">
+            <table width="100%">
+                <thead>
+                    <tr>
+                        <td>Remove</td>
+                        <td>Image</td>
+                        <td>Product</td>
+                        <td>Price</td>
+                        <td>Quantity</td>
+                        <td>Subtotal</td>
+                    </tr>
+                </thead>
+
+
+                <tbody>
+                    <tr>
+                        <!-- <td><i class="far fa-times-circle"></i></td> -->
+                        <td class="i"><img src="img/icones/sacola_compra.png" alt=""></td>
+                        <td><img src="img/aulaYoga.jpg" alt=""></td>
+                        <td>Nome do produto</td>
+                        <td>R$ 100.00</td>
+                        <td><input type="number" value="1"></td>
+                        <td>total</td>
+                    </tr>
+                </tbody>
+
+
+            </table>
+         </section>
+
+
+         <section id="cart-add" class="section-p1">
+            <div id="coupon">
+                <h3>Apply Coupon</h3>
+                <div>
+                    <input type="text" placeholder="Enter Your Coupon">
+                    <button class="normal">Apply</button>
+                </div>
+            </div>
+
+
+            <div id="subtotal">
+                <h3>Cart Totals</h3>
+                <table>
+                    <tr>
+                        <td>Cart Subtotal</td>
+                        <td>R$ 355</td>
+                    </tr>
+                    <tr>
+                        <td>Shipping</td>
+                        <td>Free</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Total</strong></td>
+                        <td><strong>R$ 355</strong></td>
+                    </tr>
+                </table>
+                <button class="">Proceed to checkout</button>
+            </div>
+         </section>
+
+
+
 
     </section>
+
+
+    <!-- <section id="favorito-container"></section> -->
+    <!-- ______________________________ -->
+
 
     <section id="hero">
         <h4>Trade-in-offer</h4>
@@ -39,153 +128,118 @@
         <button>Shop Now</button>
     </section>
 
+
     <section id="feature" class="section-p1">
+
 
         <div class="fe-box">
             <img src="img/canyoning.jpg" alt="">
             <a href="aventura.html"><h6>Aventura</h6></a>
         </div>
 
+
         <div class="fe-box">
             <img src="img/canyoning.jpg" alt="">
             <a href=""><h6>Romântico</h6></a>
         </div>
+
 
         <div class="fe-box">
             <img src="img/canyoning.jpg" alt="">
             <a href=""><h6>Relaxamento</h6></a>
         </div>
 
+
         <div class="fe-box">
             <img src="img/canyoning.jpg" alt="">
             <a href=""><h6>Gastronômico</h6></a>
         </div>
 
+
     </section>
+
 
     <section id="product1" class="section-p1">
         <h2>Featured Poducts</h2>
         <p>Summer Collection New Morden Design</p>
 
-        <div class="pro-container">
-            <div class="pro">
+
+        <div id="pro-container">
+            <!-- <div class="pro">
                 <img class="img_pro" src="img/aulaYoga.jpg" alt="">
                 <div class="des">
-                    <span>yoga</span>
+                    <span>relaxamento</span>
                     <h5>Aulas de yoga</h5>
-                    <div class="star"> 
+                    <div class="star">
                         <span class="material-icons"> grade </span>
                         <span class="material-icons"> grade </span>
                         <span class="material-icons"> grade </span>
                         <span class="material-icons"> grade </span>
                         <span class="material-icons"> grade </span>
+
 
                     </div>
                     <h4>R$ 100</h4>
                 </div>
-                <a href=""><img src="img/icones/sacola_compra.png" alt=""></a>
-            </div>
+                <button class="adicionar-carrinho-button"><img src="img/icones/sacola_compra.png" alt=""></button>
+                <button class="adicionar-favorito-button"><img src="img/icones/sacola_compra.png" alt=""></button> -->
+                <!-- <a href=""><img src="img/icones/sacola_compra.png" alt=""></a>
+                <a href=""><img src="img/icones/sacola_compra.png" alt=""></a> -->
+            <!-- </div> -->
 
-            <div class="pro">
+
+            <!-- <div class="pro">
                 <img class="img_pro" src="img/aulaYoga.jpg" alt="">
                 <div class="des">
                     <span>yoga</span>
                     <h5>Aulas de yoga</h5>
-                    <div class="star"> 
+                    <div class="star">
                         <span class="material-icons"> grade </span>
                         <span class="material-icons"> grade </span>
                         <span class="material-icons"> grade </span>
                         <span class="material-icons"> grade </span>
                         <span class="material-icons"> grade </span>
+
 
                     </div>
                     <h4>R$ 100</h4>
                 </div>
-                <a href=""><img src="img/icones/sacola_compra.png" alt=""></a>
-            </div>
+                <button class="adicionar-carrinho-button"><img src="img/icones/sacola_compra.png" alt=""></button>
+                <button class="adicionar-favorito-button"><img src="img/icones/sacola_compra.png" alt=""></button>
+            </div> -->
 
 
-            <div class="pro">
+
+
+            <!-- <div class="pro">
                 <img class="img_pro" src="img/aulaYoga.jpg" alt="">
                 <div class="des">
                     <span>yoga</span>
                     <h5>Aulas de yoga</h5>
-                    <div class="star"> 
+                    <div class="star">
                         <span class="material-icons"> grade </span>
                         <span class="material-icons"> grade </span>
                         <span class="material-icons"> grade </span>
                         <span class="material-icons"> grade </span>
                         <span class="material-icons"> grade </span>
+
 
                     </div>
                     <h4>R$ 100</h4>
                 </div>
-                <a href=""><img src="img/icones/sacola_compra.png" alt=""></a>
-            </div>
+                <button class="adicionar-carrinho-button"><img src="img/icones/sacola_compra.png" alt=""></button>
+                <button class="adicionar-favorito-button"><img src="img/icones/sacola_compra.png" alt=""></button>
+            </div> -->
 
 
-            <div class="pro">
-                <img class="img_pro" src="img/aulaYoga.jpg" alt="">
-                <div class="des">
-                    <span>yoga</span>
-                    <h5>Aulas de yoga</h5>
-                    <div class="star"> 
-                        <span class="material-icons"> grade </span>
-                        <span class="material-icons"> grade </span>
-                        <span class="material-icons"> grade </span>
-                        <span class="material-icons"> grade </span>
-                        <span class="material-icons"> grade </span>
-
-                    </div>
-                    <h4>R$ 100</h4>
-                </div>
-                <a href=""><img src="img/icones/sacola_compra.png" alt=""></a>
-            </div>
-
-
-            <div class="pro">
-                <img class="img_pro" src="img/aulaYoga.jpg" alt="">
-                <div class="des">
-                    <span>yoga</span>
-                    <h5>Aulas de yoga</h5>
-                    <div class="star"> 
-                        <span class="material-icons"> grade </span>
-                        <span class="material-icons"> grade </span>
-                        <span class="material-icons"> grade </span>
-                        <span class="material-icons"> grade </span>
-                        <span class="material-icons"> grade </span>
-
-                    </div>
-                    <h4>R$ 100</h4>
-                </div>
-                <a href=""><img src="img/icones/sacola_compra.png" alt=""></a>
-            </div>
-
-
-            <div class="pro">
-                <img class="img_pro" src="img/aulaYoga.jpg" alt="">
-                <div class="des">
-                    <span>yoga</span>
-                    <h5>Aulas de yoga</h5>
-                    <div class="star"> 
-                        <span class="material-icons"> grade </span>
-                        <span class="material-icons"> grade </span>
-                        <span class="material-icons"> grade </span>
-                        <span class="material-icons"> grade </span>
-                        <span class="material-icons"> grade </span>
-
-                    </div>
-                    <h4>R$ 100</h4>
-                </div>
-                <a href=""><img src="img/icones/sacola_compra.png" alt=""></a>
-            </div>
-
-            
         </div>
 
 
+
+
     </section>
-    
+   
+
 
     <section id="banner" class="section-m1">
         <h4>Repair Services</h4>
@@ -193,45 +247,31 @@
         <button class="normal">Explore more</button>
     </section>
 
+
     <section id="product1" class="section-p1">
         <h2>New Arrivals</h2>
         <p>Summer Collection New Morden Design</p>
 
-        <div class="pro-container">
-            <div class="pro">
+
+        <div id="pro-container">
+            <!-- <div class="pro">
                 <img class="img_pro" src="img/aulaYoga.jpg" alt="">
                 <div class="des">
                     <span>yoga</span>
                     <h5>Aulas de yoga</h5>
-                    <div class="star"> 
+                    <div class="star">
                         <span class="material-icons"> grade </span>
                         <span class="material-icons"> grade </span>
                         <span class="material-icons"> grade </span>
                         <span class="material-icons"> grade </span>
                         <span class="material-icons"> grade </span>
+
 
                     </div>
                     <h4>R$ 100</h4>
                 </div>
-                <a href=""><img src="img/icones/sacola_compra.png" alt=""></a>
-            </div>
-
-            <div class="pro">
-                <img class="img_pro" src="img/aulaYoga.jpg" alt="">
-                <div class="des">
-                    <span>yoga</span>
-                    <h5>Aulas de yoga</h5>
-                    <div class="star"> 
-                        <span class="material-icons"> grade </span>
-                        <span class="material-icons"> grade </span>
-                        <span class="material-icons"> grade </span>
-                        <span class="material-icons"> grade </span>
-                        <span class="material-icons"> grade </span>
-
-                    </div>
-                    <h4>R$ 100</h4>
-                </div>
-                <a href=""><img src="img/icones/sacola_compra.png" alt=""></a>
+                <button class="adicionar-carrinho-button"><img src="img/icones/sacola_compra.png" alt=""></button>
+                <button class="adicionar-favorito-button"><img src="img/icones/sacola_compra.png" alt=""></button>
             </div>
 
 
@@ -240,18 +280,21 @@
                 <div class="des">
                     <span>yoga</span>
                     <h5>Aulas de yoga</h5>
-                    <div class="star"> 
+                    <div class="star">
                         <span class="material-icons"> grade </span>
                         <span class="material-icons"> grade </span>
                         <span class="material-icons"> grade </span>
                         <span class="material-icons"> grade </span>
                         <span class="material-icons"> grade </span>
 
+
                     </div>
                     <h4>R$ 100</h4>
                 </div>
-                <a href=""><img src="img/icones/sacola_compra.png" alt=""></a>
-            </div>
+                <button class="adicionar-carrinho-button"><img src="img/icones/sacola_compra.png" alt=""></button>
+                <button class="adicionar-favorito-button"><img src="img/icones/sacola_compra.png" alt=""></button>            </div>
+
+
 
 
             <div class="pro">
@@ -259,18 +302,21 @@
                 <div class="des">
                     <span>yoga</span>
                     <h5>Aulas de yoga</h5>
-                    <div class="star"> 
+                    <div class="star">
                         <span class="material-icons"> grade </span>
                         <span class="material-icons"> grade </span>
                         <span class="material-icons"> grade </span>
                         <span class="material-icons"> grade </span>
                         <span class="material-icons"> grade </span>
 
+
                     </div>
                     <h4>R$ 100</h4>
                 </div>
-                <a href=""><img src="img/icones/sacola_compra.png" alt=""></a>
-            </div>
+                <button class="adicionar-carrinho-button"><img src="img/icones/sacola_compra.png" alt=""></button>
+                <button class="adicionar-favorito-button"><img src="img/icones/sacola_compra.png" alt=""></button>            </div>
+
+
 
 
             <div class="pro">
@@ -278,18 +324,22 @@
                 <div class="des">
                     <span>yoga</span>
                     <h5>Aulas de yoga</h5>
-                    <div class="star"> 
+                    <div class="star">
                         <span class="material-icons"> grade </span>
                         <span class="material-icons"> grade </span>
                         <span class="material-icons"> grade </span>
                         <span class="material-icons"> grade </span>
                         <span class="material-icons"> grade </span>
 
+
                     </div>
                     <h4>R$ 100</h4>
                 </div>
-                <a href=""><img src="img/icones/sacola_compra.png" alt=""></a>
+                <button class="adicionar-carrinho-button"><img src="img/icones/sacola_compra.png" alt=""></button>
+                <button class="adicionar-favorito-button"><img src="img/icones/sacola_compra.png" alt=""></button>
             </div>
+
+
 
 
             <div class="pro">
@@ -297,24 +347,53 @@
                 <div class="des">
                     <span>yoga</span>
                     <h5>Aulas de yoga</h5>
-                    <div class="star"> 
+                    <div class="star">
                         <span class="material-icons"> grade </span>
                         <span class="material-icons"> grade </span>
                         <span class="material-icons"> grade </span>
                         <span class="material-icons"> grade </span>
                         <span class="material-icons"> grade </span>
+
 
                     </div>
                     <h4>R$ 100</h4>
                 </div>
-                <a href=""><img src="img/icones/sacola_compra.png" alt=""></a>
+                <button class="adicionar-carrinho-button"><img src="img/icones/sacola_compra.png" alt=""></button>
+                <button class="adicionar-favorito-button"><img src="img/icones/sacola_compra.png" alt=""></button>
             </div>
 
-            
+
+
+
+            <div class="pro">
+                <img class="img_pro" src="img/aulaYoga.jpg" alt="">
+                <div class="des">
+                    <span>yoga</span>
+                    <h5>Aulas de yoga</h5>
+                    <div class="star">
+                        <span class="material-icons"> grade </span>
+                        <span class="material-icons"> grade </span>
+                        <span class="material-icons"> grade </span>
+                        <span class="material-icons"> grade </span>
+                        <span class="material-icons"> grade </span>
+
+
+                    </div>
+                    <h4>R$ 100</h4>
+                </div>
+                <button class="adicionar-carrinho-button"><img src="img/icones/sacola_compra.png" alt=""></button>
+                <button class="adicionar-favorito-button"><img src="img/icones/sacola_compra.png" alt=""></button>
+            </div> -->
+
+
+           
         </div>
 
 
+
+
     </section>
+
 
     <section id="sm-banner" class="section-p1">
         <div class="banner-box">
@@ -324,6 +403,7 @@
             <button class="white">Learn More</button>
         </div>
 
+
         <div class="banner-box banner-box2">
             <h4>crazy deals</h4>
             <h2>buy 1 get 1 free</h2>
@@ -332,16 +412,19 @@
         </div>
     </section>
 
+
     <section id="banner3">
         <div class="banner-box">
             <h2>SEASONAL SALE</h2>
             <h3>Winter Collection -50% OFF</h3>      
         </div>
 
+
         <div class="banner-box banner-box2">
             <h2>SEASONAL SALE</h2>
             <h3>Winter Collection -50% OFF</h3>      
         </div>
+
 
         <div class="banner-box banner-box3">
             <h2>SEASONAL SALE</h2>
@@ -349,19 +432,115 @@
         </div>
     </section>
 
-    <!-- <div id="produtos-container"></div> -->
+
+    <section id="newsletter" class="section-p1 section-m1">
+        <div id="newstesxt">
+            <h4>Sign Up For newsletters</h4>
+            <p>Get E-mail updates about our latest shop and <span>special offers</span></p>
+        </div>
+        <div class="form">
+            <input type="text" placeholder="Your email address">
+            <button class="normal">Sign Up</button>
+        </div>
+    </section>
+
+
+    <!-- <div id="pro-container"></div> -->
+
+
+
+
+    <footer class="section-p1">
+        <div class="col">
+            <img class="logo" src="/img/logo.png" alt="">
+            <h4>Contact</h4>
+            <p><strong>Address:</strong> 526 Wellington Road, Street 32, San Francisco</p>
+            <p><strong>Phone:</strong> +21 12345-6789</p>
+            <p><strong>Hours:</strong> 15:00 - 18:00, Mon - Fri</p>
+           
+            <div class="follow">
+                <h4>Follow us</h4>
+                <div class="icon">
+                    <i class="fab fa-facebook"></i>
+                    <i class="fab fa-twitter"></i>
+                    <i class="fab fa-instagram"></i>
+                    <i class="fab fa-pinterest-p"></i>
+                    <i class="fab fa-youtube"></i>
+
+
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col">
+            <h4>About</h4>
+            <a href="">About us</a>
+            <a href="">Delivery Information</a>
+            <a href="">Privacy Policy</a>
+            <a href="">Terms & Condicions</a>
+            <a href="">Contact Us</a>
+        </div>
+
+
+        <div class="col">
+            <h4>My Account</h4>
+            <a href="">Sign In</a>
+            <a href="">View Cart</a>
+            <a href="">My WishList</a>
+            <a href="">Track My Order</a>
+            <a href="">Help</a>
+        </div>
+
+
+        <div class="col install">
+            <h4>install App</h4>
+            <p>From App Store or Google Play</p>
+            <div class="row">
+                <img src="" alt="">
+                <img src="" alt="">
+            </div>
+            <p>Secured Payment Gateways</p>
+            <img src="" alt="">
+        </div>
+
+
+        <div class="copyright">
+            <p>2024, Twist | Tecgraf - Ecommerce</p>
+        </div>
+    </footer>
+
+
+
 
     <!-- <button onclick="window.location.href='carrinho.html'">Ver Carrinho</button> -->
 
-    
+
+   
+
 
     <!-- Scripts JavaScript -->
     <script src="js/model/produtosModel.js"></script>
     <script src="js/model/carrinhoModel.js"></script>
+    <script src="js/model/favoritoModel.js"></script>
+    <script src="js/view/favoritoView.js"></script>
     <script src="js/view/produtosView.js"></script>
     <script src="js/view/carrinhoButtonView.js"></script>
+    <script src="js/view/favoritoButtonView.js"></script>
     <script src="js/controller/carrinhoButtonController.js"></script>
+    <script src="js/controller/favoritoButtonController.js"></script>
+    <script src="js/controller/favoritoController.js"></script>
     <script src="js/controller/produtosController.js"></script>
+    <script src="js/model/shopModel.js"></script>
+    <script src="js/view/shopView.js"></script>
+    <script src="js/controller/ShopController.js"></script>
+    <script src="js/model/carrinhoModel.js"></script>
+    <script src="js/view/carrinhoView.js"></script>
+    <script src="js/controller/carrinhoController.js"></script>
     <script src="js/app.js"></script>
+    <script src="js/layout.js"></script>
 </body>
 </html>
+
+
+

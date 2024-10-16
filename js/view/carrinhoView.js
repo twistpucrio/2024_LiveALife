@@ -1,14 +1,17 @@
 // js/view/carrinhoView.js
 
+
 const CarrinhoView = (() => {
     const renderizarCarrinho = (carrinho) => {
         const container = document.getElementById('carrinho-container');
         container.innerHTML = '';
 
+
         if (carrinho.length === 0) {
             container.innerHTML = '<p>Seu carrinho está vazio.</p>';
             return;
         }
+
 
         const tabela = document.createElement('table');
         tabela.innerHTML = `
@@ -39,18 +42,27 @@ const CarrinhoView = (() => {
         `;
         container.appendChild(tabela);
 
+
         const total = carrinho.reduce((acc, item) => acc + item.preco * item.quantidade, 0);
         const totalDiv = document.createElement('div');
         totalDiv.innerHTML = `<h3>Total: R$ ${total.toFixed(2)}</h3>`;
         container.appendChild(totalDiv);
 
+
         const limparButton = document.createElement('button');
         limparButton.textContent = 'Limpar Carrinho';
         limparButton.id = 'limpar-carrinho';
         container.appendChild(limparButton);
+
+
+        const finalizarPedido_button = document.createElement('button');
+        finalizarPedido_button.textContent = 'Finalizar Compra';
+        container.appendChild(finalizarPedido_button);
     };
+
 
     return {
         renderizarCarrinho
     };
 })();
+
