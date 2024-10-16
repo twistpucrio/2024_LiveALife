@@ -15,16 +15,8 @@ const FavoritoController = ((model, view) => {
             }
         });
 
-        container.addEventListener('input', (event) => {
-            if (event.target.classList.contains('quantidade-input')) {
-                const produtoId = parseInt(event.target.getAttribute('data-id'));
-                const novaQuantidade = parseInt(event.target.value);
-                if (!isNaN(novaQuantidade) && novaQuantidade > 0) {
-                    model.atualizarQuantidade(produtoId, novaQuantidade);
-                    atualizarView();
-                }
-            }
-        });
+        
+       
 
         container.addEventListener('click', (event) => {
             if (event.target.id === 'limpar-favorito') {

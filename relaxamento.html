@@ -10,13 +10,6 @@
     <a href="index.html">Home</a>
     <a href="produtos.html"> | Todos produtos </a>
     <a href="shop.html"> | Shop</a>
-  
-    <a href = "produtos.html"> produtos</a>
-    <a href="shop.html">shop</a>
-    <a href="teste.html">Form2</a>
-
-    <div id="botao-carrinho"></div>
-    <div id="botao-favorito"></div>
 
 
     <h1> Lista de Produtos </h1>
@@ -27,16 +20,6 @@
         <input type="text" id="busca-categoria" placeholder="Buscar por categoria">
         <input type="number" id="busca-preco-min" placeholder="Preço Mínimo" min="0">
         <input type="number" id="busca-preco-max" placeholder="Preço Máximo" min="0">
-        <label for="classInd">Classificação Indicativa:</label>
-        <input list="indicativa" name="classInd" id="classInd" placeholder="Selecione a classificação">
-            <datalist id="indicativa">
-                <option value="Livre">Livre</option>
-                <option value="10+">10+</option>
-                <option value="12+">12+</option>
-                <option value="14+">14+</option>
-                <option value="16+">16+</option>
-                <option value="18+">18+</option>
-            </datalist>
         <button id="botao-buscar">Buscar</button>
 
     </div>
@@ -44,22 +27,15 @@
     <div id="produtos-container"></div>
 
     <button onclick="window.location.href='carrinho.html'">Ver Carrinho</button>
-    <button onclick="window.location.href='favorito.html'">Ver Favorito</button>
+
     
 
     <!-- Scripts JavaScript -->
     <script src="js/model/produtosModel.js"></script>
     <script src="js/model/carrinhoModel.js"></script>
-    <script src="js/model/favoritoModel.js"></script>
-    <script src="js/view/favoritoView.js"></script>
     <script src="js/view/produtosView.js"></script>
     <script src="js/view/carrinhoButtonView.js"></script>
-    <script src="js/view/favoritoButtonView.js"></script>
     <script src="js/controller/carrinhoButtonController.js"></script>
-    <script src="js/controller/favoritoButtonController.js"></script>
-    <script src="js/controller/favoritoController.js"></script>
     <script src="js/controller/produtosController.js"></script>
     <script src="js/app.js"></script>
 </body>
-</html>
-

@@ -1,11 +1,11 @@
 const FavoritoButtonView = (() => {
-    const renderizarBotaoFavorito = (numeroDeItens) => {
+    const renderizarBotaoFavorito = () => {
         const botaoFavorito = document.getElementById('botao-favorito');
 
         if (botaoFavorito) {
             botaoFavorito.innerHTML = `
                 <button id="ver-favorito">
-                    Favorito (${numeroDeItens})
+                    Favoritos
                 </button>
             `;
         }

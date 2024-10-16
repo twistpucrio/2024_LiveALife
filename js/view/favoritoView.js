@@ -33,10 +33,7 @@ const FavoritoView = (() => {
         `;
         container.appendChild(tabela);
 
-        const total = favorito.reduce((acc, item) => acc + item.preco * item.quantidade, 0);
-        const totalDiv = document.createElement('div');
-        totalDiv.innerHTML = `<h3>Total: R$ ${total.toFixed(2)}</h3>`;
-        container.appendChild(totalDiv);
+        
 
         const limparButton = document.createElement('button');
         limparButton.textContent = 'Limpar Favoritos';
