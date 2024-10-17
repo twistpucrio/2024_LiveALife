@@ -1,4 +1,8 @@
-#cart{
+ 
+#carrinho-container{
+
+
+    overflow-x: auto;
 
 
     table{
@@ -6,17 +10,20 @@
         border-collapse: collapse;
         table-layout: fixed;
         white-space: nowrap;
+        margin-bottom: 50px;
 
 
-        .i{
+        .remover-button{
             img{
-                width: 20px;
+                width: 15px;
             }
         }
 
 
+
+
         img{
-            width: 70px;
+            width: 100px;
         }
 
 
@@ -30,10 +37,14 @@
         }
 
 
+
+
         td:nth-child(2){
             width: 150px;
             text-align: center;
         }
+
+
 
 
         td:nth-child(3){
@@ -42,14 +53,18 @@
         }
 
 
+
+
         td:nth-child(4), td:nth-child(5), td:nth-child(6){
             width: 150px;
             text-align: center;
         }
 
 
-        td:nth-child(5) input{
-            width: 70px;
+
+
+        td:nth-child(4) .quantidade-input{
+            width: 40px;
             padding: 10px 5px 10px 15px;
         }
 
@@ -63,9 +78,9 @@
 
 
             td{
-                font-weight: 700;
+                font-weight: 900;
                 text-transform: uppercase;
-                font-size: 13px;
+                font-size: 15px;
                 padding: 18px 0;
             }
         }
@@ -73,16 +88,29 @@
 
 
 
+
+
+
+
         tbody {
             tr {
                 td{
-                    padding-top: 15px;
-                    font-size: 13px;
+                    padding-top: 20px;
+                    font-size: 18px;
                 }
             }
+            border-bottom: 1px solid #e2e9e1;
         }
     }
 }
+
+
+
+
+
+
+
+
 
 
 #cart-add{
@@ -91,14 +119,19 @@
     justify-content: space-between;
 
 
+
+
     #coupon{
         width: 50%;
         margin-bottom: 30px;
 
 
         h3{
-            padding-bottom: 15px;
+            padding-bottom: 10px;
+            font-size: 25px;
         }
+
+
 
 
         input{
@@ -110,12 +143,21 @@
         }
 
 
+
+
         button{
             background-color: #088178;
             color: #fff;
             padding: 12px 20px;
         }
+
+
+        button:hover{
+            opacity: 0.9;
+        }
     }
+
+
 
 
     #subtotal{
@@ -125,15 +167,21 @@
         padding: 30px;
 
 
+
+
         h3{
             padding-bottom: 15px;
         }
+
+
 
 
         table{
             border-collapse: collapse;
             width: 100%;
             margin-bottom: 20px;
+
+
 
 
             td{
@@ -144,6 +192,8 @@
             }
 
 
+
+
            
         }
         button{
@@ -152,5 +202,17 @@
             padding: 12px 20px;
         }
     }
+
+
+   
 }
+
+
+footer{
+    border-top: 1px solid #e2e9e1;;
+}
+
+
+
+
 

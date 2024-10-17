@@ -1,9 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: Spartan, sans-serif;
 }
+
+
 
 
 /* padronizando */
@@ -14,11 +19,15 @@ h1 {
 }
 
 
+
+
 h2 {
     font-size: 46px;
     line-height: 54px;
     color: #222
 }
+
+
 
 
 h4 {
@@ -27,10 +36,14 @@ h4 {
 }
 
 
+
+
 h6 {
     font-weight: 700;
     font-size: 12px;
 }
+
+
 
 
 p {
@@ -40,14 +53,20 @@ p {
 }
 
 
+
+
 .section-p1 {
     padding: 40px 80px;
 }
 
 
+
+
 .section-m1 {
     margin: 40px 0;
 }
+
+
 
 
 button.normal{
@@ -63,6 +82,8 @@ button.normal{
 }
 
 
+
+
 button.white{
     font-size: 13px;
     font-weight: 600;
@@ -75,13 +96,21 @@ button.white{
     transition: 0.2s;
 
 
+
+
     cursor: pointer;
 }
+
+
 
 
 body{
     width: 100%
 }
+
+
+
+
 
 
 
@@ -100,42 +129,70 @@ header{
     left: 0;
 
 
+
+
     .logo{
         width: 40%;
         height: 40%;
     }
 
 
+
+
     #navbar{
         display: flex;
-        align-items: center;
-        justify-content: center;
-   
+        /* align-items: center;
+        justify-content: center; */
+
+
+
+
+
+
         li{
             list-style: none;
             padding: 0 20px;
             position: relative;
-           
+
+
             a{
                 text-decoration: none;
                 font-size: 16px;
                 font-weight: 600;
                 color: #1a1a1a;
-   
-                .carrinho_icon{
-                    border: 2px solid  #E3E6F3;
-                    width: 30px;
-               
-                }    
-   
+
+
+
+
                 transition: 0.3s ease;
+
+
+                button{
+                    display: flex;
+                    border:0;
+                    background: none;
+                    padding: 2px;
+                    img{
+                        /* border: 2px solid red; */
+                        width: 30px;                        
+                }
+
+
+                }
+
+
+                .text_carrinho{
+                    color: #088178;
+                }
             }
-   
+
+
             a:hover, .carrinho_icon:hover, a.active{
                 color: #088178;
                 border-color: #088178;
             }
-   
+
+
             a.active::after, a:hover::after{
                 content: "";
                 width: 30%;
@@ -152,31 +209,21 @@ header{
 
 
 
-
-
-
-
-
-
-
-
-
-
 /* HOME PAGE */
-
-
 #hero{
     background-image: url("/img/escalada.jpg"); /* tratar essa imagem no adobe*/
     height: 90vh;
     width: 100%;
     background-size: cover;
-    background-position: top 25% left 0;
+    background-position: top 10% left 0;
     padding-left: 50%;
-   
+
+
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
+    transition: 0.3;
 
 
     h4{
@@ -184,9 +231,13 @@ header{
     }
 
 
+
+
     h1{
         color: #088178;
     }
+
+
 
 
     button{
@@ -194,31 +245,42 @@ header{
         background-color: transparent;
         color: #088178;
         border: 0;
+        border-bottom: 3px solid #1f5551;
         padding: 14px 80px 14px 65px;
         background-repeat: no-repeat;
         cursor: pointer;
         font-weight: 700;
-        font-size: 15px;
+        font-size: 30px;
+
+
+
+
     }
 
 
-   
+    button:hover{
+        color: #1f5551;
+    }
 }
 
 
+
+
 #feature{
-
-
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-wrap: wrap; /* torna responsivo */
 
 
+
+
     img{
         width: 100px;
         height: 100px;
     }
+
+
 
 
     .fe-box{
@@ -231,6 +293,8 @@ header{
         margin: 15px 0;
 
 
+
+
         h6{
             display: inline-block;
             padding: 9px 8px 6px 8px;
@@ -239,9 +303,6 @@ header{
             color: #088178;
             background-color: #fddde4;
         }
-
-
-       
 
 
         img{
@@ -256,9 +317,13 @@ header{
     }
 
 
+
+
     .fe-box:nth-child(1) h6{
         background-color: #d1e8f2;
     }
+
+
 
 
     .fe-box:nth-child(3) h6{
@@ -266,9 +331,13 @@ header{
     }
 
 
+
+
     .fe-box:nth-child(4) h6{
         background-color: #cdd4f8;
     }
+
+
 
 
     .fe-box:nth-child(5) h6{
@@ -284,11 +353,13 @@ header{
 }
 
 
-#pro-container{
+.pro-container{
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     padding-top: 20px;
     flex-wrap: wrap;
+
+
 
 
     .pro{
@@ -299,13 +370,19 @@ header{
         border-radius: 20px;
 
 
+
+
         /* cursor: pointer; */
         box-shadow: 20px 20px 30px rgba(0, 0 0, 0.02);
         margin: 15px 0;
         transition: 0.2s ease;
 
 
+
+
         position: relative;
+
+
 
 
         img{
@@ -314,9 +391,13 @@ header{
         }
 
 
+
+
         img:hover{
             opacity: 0.9;
         }
+
+
 
 
         button{
@@ -327,7 +408,8 @@ header{
                 font-weight: 500;
                 color:#088178;
                 border: 1px solid #cce7d0;
-   
+
+
                 padding: 5px;
                 position: absolute;
                 bottom: 20px;
@@ -336,9 +418,11 @@ header{
         }
         .adicionar-carrinho-button{
             img {
-                right: 60px;
+                right: 75px;
             }
         }
+
+
 
 
         .adicionar-favorito-button{
@@ -349,6 +433,8 @@ header{
     }
 
 
+
+
     .pro:hover{
         box-shadow: 20px 20px 30px rgba(0, 0 0, 0.06);
         border: 1px solid red;
@@ -356,9 +442,13 @@ header{
 }
 
 
+
+
 .des{
     text-align: start;
     padding: 10px 0;
+
+
 
 
     span{
@@ -367,11 +457,15 @@ header{
     }
 
 
+
+
     h5{
         padding-top: 7px;
         color: #1a1a1a;;
         font-size: 14px;
     }
+
+
 
 
     h4{
@@ -383,11 +477,15 @@ header{
     }
 
 
+
+
     .material-icons{
         width: 8%;
         color: rgb(243, 181, 25);
     }
 }
+
+
 
 
 #banner{
@@ -398,7 +496,11 @@ header{
     text-align: center;
 
 
+
+
     background-image: url("/img/jardinsSensoriais.png");
+
+
 
 
     width: 100%;
@@ -407,10 +509,14 @@ header{
     background-position: center;
 
 
+
+
     h4{
         color: #fff;
         font-size: 16px;
     }
+
+
 
 
     h2{
@@ -419,26 +525,37 @@ header{
         padding: 10px 0;
 
 
+
+
         span{
             color: #ef3636;
         }
     }
-   
+
+
     button:hover{
         background: #088178;
         color: #fff;
     }
 
 
+
+
 }
+
+
 
 
 #sm-banner{
 
 
+
+
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
+
+
 
 
     h4{
@@ -448,11 +565,15 @@ header{
     }
 
 
+
+
     h2{
         color: #fff;
         font-size: 28px;
         font-weight: 800;
     }
+
+
 
 
     span{
@@ -463,6 +584,8 @@ header{
     }
 
 
+
+
     .banner-box{
         display: flex;
         flex-direction: column;
@@ -470,7 +593,11 @@ header{
         align-items: flex-start;
 
 
+
+
         background-image: url("/img/piquenique.jpg");
+
+
 
 
         width: 600px;
@@ -479,14 +606,20 @@ header{
         background-position: center;
 
 
+
+
         padding: 30px;
         margin: 10px 0;
     }
 
 
+
+
     .banner-box2{
         background-image: url("/img/jantarRomantico.jpg");
     }
+
+
 
 
     .banner-box:hover button{
@@ -496,13 +629,19 @@ header{
 }
 
 
+
+
 #banner3 {
+
+
 
 
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 0 80px;
+
+
 
 
     .banner-box{
@@ -512,7 +651,11 @@ header{
         align-items: flex-start;
 
 
+
+
         background-image: url("/img/piquenique.jpg");
+
+
 
 
         width: 30%;
@@ -521,9 +664,13 @@ header{
         background-position: center;
 
 
+
+
         padding: 20px;
         margin-bottom: 20px;
     }
+
+
 
 
     .banner-box2{
@@ -531,9 +678,13 @@ header{
     }
 
 
+
+
     .banner-box3{
         background-image: url("/img/passeioBarco.jpg");
     }
+
+
 
 
     h2{
@@ -541,8 +692,11 @@ header{
         font-weight: 800;
         font-size: 15px;
     }
-   
+
+
 }
+
+
 
 
 #newsletter{
@@ -556,11 +710,15 @@ header{
     background-color: #041e42;
 
 
+
+
     h4{
         font-size: 22px;
         font-weight: 700;
         color: #fff;
     }
+
+
 
 
     p{
@@ -569,16 +727,23 @@ header{
         color: #818ea0;
 
 
+
+
         span{
             color: #ffbd27;
         }
     }
 
 
+
+
     .form{
         display: flex;
         width: 40%;
-       
+
+
+
+
 
 
         input{
@@ -591,29 +756,40 @@ header{
             outline: none;
 
 
+
+
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
         }
-   
+
+
         button{
             background-color: #088178;
             color:#fff;
             white-space: nowrap;
 
 
+
+
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
         }
-   
+
+
     }
-   
+
+
 }
+
+
 
 
 footer{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
+
+
 
 
     .col{
@@ -625,6 +801,8 @@ footer{
     }
 
 
+
+
     .logo{
         margin-bottom: 30px;
         width: 25%;
@@ -632,16 +810,22 @@ footer{
     }
 
 
+
+
     h4{
         font-size: 14px;
-        padding-bottom: 20px;  
+        padding-bottom: 20px;
     }
+
+
 
 
     p{
         font-size: 13px;
         margin: 0 0 8px 0;
     }
+
+
 
 
     a{
@@ -652,25 +836,34 @@ footer{
     }
 
 
+
+
     a:hover{
         color:#088178
     }
 
 
+
+
     .follow{
         margin-top: 20px;
-       
-        i{
-            color: #465b52;
+
+
+        img{
             padding-right: 4px;
             cursor: pointer;
+            width: 25px;
         }
 
 
-        i:hover{
-            color:#088178
+        img:hover{
+            opacity: 0.7;
         }
+
+
     }
+
+
 
 
     .install {
@@ -678,11 +871,14 @@ footer{
             border: 1px solid #088178;
             border-radius: 6px;
         }
-       
+
+
         img{
             margin: 10px 0 15px 0;
         }
     }
+
+
 
 
     .copyright{
@@ -690,6 +886,14 @@ footer{
         text-align: center;
     }
 }
+
+
+
+
+
+
+
+
 
 
 
@@ -709,7 +913,8 @@ footer{
     height: 100%;
     background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro semitransparente */
 }
- 
+
+
 .popup-content {
     background-color: white;
     margin: 10% auto;
@@ -717,7 +922,8 @@ footer{
     width: 50%;
     position: relative;
 }
- 
+
+
 .close-btn {
     position: absolute;
     top: 10px;
@@ -729,10 +935,23 @@ footer{
 
 
 
-
-
-/* RESPONSIVIDADE */
-@media (max-wid) {
-   
+#mobile{
+    display: none;
+    align-items: center;
 }
+
+
+.close{
+    display: none;
+}
+
+
+
+
+
+
+
+
+
+
 

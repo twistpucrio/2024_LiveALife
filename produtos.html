@@ -6,39 +6,43 @@
     <!-- <link rel="stylesheet" href="css/estilos.css"> -->
     <link rel="stylesheet" href="/css/index.css">
     <link rel="stylesheet" href="/css/shop.css">
+    <link rel="stylesheet" href="css/responsividade.css">
+
+
 </head>
 <body>
+    <!-- Header -->
     <header id="header">
-        <a href="#"> <img src="img/logo.png" class="logo" alt="logo"> </a>
+        <a href="index.html"> <img src="img/logo.png" class="logo" alt="logo"> </a>
      
         <nav>
             <ul id="navbar">
                 <li> <a href="index.html">Home</a> </li>
-                <li> <a class="active" href="shop.html">Shop</a> </li>
+                <li> <a class="active" href="produtos.html">Shop</a> </li>
                 <li> <a href="blog.html">Blog</a> </li>
-                <li> <a href="">About</a> </li>
-                <li> <a href="">Contact</a> </li>
+                <li> <a href="about.html">About</a> </li>
+                <li> <a href="contact.html">Contact</a> </li>
                
-                <!-- <li> <a href=""><img src="img/icones/sacola_compra.png" class="carrinho_icon" alt="logo"></a> </li> -->
-                <li id="botao-carrinho"> <a href=""></a></li>
-                <li id="botao-favorito"> <a href=""></a></li>
+                <li id="lg-bag"> <a class="botao-carrinho" href=""><img src="img/icones/sacola_compra.png"></a> </li>
+                <li id="lg-fav"> <a class="botao-favorito" href=""><img src="img/icones/sacola_compra.png"></a> </li>
+                <!-- <li> <a class="botao-carrinho" href=""></a></li> -->
+                <!-- <li> <a class="botao-favorito" href=""></a></li> -->
                
+                <a class="close" href=""><img src="img/icones/sacola_compra.png"></a>
                 <!-- <div id="botao-carrinho"></div>
                 <div id="botao-favorito"></div> -->
-            </ul>
+            </ul>      
+        </nav>
+
+
+        <nav id="mobile">
+            <a class="botao-carrinho" href=""><img src="img/icones/sacola_compra.png"></a>
+            <a class="botao-favorito" href=""><img src="img/icones/sacola_compra.png"></a>
+            <img id="bar" src="img/icones/sacola_compra.png">
         </nav>
 
 
     </header>
-
-
-    <a href="index.html">Home</a>
-    <a href="produtos.html"> | Todos produtos </a>
-    <a href="shop.html"> | Shop</a>
- 
-    <a href = "produtos.html"> produtos</a>
-    <a href="shop.html">shop</a>
-    <a href="teste.html">Form2</a>
 
 
     <div id="botao-carrinho"></div>
@@ -49,6 +53,8 @@
         <h2>#stayhome</h2>
         <p>Buy online</p>
     </section>
+
+
 
 
     <h1> Lista de Produtos </h1>
@@ -72,18 +78,22 @@
         <button id="botao-buscar">Buscar</button>
 
 
+
+
     </div>
    
-    <div id="pro-container"></div>
+    <div class="pro-container"></div>
+
+
 
 
     <section id="pagination" class="section-p1">
         <a href="#">1</a>
         <a href="#">2</a>
         <a href="#"><i class="fal fa-long-arrow-alt-right"></i></a>
-
-
     </section>
+
+
 
 
     <!-- <button onclick="window.location.href='carrinho.html'">Ver Carrinho</button>
@@ -99,6 +109,8 @@
             <button class="normal">Sign Up</button>
         </div>
     </section>
+
+
 
 
     <footer class="section-p1">
@@ -119,9 +131,13 @@
                     <i class="fab fa-youtube"></i>
 
 
+
+
                 </div>
             </div>
         </div>
+
+
 
 
         <div class="col">
@@ -134,6 +150,8 @@
         </div>
 
 
+
+
         <div class="col">
             <h4>My Account</h4>
             <a href="">Sign In</a>
@@ -142,6 +160,8 @@
             <a href="">Track My Order</a>
             <a href="">Help</a>
         </div>
+
+
 
 
         <div class="col install">
@@ -156,28 +176,56 @@
         </div>
 
 
+
+
         <div class="copyright">
             <p>2024, Twist | Tecgraf - Ecommerce</p>
         </div>
     </footer>
 
 
+
+
     <!-- Scripts JavaScript -->
     <script src="js/model/produtosModel.js"></script>
     <script src="js/model/carrinhoModel.js"></script>
     <script src="js/model/favoritoModel.js"></script>
+    <script src="js/model/carrinhoModel.js"></script>
+
+
+
+
     <script src="js/view/favoritoView.js"></script>
     <script src="js/view/produtosView.js"></script>
     <script src="js/view/carrinhoButtonView.js"></script>
+    <script src="js/view/shopView.js"></script>
     <script src="js/view/favoritoButtonView.js"></script>
+    <script src="js/view/carrinhoView.js"></script>
+
+
     <script src="js/controller/carrinhoButtonController.js"></script>
     <script src="js/controller/favoritoButtonController.js"></script>
     <script src="js/controller/favoritoController.js"></script>
     <script src="js/controller/produtosController.js"></script>
+    <script src="js/controller/ShopController.js"></script>
+    <script src="js/controller/carrinhoController.js"></script>
+
+
+   
     <script src="js/app.js"></script>
-    <script src="js/view/desc_prod_View.js"></script>
+    <script src="js/layout.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
 
 
 
