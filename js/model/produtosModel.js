@@ -40,16 +40,24 @@ const ProdutosModel = (() => {
                 corresponde = corresponde && produto.preco <= criterios.precoMax;
             }
 
-            if(criterios.categoria) {
-                console.log(`${criterios.categoria}`)
+            // if(criterios.categoria) {
+            //     console.log(`${criterios.categoria}`)
                 
-                const nomeCatBusca = criterios.categoria.toLowerCase();
+            //     const nomeCatBusca = criterios.categoria.toLowerCase();
+            //     const temCategoria = produto.categorias.some(categoria =>
+            //         categoria.toLowerCase().includes(nomeCatBusca)
+            //     );
+            //     corresponde = corresponde && temCategoria
+                
+            // }
+
+            if (criterios.categorias && criterios.categorias.length > 0) {
                 const temCategoria = produto.categorias.some(categoria =>
-                    categoria.toLowerCase().includes(nomeCatBusca)
+                    criterios.categorias.includes(categoria.toLowerCase())
                 );
-                corresponde = corresponde && temCategoria
-                
+                corresponde = corresponde && temCategoria;
             }
+            
             if (criterios.classInd) {
                 const classIndBusca = criterios.classInd.toLowerCase();
                 const classIndProduto = produto.classificacao.toLowerCase();
