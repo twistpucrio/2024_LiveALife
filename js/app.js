@@ -23,9 +23,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    if (page === 'index.html' || page === '') {
-        ProdutosController.init();
-    }
+    // if (page === 'index.html' || page === 'produtos.html' || page === '') {
+    //     ProdutosController.init();
+    // }
 
 
     // if (page === 'favorito.html') {
@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // }
 
-
+    ProdutosController.init();
     CarrinhoButtonController.init();
     FavoritoButtonController.init();
    

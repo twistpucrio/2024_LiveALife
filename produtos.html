@@ -55,14 +55,19 @@
     </section>
 
 
-
-
     <h1> Lista de Produtos </h1>
    
     <!-- Formulário de Busca -->
     <div id="busca-container">
         <input type="text" id="busca-nome" placeholder="Buscar por nome">
-        <input type="text" id="busca-categoria" placeholder="Buscar por categoria">
+
+        <label><input type="checkbox" class="busca-categoria" value="aventura"> Aventura</label> 
+        <label><input type="checkbox" class="busca-categoria" value="romance"> Romance</label>
+        <label><input type="checkbox" class="busca-categoria" value="relaxamento"> Relaxamento</label> 
+        <label><input type="checkbox" class="busca-categoria" value="gastronomico"> Gastronômico</label>
+        <label><input type="checkbox" class="busca-categoria" value="esporte"> Esporte</label>
+
+        <!-- <input type="text" id="busca-categoria" placeholder="Buscar por categoria"> -->
         <input type="number" id="busca-preco-min" placeholder="Preço Mínimo" min="0">
         <input type="number" id="busca-preco-max" placeholder="Preço Máximo" min="0">
         <label for="classInd">Classificação Indicativa:</label>

@@ -19,62 +19,117 @@ const ProdutosController = ((model, view, carrinhoController) => {
         FavoritoModel.adicionarItem(produto);        
     };
 
-    const configurarBusca = () => {
-        const botaoBuscar = document.getElementById('botao-buscar');
-        botaoBuscar.addEventListener('click', () => {
-            const nome = document.getElementById('busca-nome').value.trim();
-            const categoria = document.getElementById('busca-categoria').value.trim();
-            let precoMin = parseFloat(document.getElementById('busca-preco-min').value);
-            let precoMax = parseFloat(document.getElementById('busca-preco-max').value);
-            let classInd = document.getElementById('classInd').value;
+//     const configurarBusca = () => {
+//     const botaoBuscar = document.getElementById('botao-buscar');
+//     botaoBuscar.addEventListener('click', () => {
+//         const nome = document.getElementById('busca-nome').value.trim();
+//         let precoMin = parseFloat(document.getElementById('busca-preco-min').value);
+//         let precoMax = parseFloat(document.getElementById('busca-preco-max').value);
+//         let classInd = document.getElementById('classInd').value;
 
-            // Verificação se precoMin é maior que precoMax
-            if (precoMin > precoMax) {
-                alert('O preço mínimo não pode ser maior que o preço máximo.');
-                document.getElementById('busca-preco-min').value = ''; // Limpa o campo
-                document.getElementById('busca-preco-max').value = ''; // Limpa o campo
-                return; // Sai da função para evitar busca
-            }
+//         // Verificação se precoMin é maior que precoMax
+//         if (precoMin > precoMax) {
+//             alert('O preço mínimo não pode ser maior que o preço máximo.');
+//             return;
+//         }
 
+//         // Verificação de preços negativos
+//         if (precoMin < 0 || precoMax < 0) {
+//             alert('Os preços não podem ser negativos.');
+//             return;
+//         }
 
-            if (precoMin < 0 || precoMax< 0) {
-                alert('Valor inválido! Os preços não podem ser negativos!');
-                if (precoMin < 0) {
-                    document.getElementById('busca-preco-min').value = ''; // Limpa o campo
-                }
-                if (precoMax < 0) {
-                    document.getElementById('busca-preco-max').value = ''; // Limpa o campo
-                }
-                return; // Sai da função para evitar busca
-            }
+//         // Coleta das categorias selecionadas
+//         const categoriasSelecionadas = [];
+//         document.querySelectorAll('.busca-categoria:checked').forEach(checkbox => {
+//             categoriasSelecionadas.push(checkbox.value);
+//         });
 
-        
-            const criterios = {};
+//         // Criando objeto de critérios
+//         const criterios = {};
 
-            if (nome !== '') {
-                criterios.nome = nome;
-            }
+//         if (nome !== '') {
+//             criterios.nome = nome;
+//         }
 
-            if (categoria !== '') {
-                criterios.categoria = categoria;
-            }
+//         if (categoriasSelecionadas.length > 0) {
+//             criterios.categorias = categoriasSelecionadas;
+//         }
 
-            if (classInd !== ''){
-                criterios.classInd = classInd;
-            }
+//         if (classInd !== '') {
+//             criterios.classInd = classInd;
+//         }
 
-            if (!isNaN(precoMin)) {
-                criterios.precoMin = precoMin;
-            }
+//         if (!isNaN(precoMin)) {
+//             criterios.precoMin = precoMin;
+//         }
 
-            if (!isNaN(precoMax)) {
-                criterios.precoMax = precoMax;
-            }
+//         if (!isNaN(precoMax)) {
+//             criterios.precoMax = precoMax;
+//         }
 
-            const resultados = model.buscarProdutos(criterios);
-            view.renderizarProdutos(resultados, carrinhoController.adicionarAoCarrinho, FavoritoController.adicionarAoFavorito);
+//         // Busca os produtos com os critérios
+//         const resultados = model.buscarProdutos(criterios);
+//         view.renderizarProdutos(resultados, carrinhoController.adicionarAoCarrinho, FavoritoController.adicionarAoFavorito);
+//     });
+// };
+
+const configurarBusca = () => {
+    const botaoBuscar = document.getElementById('botao-buscar');
+    botaoBuscar.addEventListener('click', () => {
+        const nome = document.getElementById('busca-nome').value.trim();
+        let precoMin = parseFloat(document.getElementById('busca-preco-min').value);
+        let precoMax = parseFloat(document.getElementById('busca-preco-max').value);
+        let classInd = document.getElementById('classInd').value;
+
+        // Verificação se precoMin é maior que precoMax
+        if (precoMin > precoMax) {
+            alert('O preço mínimo não pode ser maior que o preço máximo.');
+            return;
+        }
+
+        // Verificação de preços negativos
+        if (precoMin < 0 || precoMax < 0) {
+            alert('Os preços não podem ser negativos.');
+            return;
+        }
+
+        // Coleta das categorias selecionadas
+        const categoriasSelecionadas = [];
+        document.querySelectorAll('.busca-categoria:checked').forEach(checkbox => {
+            categoriasSelecionadas.push(checkbox.value);
         });
-    };
+
+        // Criando objeto de critérios
+        const criterios = {};
+
+        if (nome !== '') {
+            criterios.nome = nome;
+        }
+
+        if (categoriasSelecionadas.length > 0) {
+            criterios.categorias = categoriasSelecionadas;
+        }
+
+        if (classInd !== '') {
+            criterios.classInd = classInd;
+        }
+
+        if (!isNaN(precoMin)) {
+            criterios.precoMin = precoMin;
+        }
+
+        if (!isNaN(precoMax)) {
+            criterios.precoMax = precoMax;
+        }
+
+        // Busca os produtos com os critérios
+        const resultados = model.buscarProdutos(criterios);
+        view.renderizarProdutos(resultados, carrinhoController.adicionarAoCarrinho, FavoritoController.adicionarAoFavorito);
+    });
+};
+
+
 
     return {
         init
