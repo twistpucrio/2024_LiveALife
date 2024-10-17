@@ -9,7 +9,7 @@ const FavoritoButtonView = (() => {
             botaoFavorito.forEach((botaoFavorito) => {
                 botaoFavorito.innerHTML = `
                     <button id="ver-favorito">
-                        <a class="botao-favorito" href=""><img src="img/icones/favorito.svg"></a>
+                        <img src="img/icones/favorito.svg">
                     </button>
                 `;
             });

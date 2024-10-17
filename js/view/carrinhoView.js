@@ -65,7 +65,7 @@ const CarrinhoView = (() => {
                         </td>
                         <td>R$ ${(item.preco * item.quantidade).toFixed(2)}</td>
                         <td>
-                            <button data-id="${item.id}" class="remover-button"> <img src="img/icones/sacola_compra.png"></button>
+                            <button data-id="${item.id}" class="remover-button"> <img src="img/icones/close.svg"></button>
                         </td>
                     </tr>
                 `).join('')}
@@ -78,6 +78,7 @@ const CarrinhoView = (() => {
         const limparButton = document.createElement('button');
         limparButton.textContent = 'Limpar Carrinho';
         limparButton.id = 'limpar-carrinho';
+        limparButton.className = "limpar-carrinho"
         container.appendChild(limparButton);
 
 

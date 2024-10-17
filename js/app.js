@@ -31,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // if (page === 'favorito.html') {
     //     FavoritoController.init();
 
-
     // }
 
 
