@@ -1,32 +1,63 @@
-// js/view/carrinhoView.js
-
-
 const CarrinhoView = (() => {
     const renderizarCarrinho = (carrinho) => {
         const container = document.getElementById('carrinho-container');
         container.innerHTML = '';
 
 
+        // Verificação se o carrinho está vazio
         if (carrinho.length === 0) {
             container.innerHTML = '<p>Seu carrinho está vazio.</p>';
+
+
+            // Atualizar o total para 0 quando o carrinho estiver vazio
+            const container_total = document.getElementById("total-container");
+            container_total.innerHTML = `
+                <section id="cart-add" class="section-p1">
+                    <div id="subtotal">
+                        <h3>Cart Totals</h3>
+                        <table>
+                            <tr>
+                                <td>Cart Subtotal</td>
+                                <td><h3>Total: R$ 0.00</h3></td>
+                            </tr>
+                            <tr>
+                                <td>Shipping</td>
+                                <td>Free</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Total</strong></td>
+                                <td><strong><h3>Total: R$ 0.00</h3></strong></td>
+                            </tr>
+                        </table>
+                        <button class="" disabled>Finalizar Compra</button>
+                    </div>
+                </section>
+            `;
             return;
         }
 
 
+        // Cálculo do total
+        const total = carrinho.reduce((acc, item) => acc + item.preco * item.quantidade, 0);
+
+
+        // Criação da tabela do carrinho
         const tabela = document.createElement('table');
         tabela.innerHTML = `
             <thead>
                 <tr>
-                    <th>Produto</th>
-                    <th>Preço</th>
-                    <th>Quantidade</th>
-                    <th>Total</th>
-                    <th>Ações</th>
+                    <td>Img</td>
+                    <td>Produto</td>
+                    <td>Preço</td>
+                    <td>Quantidade</td>
+                    <td>Subtotal</td>
+                    <td>Remover</td>
                 </tr>
             </thead>
             <tbody>
                 ${carrinho.map(item => `
                     <tr>
+                        <td><img src="${item.imagem}" alt="${item.alt}"></td>
                         <td>${item.nome}</td>
                         <td>R$ ${item.preco}</td>
                         <td>
@@ -34,7 +65,7 @@ const CarrinhoView = (() => {
                         </td>
                         <td>R$ ${(item.preco * item.quantidade).toFixed(2)}</td>
                         <td>
-                            <button data-id="${item.id}" class="remover-button">Remover</button>
+                            <button data-id="${item.id}" class="remover-button"> <img src="img/icones/sacola_compra.png"></button>
                         </td>
                     </tr>
                 `).join('')}
@@ -43,21 +74,51 @@ const CarrinhoView = (() => {
         container.appendChild(tabela);
 
 
-        const total = carrinho.reduce((acc, item) => acc + item.preco * item.quantidade, 0);
-        const totalDiv = document.createElement('div');
-        totalDiv.innerHTML = `<h3>Total: R$ ${total.toFixed(2)}</h3>`;
-        container.appendChild(totalDiv);
-
-
+        // Botão para limpar o carrinho
         const limparButton = document.createElement('button');
         limparButton.textContent = 'Limpar Carrinho';
         limparButton.id = 'limpar-carrinho';
         container.appendChild(limparButton);
 
 
-        const finalizarPedido_button = document.createElement('button');
-        finalizarPedido_button.textContent = 'Finalizar Compra';
-        container.appendChild(finalizarPedido_button);
+        // Atualizando o total e o botão de checkout
+        const container_total = document.getElementById("total-container");
+        container_total.innerHTML = ''; // Limpa o container
+
+
+        const addCart = document.createElement('div');
+        addCart.innerHTML = `
+            <section id="cart-add" class="section-p1">
+                <div id="coupon">
+                    <h3>Aplicar Cupom de Desconto</h3>
+                    <div>
+                        <input type="text" placeholder="Enter Your Coupon">
+                        <button class="normal">Apply</button>
+                    </div>
+                </div>
+
+
+                <div id="subtotal">
+                    <h3>Cart Totals</h3>
+                    <table>
+                        <tr>
+                            <td>Cart Subtotal</td>
+                            <td><h3>Total: R$ ${total.toFixed(2)}</h3></td>
+                        </tr>
+                        <tr>
+                            <td>Shipping</td>
+                            <td>Free</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Total</strong></td>
+                            <td><strong><h3>Total: R$ ${total.toFixed(2)}</h3></strong></td>
+                        </tr>
+                    </table>
+                    <button class="">Finalizar Compra</button>
+                </div>
+            </section>
+        `;
+        container_total.appendChild(addCart); // Agora ele será adicionado corretamente
     };
 
 
@@ -65,4 +126,6 @@ const CarrinhoView = (() => {
         renderizarCarrinho
     };
 })();
+
+
 

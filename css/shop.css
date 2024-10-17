@@ -4,6 +4,8 @@
     height: 40vh;
 
 
+
+
     background-size: over;
     display: flex;
     justify-content: center;
@@ -13,14 +15,20 @@
     padding: 14px;
 
 
+
+
     h2, p{
         color:#fff
     }
 }
 
 
+
+
 #pagination{
     text-align: center;
+
+
 
 
     a{
@@ -32,12 +40,16 @@
         font-weight: 600;
 
 
+
+
         i{
             font-size: 16px;
             font-weight: 600;
         }
     }
 }
+
+
 
 
 #prod-details{
@@ -47,10 +59,14 @@
     margin-top: 20px;
 
 
+
+
     .single-pro-image{
         width: 40%;
         margin-right: 50px;
     }
+
+
 
 
     .small-img-group{
@@ -59,10 +75,14 @@
     }
 
 
+
+
     .small-img-col{
         flex-basis: 24.5%;
         cursor: pointer;
     }
+
+
 
 
     .single-pro-details{
@@ -70,9 +90,13 @@
         padding-top: 30px;
 
 
+
+
         h4{
             padding: 40px 0 20px 0;
         }
+
+
 
 
         h2{
@@ -80,11 +104,15 @@
         }
 
 
+
+
         select{
             display: block;
             padding: 5px 10px;
             margin-bottom: 10px;
         }
+
+
 
 
         input{
@@ -96,9 +124,13 @@
         }
 
 
+
+
         input:focus{
             outline: none;
         }
+
+
 
 
         button{
@@ -106,9 +138,12 @@
             color: #fff;
         }
 
+
         button:hover{
             opacity: 0.5;
         }
+
+
 
 
         span{
@@ -120,7 +155,6 @@
 
 
 
-/* RESPONSIVIDADE */
 
 
 

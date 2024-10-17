@@ -5,8 +5,10 @@
     <title>E-commerce MVC</title>
    
     <link rel="stylesheet" href="css/index.css">
-    <!-- <link rel="stylesheet" href="css/estilos.css"> -->
+    <link rel="stylesheet" href="css/responsividade.css">
     <link rel="stylesheet" href="css/carrinho.css">
+
+
 
 
     <!-- icones -->
@@ -14,8 +16,14 @@
     rel="stylesheet">
 
 
+    <!-- icones / outra fonte -->
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
+
+
 </head>
 <body>
+
+
 
 
     <!-- Header -->
@@ -25,99 +33,41 @@
         <nav>
             <ul id="navbar">
                 <li> <a class="active" href="index.html">Home</a> </li>
-                <li> <a href="shop.html">Shop</a> </li>
-                <li> <a href="blog.html">Blog</a> </li>
+                <li> <a href="produtos.html">Shop</a> </li>
+                <!-- <li> <a href="blog.html">Blog</a> </li> -->
                 <li> <a href="about.html">About</a> </li>
                 <li> <a href="contact.html">Contact</a> </li>
                
-                <!-- <li> <a href=""><img src="img/icones/sacola_compra.png" class="carrinho_icon" alt="logo"></a> </li> -->
-                <li id="botao-carrinho"></li>
-                <li id="botao-favorito"> <a href=""></a></li>
+                <li id="lg-bag"> <a class="botao-carrinho" href="carrinho.html"></a> </li>
+                <li id="lg-fav"> <a class="botao-favorito" href=""></a> </li>
+                <!-- <li> <a class="botao-carrinho" href=""></a></li> -->
+                <!-- <li> <a class="botao-favorito" href=""></a></li> -->
                
+                <a class="close" href=""><img src="img/icones/close.svg"></a>
                 <!-- <div id="botao-carrinho"></div>
                 <div id="botao-favorito"></div> -->
-            </ul>
+            </ul>      
+        </nav>
+
+
+        <nav id="mobile">
+            <a class="botao-carrinho" href="carrinho.html"><img src="img/icones/sacola_compra.png"></a>
+            <a class="botao-favorito" href=""><img src="img/icones/sacola_compra.png"></a>
+            <img id="bar" src="img/icones/menu.svg">
         </nav>
 
 
     </header>
 
 
+
+
     <!-- Pop-ups | Carrinho e Favoritos -->
-    <section>
-        <div id="carrinho-container"></div>
-
-
-        <!-- como o vídeo estiliza -->
-         <section id="cart" class="section-p1">
-            <table width="100%">
-                <thead>
-                    <tr>
-                        <td>Remove</td>
-                        <td>Image</td>
-                        <td>Product</td>
-                        <td>Price</td>
-                        <td>Quantity</td>
-                        <td>Subtotal</td>
-                    </tr>
-                </thead>
-
-
-                <tbody>
-                    <tr>
-                        <!-- <td><i class="far fa-times-circle"></i></td> -->
-                        <td class="i"><img src="img/icones/sacola_compra.png" alt=""></td>
-                        <td><img src="img/aulaYoga.jpg" alt=""></td>
-                        <td>Nome do produto</td>
-                        <td>R$ 100.00</td>
-                        <td><input type="number" value="1"></td>
-                        <td>total</td>
-                    </tr>
-                </tbody>
-
-
-            </table>
-         </section>
-
-
-         <section id="cart-add" class="section-p1">
-            <div id="coupon">
-                <h3>Apply Coupon</h3>
-                <div>
-                    <input type="text" placeholder="Enter Your Coupon">
-                    <button class="normal">Apply</button>
-                </div>
-            </div>
-
-
-            <div id="subtotal">
-                <h3>Cart Totals</h3>
-                <table>
-                    <tr>
-                        <td>Cart Subtotal</td>
-                        <td>R$ 355</td>
-                    </tr>
-                    <tr>
-                        <td>Shipping</td>
-                        <td>Free</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Total</strong></td>
-                        <td><strong>R$ 355</strong></td>
-                    </tr>
-                </table>
-                <button class="">Proceed to checkout</button>
-            </div>
-         </section>
-
-
-
-
-    </section>
-
-
+   
     <!-- <section id="favorito-container"></section> -->
     <!-- ______________________________ -->
+
+
 
 
     <section id="hero">
@@ -129,7 +79,11 @@
     </section>
 
 
+
+
     <section id="feature" class="section-p1">
+
+
 
 
         <div class="fe-box">
@@ -138,10 +92,14 @@
         </div>
 
 
+
+
         <div class="fe-box">
             <img src="img/canyoning.jpg" alt="">
             <a href=""><h6>Romântico</h6></a>
         </div>
+
+
 
 
         <div class="fe-box">
@@ -150,23 +108,33 @@
         </div>
 
 
+
+
         <div class="fe-box">
             <img src="img/canyoning.jpg" alt="">
             <a href=""><h6>Gastronômico</h6></a>
         </div>
 
 
+
+
     </section>
+
+
 
 
     <section id="product1" class="section-p1">
         <h2>Featured Poducts</h2>
         <p>Summer Collection New Morden Design</p>
 
-        <div id="pro-container"></div>
+
+        <div class="pro-container"></div>
+
 
     </section>
    
+
+
 
 
     <section id="banner" class="section-m1">
@@ -176,151 +144,19 @@
     </section>
 
 
+
+
     <section id="product1" class="section-p1">
         <h2>New Arrivals</h2>
         <p>Summer Collection New Morden Design</p>
 
 
-        <div id="pro-container">
-            <!-- <div class="pro">
-                <img class="img_pro" src="img/aulaYoga.jpg" alt="">
-                <div class="des">
-                    <span>yoga</span>
-                    <h5>Aulas de yoga</h5>
-                    <div class="star">
-                        <span class="material-icons"> grade </span>
-                        <span class="material-icons"> grade </span>
-                        <span class="material-icons"> grade </span>
-                        <span class="material-icons"> grade </span>
-                        <span class="material-icons"> grade </span>
-
-
-                    </div>
-                    <h4>R$ 100</h4>
-                </div>
-                <button class="adicionar-carrinho-button"><img src="img/icones/sacola_compra.png" alt=""></button>
-                <button class="adicionar-favorito-button"><img src="img/icones/sacola_compra.png" alt=""></button>
-            </div>
-
-
-            <div class="pro">
-                <img class="img_pro" src="img/aulaYoga.jpg" alt="">
-                <div class="des">
-                    <span>yoga</span>
-                    <h5>Aulas de yoga</h5>
-                    <div class="star">
-                        <span class="material-icons"> grade </span>
-                        <span class="material-icons"> grade </span>
-                        <span class="material-icons"> grade </span>
-                        <span class="material-icons"> grade </span>
-                        <span class="material-icons"> grade </span>
-
-
-                    </div>
-                    <h4>R$ 100</h4>
-                </div>
-                <button class="adicionar-carrinho-button"><img src="img/icones/sacola_compra.png" alt=""></button>
-                <button class="adicionar-favorito-button"><img src="img/icones/sacola_compra.png" alt=""></button>            </div>
-
-
-
-
-            <div class="pro">
-                <img class="img_pro" src="img/aulaYoga.jpg" alt="">
-                <div class="des">
-                    <span>yoga</span>
-                    <h5>Aulas de yoga</h5>
-                    <div class="star">
-                        <span class="material-icons"> grade </span>
-                        <span class="material-icons"> grade </span>
-                        <span class="material-icons"> grade </span>
-                        <span class="material-icons"> grade </span>
-                        <span class="material-icons"> grade </span>
-
-
-                    </div>
-                    <h4>R$ 100</h4>
-                </div>
-                <button class="adicionar-carrinho-button"><img src="img/icones/sacola_compra.png" alt=""></button>
-                <button class="adicionar-favorito-button"><img src="img/icones/sacola_compra.png" alt=""></button>            </div>
-
-
-
-
-            <div class="pro">
-                <img class="img_pro" src="img/aulaYoga.jpg" alt="">
-                <div class="des">
-                    <span>yoga</span>
-                    <h5>Aulas de yoga</h5>
-                    <div class="star">
-                        <span class="material-icons"> grade </span>
-                        <span class="material-icons"> grade </span>
-                        <span class="material-icons"> grade </span>
-                        <span class="material-icons"> grade </span>
-                        <span class="material-icons"> grade </span>
-
-
-                    </div>
-                    <h4>R$ 100</h4>
-                </div>
-                <button class="adicionar-carrinho-button"><img src="img/icones/sacola_compra.png" alt=""></button>
-                <button class="adicionar-favorito-button"><img src="img/icones/sacola_compra.png" alt=""></button>
-            </div>
-
-
-
-
-            <div class="pro">
-                <img class="img_pro" src="img/aulaYoga.jpg" alt="">
-                <div class="des">
-                    <span>yoga</span>
-                    <h5>Aulas de yoga</h5>
-                    <div class="star">
-                        <span class="material-icons"> grade </span>
-                        <span class="material-icons"> grade </span>
-                        <span class="material-icons"> grade </span>
-                        <span class="material-icons"> grade </span>
-                        <span class="material-icons"> grade </span>
-
-
-                    </div>
-                    <h4>R$ 100</h4>
-                </div>
-                <button class="adicionar-carrinho-button"><img src="img/icones/sacola_compra.png" alt=""></button>
-                <button class="adicionar-favorito-button"><img src="img/icones/sacola_compra.png" alt=""></button>
-            </div>
-
-
-
-
-            <div class="pro">
-                <img class="img_pro" src="img/aulaYoga.jpg" alt="">
-                <div class="des">
-                    <span>yoga</span>
-                    <h5>Aulas de yoga</h5>
-                    <div class="star">
-                        <span class="material-icons"> grade </span>
-                        <span class="material-icons"> grade </span>
-                        <span class="material-icons"> grade </span>
-                        <span class="material-icons"> grade </span>
-                        <span class="material-icons"> grade </span>
-
-
-                    </div>
-                    <h4>R$ 100</h4>
-                </div>
-                <button class="adicionar-carrinho-button"><img src="img/icones/sacola_compra.png" alt=""></button>
-                <button class="adicionar-favorito-button"><img src="img/icones/sacola_compra.png" alt=""></button>
-            </div> -->
-
-
-           
-        </div>
-
-
+        <div class="pro-container"></div>
 
 
     </section>
+
+
 
 
     <section id="sm-banner" class="section-p1">
@@ -332,6 +168,8 @@
         </div>
 
 
+
+
         <div class="banner-box banner-box2">
             <h4>crazy deals</h4>
             <h2>buy 1 get 1 free</h2>
@@ -341,11 +179,15 @@
     </section>
 
 
+
+
     <section id="banner3">
         <div class="banner-box">
             <h2>SEASONAL SALE</h2>
             <h3>Winter Collection -50% OFF</h3>      
         </div>
+
+
 
 
         <div class="banner-box banner-box2">
@@ -354,11 +196,15 @@
         </div>
 
 
+
+
         <div class="banner-box banner-box3">
             <h2>SEASONAL SALE</h2>
             <h3>Winter Collection -50% OFF</h3>      
         </div>
     </section>
+
+
 
 
     <section id="newsletter" class="section-p1 section-m1">
@@ -373,7 +219,13 @@
     </section>
 
 
+
+
     <!-- <div id="pro-container"></div> -->
+
+
+
+
 
 
 
@@ -389,21 +241,17 @@
             <div class="follow">
                 <h4>Follow us</h4>
                 <div class="icon">
-                    <i class="fab fa-facebook"></i>
-                    <i class="fab fa-twitter"></i>
-                    <i class="fab fa-instagram"></i>
-                    <i class="fab fa-pinterest-p"></i>
-                    <i class="fab fa-youtube"></i>
-
-
+                    <a href=""><img src="img/icones/icon_instagran.png" alt=""></a>
                 </div>
             </div>
         </div>
 
 
+
+
         <div class="col">
             <h4>About</h4>
-            <a href="">About us</a>
+            <a href="about.html">About us</a>
             <a href="">Delivery Information</a>
             <a href="">Privacy Policy</a>
             <a href="">Terms & Condicions</a>
@@ -411,29 +259,30 @@
         </div>
 
 
+
+
         <div class="col">
             <h4>My Account</h4>
             <a href="">Sign In</a>
-            <a href="">View Cart</a>
+            <a href="carrinho.html">View Cart</a>
             <a href="">My WishList</a>
             <a href="">Track My Order</a>
             <a href="">Help</a>
         </div>
 
 
+
+
         <div class="col install">
-            <h4>install App</h4>
-            <p>From App Store or Google Play</p>
-            <div class="row">
-                <img src="" alt="">
-                <img src="" alt="">
-            </div>
-            <p>Secured Payment Gateways</p>
-            <img src="" alt="">
+            <h4>Secured Payment Gateway</h4>
+            <img src="img/icones/pay.png" alt="">
         </div>
 
 
+
+
         <div class="copyright">
+            <br>
             <p>2024, Twist | Tecgraf - Ecommerce</p>
         </div>
     </footer>
@@ -441,10 +290,18 @@
 
 
 
+
+
+
+
     <!-- <button onclick="window.location.href='carrinho.html'">Ver Carrinho</button> -->
 
 
+
+
    
+
+
 
 
     <!-- Scripts JavaScript -->
@@ -454,12 +311,15 @@
     <script src="js/model/carrinhoModel.js"></script>
 
 
+
+
     <script src="js/view/favoritoView.js"></script>
     <script src="js/view/produtosView.js"></script>
     <script src="js/view/carrinhoButtonView.js"></script>
     <script src="js/view/shopView.js"></script>
     <script src="js/view/favoritoButtonView.js"></script>
     <script src="js/view/carrinhoView.js"></script>
+
 
     <script src="js/controller/carrinhoButtonController.js"></script>
     <script src="js/controller/favoritoButtonController.js"></script>
@@ -468,11 +328,20 @@
     <script src="js/controller/ShopController.js"></script>
     <script src="js/controller/carrinhoController.js"></script>
 
-    
+
+   
     <script src="js/app.js"></script>
     <script src="js/layout.js"></script>
 </body>
 </html>
+
+
+
+
+
+
+
+
 
 
 
