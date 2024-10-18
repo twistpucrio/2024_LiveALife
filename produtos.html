@@ -55,21 +55,36 @@
     </section>
 
 
+
     <h1> Lista de Produtos </h1>
    
     <!-- Formulário de Busca -->
     <div id="busca-container">
         <input type="text" id="busca-nome" placeholder="Buscar por nome">
 
-        <label><input type="checkbox" class="busca-categoria" value="aventura"> Aventura</label> 
+        <!-- <input type="text" id="busca-categoria" placeholder="Buscar por categoria"> -->
+        <label for="classInd">Categoria:</label>
+        <select id="categoriaSelect">
+            <option value="todos">Todos</option>
+            <option value="Aventura">Aventura</option>
+            <option value="Romântico">Romântico</option>
+            <option value="Relaxamento">Relaxamento</option>
+            <option value="Gastronômico">Gastronômico</option>
+        </select>
+
+        <!--<label><input type="checkbox" class="busca-categoria" value="aventura"> Aventura</label> 
         <label><input type="checkbox" class="busca-categoria" value="romance"> Romance</label>
         <label><input type="checkbox" class="busca-categoria" value="relaxamento"> Relaxamento</label> 
         <label><input type="checkbox" class="busca-categoria" value="gastronomico"> Gastronômico</label>
-        <label><input type="checkbox" class="busca-categoria" value="esporte"> Esporte</label>
+        <label><input type="checkbox" class="busca-categoria" value="esporte"> Esporte</label>-->
 
         <!-- <input type="text" id="busca-categoria" placeholder="Buscar por categoria"> -->
+
+      
         <input type="number" id="busca-preco-min" placeholder="Preço Mínimo" min="0">
         <input type="number" id="busca-preco-max" placeholder="Preço Máximo" min="0">
+        
+        
         <label for="classInd">Classificação Indicativa:</label>
         <input list="indicativa" name="classInd" id="classInd" placeholder="Selecione a classificação">
             <datalist id="indicativa">
@@ -83,12 +98,10 @@
         <button id="botao-buscar">Buscar</button>
 
 
-
-
     </div>
    
     <div class="pro-container"></div>
-
+    <div class="prodEspecifico-container"></div>
 
 
 
@@ -97,6 +110,7 @@
         <a href="#">2</a>
         <a href="#"><i class="fal fa-long-arrow-alt-right"></i></a>
     </section>
+
 
 
 
@@ -114,6 +128,9 @@
         </div>
     </section>
 
+
+
+
     <footer class="section-p1">
         <div class="col">
             <img class="logo" src="/img/logo.png" alt="">
@@ -130,6 +147,9 @@
             </div>
         </div>
 
+
+
+
         <div class="col">
             <h4>About</h4>
             <a href="about.html">About us</a>
@@ -138,6 +158,9 @@
             <a href="">Terms & Condicions</a>
             <a href="">Contact Us</a>
         </div>
+
+
+
 
         <div class="col">
             <h4>My Account</h4>
@@ -148,10 +171,14 @@
             <a href="">Help</a>
         </div>
 
+
         <div class="col install">
             <h4>Secured Payment Gateway</h4>
             <img src="img/icones/pay.png" alt="">
         </div>
+
+
+
 
         <div class="copyright">
             <br>

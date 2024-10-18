@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // }
 
 
-    if (page === 'shop.html' || page === '') {
+    if (page === 'index.html' || page === '') {
         ShopController.init();
     }
 
