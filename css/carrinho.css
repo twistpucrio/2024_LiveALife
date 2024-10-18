@@ -12,64 +12,50 @@
         white-space: nowrap;
         margin-bottom: 50px;
 
-
         .remover-button{
+            background: none;
+            border: none;
+
             img{
-                width: 15px;
+                width: 25px;
+                border: 1px solid #088178;
+                border-radius: 50%;
+                padding: 3px;
+            }
+
+            img:hover{
+                background-color: #e2e9e1;
             }
         }
-
-
-
 
         img{
             width: 100px;
         }
-
-
-
-
-
 
         td:nth-child(1){
             width: 100px;
             text-align: center;
         }
 
-
-
-
         td:nth-child(2){
             width: 150px;
             text-align: center;
         }
-
-
-
 
         td:nth-child(3){
             width: 250px;
             text-align: center;
         }
 
-
-
-
         td:nth-child(4), td:nth-child(5), td:nth-child(6){
             width: 150px;
             text-align: center;
         }
 
-
-
-
         td:nth-child(4) .quantidade-input{
-            width: 40px;
+            width: 60px;
             padding: 10px 5px 10px 15px;
         }
-
-
-
 
         thead{
             border: 1px solid #e2e9e1;
@@ -86,12 +72,6 @@
         }
 
 
-
-
-
-
-
-
         tbody {
             tr {
                 td{
@@ -103,13 +83,6 @@
         }
     }
 }
-
-
-
-
-
-
-
 
 
 
@@ -133,16 +106,13 @@
 
 
 
-
         input{
             padding: 10px 20px;
             outline: none;
-            width: 60%;
+            width: 70%;
             margin-right: 10px;
             border: 1px solid #e2e9e1;
         }
-
-
 
 
         button{
@@ -190,8 +160,6 @@
                 padding: 10px;
                 font-size: 13px;
             }
-
-
 
 
            
