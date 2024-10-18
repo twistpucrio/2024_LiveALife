@@ -22,14 +22,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 
-    // if (page === 'index.html' || page === '') {
+    // if (page === 'index.html' || page === 'produtos.html' || page === '') {
     //     ProdutosController.init();
     // }
 
 
+  
     if (page === 'favorito.html') {
         FavoritoController.init();
-
     }
 
     ProdutosController.init();
@@ -39,7 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
     /* para os pop-ups aparecerem em todas as telas */
     CarrinhoController.init();
     // FavoritoController.init();
-
 
 });
 

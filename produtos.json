@@ -1,8 +1,11 @@
+
 [ 
     { "id": 1, "nome": "Rafting", "preco": 300, "imagem": "img/rafting.jpg", "categorias":["Aventura"], "classificacao":"12+",
+
     "descricao": ["Descer rios em botes infláveis, enfrentando corredeiras e desafios aquáticos."], "alt":["Bote amarelo em um rio, cercado de pinheiros."]},
     { "id": 2, "nome": "Canyoning", "preco": 150, "imagem": "img/canyoning.jpg", "categorias":["Aventura"],"classificacao":"12+",
     "descricao": ["Exploração de cânions com descida de cachoeiras usando técnicas de rapel e escalada."], "alt":["Rio entre rochas, com pessoas saindo de uma canoa e começando a escalar as pedras."] },
+
     { "id": 3, "nome": "Escalada", "preco": 700, "imagem": "img/escalada.jpg", "categorias":["Aventura"], "classificacao":"12+",
     "descricao": ["Escalar paredões naturais com diferentes níveis de dificuldade."], "alt":["Pessoa escalando uma montanha alta, mostrando a grande altura pela paisagem ampla, com topos de montanha aparecendo no horizonte."]},
 
@@ -19,6 +22,7 @@
     "descricao": ["Delicie-se provando pães e queijos no tour gastr"], "alt":["Pessoa escalando uma montanha alta, mostrando a grande altura pela paisagem ampla, com topos de montanha aparecendo no horizonte."]},
     { "id": 11, "nome": "Feira culinária", "preco": 150, "imagem": "img/feiraCulinaria.png", "categorias":["Gastronômico"], "classificacao":"12+",
     "descricao": ["Escalar paredões naturais com diferentes níveis de dificuldade."], "alt":["Pessoa escalando uma montanha alta, mostrando a grande altura pela paisagem ampla, com topos de montanha aparecendo no horizonte."]},
+
     { "id": 12, "nome": "Aula de culinária", "preco": 200, "imagem": "img/aulaCulinaria.png", "categorias":["Gastronômico"], "classificacao":"12+",
     "descricao": ["Escalar paredões naturais com diferentes níveis de dificuldade."], "alt":["Pessoa escalando uma montanha alta, mostrando a grande altura pela paisagem ampla, com topos de montanha aparecendo no horizonte."]},
   
