@@ -25,6 +25,7 @@ const CarrinhoModel = (() => {
 
     const removerItem = (produtoId) => {
         carrinho = carrinho.filter(item => item.id !== produtoId);
+        console.log(carrinho); // Verifique o novo estado do carrinho
         salvarCarrinho();
     };
 

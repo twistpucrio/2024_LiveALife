@@ -8,9 +8,14 @@ const CarrinhoController = ((model, view) => {
         const container = document.getElementById('carrinho-container');
 
         container.addEventListener('click', (event) => {
-            if (event.target.classList.contains('remover-button')) {
+            if (event.target.closest('.remover-button')) {
                 const produtoId = parseInt(event.target.getAttribute('data-id'));
                 model.removerItem(produtoId);
+                atualizarView();
+            }
+
+            if (event.target.id === 'limpar-carrinho') {
+                model.limparCarrinho();
                 atualizarView();
             }
         });
@@ -26,12 +31,6 @@ const CarrinhoController = ((model, view) => {
             }
         });
 
-        container.addEventListener('click', (event) => {
-            if (event.target.id === 'limpar-carrinho') {
-                model.limparCarrinho();
-                atualizarView();
-            }
-        });
     };
 
 

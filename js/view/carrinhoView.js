@@ -65,7 +65,9 @@ const CarrinhoView = (() => {
                         </td>
                         <td>R$ ${(item.preco * item.quantidade).toFixed(2)}</td>
                         <td>
-                            <button data-id="${item.id}" class="remover-button"> <img src="img/icones/close.svg"></button>
+                            <button data-id="${item.id}" class="remover-button">
+                               x
+                            </button>
                         </td>
                     </tr>
                 `).join('')}
