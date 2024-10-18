@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="css/index.css">
     <link rel="stylesheet" href="css/responsividade.css">
     <link rel="stylesheet" href="css/carrinho.css">
-
+    <link rel="stylesheet" href="css/shop_categorias.css">
 
 
 
@@ -114,11 +114,10 @@
 
 
 
-
     </section>
 
-
-
+    
+    
 
     <section id="product1" class="section-p1">
         <h2>Featured Poducts</h2>
@@ -141,14 +140,22 @@
     </section>
 
 
-
+    <div>
+        <select id="categoriaSelect">
+            <option value="todos">Todos</option>
+            <option value="Aventura">Aventura</option>
+            <option value="Romântico">Romântico</option>
+            <option value="Relaxamento">Relaxamento</option>
+            <option value="Gastronômico">Gastronômico</option>
+        </select>
+    </div>
 
     <section id="product1" class="section-p1">
         <h2>New Arrivals</h2>
         <p>Summer Collection New Morden Design</p>
 
 
-        <div class="pro-container"></div>
+        <div id="prodEspecifico-container"></div>
 
 
     </section>
@@ -293,14 +300,14 @@
     <script src="js/model/carrinhoModel.js"></script>
     <script src="js/model/favoritoModel.js"></script>
     <script src="js/model/carrinhoModel.js"></script>
-
+    <script src="js/model/categEspecificaModel.js"></script>
 
 
 
     <script src="js/view/favoritoView.js"></script>
     <script src="js/view/produtosView.js"></script>
     <script src="js/view/carrinhoButtonView.js"></script>
-    <script src="js/view/shopView.js"></script>
+    <script src="js/view/categEspecificaView.js"></script>
     <script src="js/view/favoritoButtonView.js"></script>
     <script src="js/view/carrinhoView.js"></script>
 
@@ -309,7 +316,7 @@
     <script src="js/controller/favoritoButtonController.js"></script>
     <script src="js/controller/favoritoController.js"></script>
     <script src="js/controller/produtosController.js"></script>
-    <script src="js/controller/ShopController.js"></script>
+    <script src="js/controller/categEspecificaController.js"></script>
     <script src="js/controller/carrinhoController.js"></script>
 
 

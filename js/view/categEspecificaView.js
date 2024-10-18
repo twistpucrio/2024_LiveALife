@@ -1,6 +1,6 @@
 const ShopView = (() => {
     const renderizarCategorias = (produtosPorCategoria, adicionarAoCarrinhoCallback,adicionarAoFavoritoCallback) => {
-        const container = document.getElementById('produtos-container');
+        const container = document.getElementById('prodEspecifico-container');
         container.innerHTML = '';  // Limpa o container
 
         // Para cada categoria
