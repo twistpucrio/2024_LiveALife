@@ -36,9 +36,7 @@ const ProdutosView = (() => {
        
                     // Selecionar a imagem com a classe "img_pro"
                     const imagemProduto = produtoDiv.querySelector('.img_pro');
-       
-       
-                   
+    
        
                     imagemProduto.addEventListener('click', () => {
                        
@@ -52,7 +50,8 @@ const ProdutosView = (() => {
                                 preco: produto.preco,
                                 imagem: produto.imagem,
                                 alt: produto.alt,
-                                descricao: produto.descricao // Certifique-se que a descrição está presente
+                                descricao: produto.descricao, // Certifique-se que a descrição está presente
+                                categorias: produto.categorias
                             };
        
                              // Armazenar no localStorage como uma string JSON
