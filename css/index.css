@@ -353,13 +353,11 @@ header{
 }
 
 
-.pro-container{
+.pro-container, #prodEspecifico-container{
     display: flex;
     justify-content: space-around;
     padding-top: 20px;
     flex-wrap: wrap;
-
-
 
 
     .pro{

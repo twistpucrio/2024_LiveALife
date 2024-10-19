@@ -1,6 +1,4 @@
-
-const ProdutosController = ((model, view, carrinhoController) => {
-
+const ProdutosController = ((model, view, carrinhoController, favoritoController) => {
     const init = () => {
         model.carregarProdutos().then(() => {
             const produtos = model.getProdutos();
@@ -14,125 +12,43 @@ const ProdutosController = ((model, view, carrinhoController) => {
     };
 
     const adicionarAoFavorito = (produto) => {
-        alert("Adicionado com sucesso!");
-
         FavoritoModel.adicionarItem(produto);        
     };
 
-//     const configurarBusca = () => {
-//     const botaoBuscar = document.getElementById('botao-buscar');
-//     botaoBuscar.addEventListener('click', () => {
-//         const nome = document.getElementById('busca-nome').value.trim();
-//         let precoMin = parseFloat(document.getElementById('busca-preco-min').value);
-//         let precoMax = parseFloat(document.getElementById('busca-preco-max').value);
-//         let classInd = document.getElementById('classInd').value;
+    const configurarBusca = () => {
+        const botaoBuscar = document.getElementById('botao-buscar');
 
-//         // Verificação se precoMin é maior que precoMax
-//         if (precoMin > precoMax) {
-//             alert('O preço mínimo não pode ser maior que o preço máximo.');
-//             return;
-//         }
+        if (!botaoBuscar) {
+            console.error('Botão de busca não encontrado!'); // Mensagem de erro se não existir
+            return;
+        }
+       
+        botaoBuscar.addEventListener('click', () => {
+            const criterios = coletarCriterios();
+            const resultados = model.buscarProdutos(criterios);
+            view.renderizarProdutos(resultados, adicionarAoCarrinho, adicionarAoFavorito);
+        });
+    };
 
-//         // Verificação de preços negativos
-//         if (precoMin < 0 || precoMax < 0) {
-//             alert('Os preços não podem ser negativos.');
-//             return;
-//         }
-
-//         // Coleta das categorias selecionadas
-//         const categoriasSelecionadas = [];
-//         document.querySelectorAll('.busca-categoria:checked').forEach(checkbox => {
-//             categoriasSelecionadas.push(checkbox.value);
-//         });
-
-//         // Criando objeto de critérios
-//         const criterios = {};
-
-//         if (nome !== '') {
-//             criterios.nome = nome;
-//         }
-
-//         if (categoriasSelecionadas.length > 0) {
-//             criterios.categorias = categoriasSelecionadas;
-//         }
-
-//         if (classInd !== '') {
-//             criterios.classInd = classInd;
-//         }
-
-//         if (!isNaN(precoMin)) {
-//             criterios.precoMin = precoMin;
-//         }
-
-//         if (!isNaN(precoMax)) {
-//             criterios.precoMax = precoMax;
-//         }
-
-//         // Busca os produtos com os critérios
-//         const resultados = model.buscarProdutos(criterios);
-//         view.renderizarProdutos(resultados, carrinhoController.adicionarAoCarrinho, FavoritoController.adicionarAoFavorito);
-//     });
-// };
-
-const configurarBusca = () => {
-    const botaoBuscar = document.getElementById('botao-buscar');
-    botaoBuscar.addEventListener('click', () => {
+    const coletarCriterios = () => {
         const nome = document.getElementById('busca-nome').value.trim();
         let precoMin = parseFloat(document.getElementById('busca-preco-min').value);
         let precoMax = parseFloat(document.getElementById('busca-preco-max').value);
-        let classInd = document.getElementById('classInd').value;
+        const classInd = document.getElementById('classInd').value;
+        const categoriaSelecionada = document.getElementById('categoriaSelect').value;
 
-        // Verificação se precoMin é maior que precoMax
-        if (precoMin > precoMax) {
-            alert('O preço mínimo não pode ser maior que o preço máximo.');
-            return;
-        }
-
-        // Verificação de preços negativos
-        if (precoMin < 0 || precoMax < 0) {
-            alert('Os preços não podem ser negativos.');
-            return;
-        }
-
-        // Coleta das categorias selecionadas
-        const categoriasSelecionadas = [];
-        document.querySelectorAll('.busca-categoria:checked').forEach(checkbox => {
-            categoriasSelecionadas.push(checkbox.value);
-        });
-
-        // Criando objeto de critérios
         const criterios = {};
+        
+        if (nome) criterios.nome = nome;
+        if (categoriaSelecionada && categoriaSelecionada !== 'todos') criterios.categoria = categoriaSelecionada;
+        if (!isNaN(precoMin)) criterios.precoMin = precoMin;
+        if (!isNaN(precoMax)) criterios.precoMax = precoMax;
+        if (classInd) criterios.classInd = classInd;
 
-        if (nome !== '') {
-            criterios.nome = nome;
-        }
-
-        if (categoriasSelecionadas.length > 0) {
-            criterios.categorias = categoriasSelecionadas;
-        }
-
-        if (classInd !== '') {
-            criterios.classInd = classInd;
-        }
-
-        if (!isNaN(precoMin)) {
-            criterios.precoMin = precoMin;
-        }
-
-        if (!isNaN(precoMax)) {
-            criterios.precoMax = precoMax;
-        }
-
-        // Busca os produtos com os critérios
-        const resultados = model.buscarProdutos(criterios);
-        view.renderizarProdutos(resultados, carrinhoController.adicionarAoCarrinho, FavoritoController.adicionarAoFavorito);
-    });
-};
-
-
+        return criterios;
+    };
 
     return {
         init
     };
-})(ProdutosModel, ProdutosView, CarrinhoModel);
-     
+})(ProdutosModel, ProdutosView, CarrinhoModel, FavoritoModel);
