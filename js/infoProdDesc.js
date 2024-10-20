@@ -1,3 +1,5 @@
+//infoProdDesc
+
 // Recuperar o produto selecionado do localStorage
 const produtoSelecionado = JSON.parse(localStorage.getItem('produtoSelecionado'));
 
@@ -12,3 +14,15 @@ if (produtoSelecionado) {
 } else {
     console.error('Nenhum produto foi encontrado no localStorage.');
 }
+
+document.getElementById('adicionarCarrinho').addEventListener('click', () => {
+    if (produtoSelecionado) { // Alterado para usar produtoSelecionado
+        CarrinhoModel.adicionarItem(produtoSelecionado);
+    }
+});
+
+document.getElementById('adicionarFavorito').addEventListener('click', () => {
+    if (produtoSelecionado) { // Alterado para usar produtoSelecionado
+        FavoritoModel.adicionarItem(produtoSelecionado);
+    }
+});

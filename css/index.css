@@ -128,26 +128,19 @@ header{
     top: 0;
     left: 0;
 
-
-
-
     .logo{
         width: 40%;
         height: 40%;
     }
-
-
-
 
     #navbar{
         display: flex;
         /* align-items: center;
         justify-content: center; */
 
-
-
-
-
+        .text_carrinho, .text_favorito{
+            color: #088178;
+        }
 
         li{
             list-style: none;
@@ -161,11 +154,7 @@ header{
                 font-weight: 600;
                 color: #1a1a1a;
 
-
-
-
                 transition: 0.3s ease;
-
 
                 button{
                     display: flex;
@@ -180,10 +169,6 @@ header{
 
                 }
 
-
-                .text_carrinho{
-                    color: #088178;
-                }
             }
 
 
@@ -353,7 +338,7 @@ header{
 }
 
 
-.pro-container, #prodEspecifico-container{
+.pro-container{
     display: flex;
     justify-content: space-around;
     padding-top: 20px;
@@ -397,7 +382,6 @@ header{
 
 
 
-
         button{
             img {
                 width: 15%;
@@ -414,6 +398,10 @@ header{
                 right: 60px;
             }
         }
+        button:hover{
+            opacity: 0.5;
+        }
+
         .adicionar-carrinho-button{
             img {
                 right: 75px;
@@ -437,6 +425,134 @@ header{
         box-shadow: 20px 20px 30px rgba(0, 0 0, 0.06);
         border: 1px solid red;
     }
+}
+
+
+#prodEspecifico-container{
+    display: flex;
+    
+    .carrossel-container {
+        display: flex;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+        padding: 10px 10px;
+    }
+
+}
+
+/* Containers de Produtos */
+#prodEspecifico-container-2{
+    display: flex;
+    justify-content: space-around;
+    padding-top: 20px;
+    flex-wrap: wrap;
+
+    .categoria {
+        display: flex;
+        overflow-x: auto;
+        scroll-behavior: smooth;
+        
+    }
+
+    /* Estilo do Carrossel */
+    .carrossel-container {
+        display: flex;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+        padding: 10px 10px;
+    }
+}
+
+/* Estilo das Categorias */
+.categoria {
+    margin-bottom: 30px;
+}
+
+/* .categoria h1 {
+    text-align: center;
+    font-size: 24px;
+    color: #088178;
+} */
+
+
+
+.produto{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 23%;
+    min-width: 250px;
+    padding: 10px 12px;
+    border: 1px solid #cce7d0;
+    border-radius: 20px;
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.02);
+    margin: 15px 50px;
+    position: relative;
+    transition: 0.2s ease;
+    
+
+    /* cursor: pointer; */
+    box-shadow: 20px 20px 30px rgba(0, 0 0, 0.02);
+    margin: 15px 0;
+    transition: 0.2s ease;
+
+
+
+
+    position: relative;
+
+
+
+
+    img{
+        width: 100%;
+        border-radius: 20px;
+    }
+
+
+
+
+    img:hover{
+        opacity: 0.9;
+    }
+
+
+
+
+    button{
+        img {
+            width: 15%;
+            border-radius: 50%;
+            background-color: #e8f6ea;
+            font-weight: 500;
+            color:#088178;
+            border: 1px solid #cce7d0;
+
+
+            padding: 5px;
+            position: absolute;
+            bottom: 20px;
+            right: 60px;
+        }
+    }
+    .adicionar-carrinho-button{
+        img {
+            right: 75px;
+        }
+    }
+
+
+
+
+    .adicionar-favorito-button{
+        img {
+            right: 10px;
+        }
+    }
+}
+.produto:hover {
+    box-shadow: 20px 20px 30px rgba(0, 0, 0, 0.06);
+    border: 1px solid red;
 }
 
 
@@ -886,42 +1002,6 @@ footer{
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* Pop-Up */
-/* Estilo básico do pop-up */
-.popup {
-    display: none; /* Oculto por padrão */
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* Fundo escuro semitransparente */
-}
-
-
-.popup-content {
-    background-color: white;
-    margin: 10% auto;
-    padding: 20px;
-    width: 50%;
-    position: relative;
-}
-
-
 .close-btn {
     position: absolute;
     top: 10px;
@@ -929,8 +1009,6 @@ footer{
     cursor: pointer;
     font-size: 24px;
 }
-
-
 
 
 #mobile{

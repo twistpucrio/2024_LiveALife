@@ -1,5 +1,5 @@
 const FavoritoButtonView = (() => {
-    const renderizarBotaoFavorito = () => {
+    const renderizarBotaoFavorito = (numeroDeItens) => {
         const botaoFavorito = document.querySelectorAll('.botao-favorito');
 
 
@@ -10,6 +10,7 @@ const FavoritoButtonView = (() => {
                 botaoFavorito.innerHTML = `
                     <button id="ver-favorito">
                         <img src="img/icones/favorito.svg">
+                        <div class="text_favorito">${numeroDeItens}</div> <!-- Mostra o número de itens -->
                     </button>
                 `;
             });

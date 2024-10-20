@@ -11,9 +11,7 @@ const FavoritoModel = (() => {
 
     const adicionarItem = (produto) => {
         const itemExistente = favorito.find(item => item.id === produto.id);
-        if (itemExistente) {
-            itemExistente.quantidade += 1;
-        } else {
+        if (!itemExistente) {
             favorito.push({ ...produto, quantidade: 1 });
         }
         salvarFavorito();
@@ -37,7 +35,7 @@ const FavoritoModel = (() => {
     };
 
     const getTotalItens = () => {
-        return favorito.reduce((total, item) => total + item.quantidade, 0);
+        return favorito.length; // Conta o número de itens únicos, não a quantidade
     };
 
     const limparFavorito = () => {

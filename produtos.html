@@ -83,20 +83,30 @@
       
         <input type="number" id="busca-preco-min" placeholder="Preço Mínimo" min="0">
         <input type="number" id="busca-preco-max" placeholder="Preço Máximo" min="0">
-        
+     
         
         <label for="classInd">Classificação Indicativa:</label>
-        <input list="indicativa" name="classInd" id="classInd" placeholder="Selecione a classificação">
-            <datalist id="indicativa">
-                <option value="Livre">Livre</option>
-                <option value="10+">10+</option>
-                <option value="12+">12+</option>
-                <option value="14+">14+</option>
-                <option value="16+">16+</option>
-                <option value="18+">18+</option>
-            </datalist>
+        <select id="indicativa">
+            <option value="Todas">Todas</option>
+            <option value="Livre">Livre</option>
+            <option value="10+">10+</option>
+            <option value="12+">12+</option>
+            <option value="14+">14+</option>
+            <option value="16+">16+</option>
+            <option value="18+">18+</option>
+        </select>
+
         <button id="botao-buscar">Buscar</button>
 
+        <label for="ordenacao">Ordenar por:</label>
+        <select id="ordenacao">
+            <option value="padrao">Padrão</option>
+            <option value="avaliacao">Avaliação</option>
+            <option value="precoAsc">Preço: Crescente</option>
+            <option value="precoDesc">Preço: Decrescente</option>
+        </select>
+
+        <button id="botao-ordenar">Ordenar</button>
 
     </div>
    

@@ -20,9 +20,7 @@ const ProdutosView = (() => {
                             <div class="des">
                                 <span id="categorias-${produto.id}">${produto.categorias}</span>
                                 <h5 id="nome-${produto.id}">${produto.nome}</h5>
-                                <div>
-                                    <p>aqui vai entrar a avaliação</p>
-                                </div>
+                                <h3 id="avalicao-${produto.id}">${produto.avaliacao}</h3>
                                 <h4 id="preco-${produto.id}">R$ ${produto.preco}</h4>
                             </div>
                             <button data-id="${produto.id}" class="adicionar-carrinho-button"><img src="img/icones/sacola_compra.png" alt=""></button>
@@ -70,6 +68,9 @@ const ProdutosView = (() => {
                 });
             });
         }
+    
+        
+    
     };
 
     return {

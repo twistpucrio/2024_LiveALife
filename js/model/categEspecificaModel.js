@@ -1,6 +1,7 @@
 const ShopModel = (() => {
     let produtos = [];
 
+    // Carrega os produtos a partir de um arquivo JSON
     const carregarProdutos = () => {
         return fetch('produtos.json')
             .then(response => response.json())
@@ -13,6 +14,7 @@ const ShopModel = (() => {
             });
     };
 
+    // Retorna os produtos agrupados por categoria
     const getProdutosPorCategoria = () => {
         const categorias = {};
         produtos.forEach(produto => {
@@ -26,8 +28,14 @@ const ShopModel = (() => {
         return categorias;
     };
 
+    // Retorna todos os produtos
+    const getTodosProdutos = () => {
+        return produtos;
+    };
+
     return {
         carregarProdutos,
-        getProdutosPorCategoria
+        getProdutosPorCategoria,
+        getTodosProdutos
     };
 })();

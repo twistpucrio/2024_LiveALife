@@ -3,6 +3,25 @@
     overflow-x: auto;
 }
 
+body.fav{
+    footer{
+        border: none;
+    }
+}
+
+#favorito-container{
+    display: flex;
+    flex-direction: column;
+
+    justify-content: center;
+    /* align-items: center; */
+
+    margin-top: 50px;
+    margin-bottom: 170px;
+    margin-left: 40px;
+    margin-right: 40px;
+}
+
 table{
     width: 100%;
     border-collapse: collapse;
@@ -11,20 +30,17 @@ table{
     margin-bottom: 50px;
 
     .remover-button{
+        width: 30px;
+        height: 30px;
         background-image: url("img/icones/close.svg"); 
         border: 1px solid #088178;
-        border-radius: 100%;
-        padding: 5px;
-        /* img{
-            width: 25px;
-            border: 1px solid #088178;
-            border-radius: 50%;
-            padding: 3px;
-        }
+        border-radius: 50%;
+        color: #088178;
+    }
 
-        img:hover{
-            background-color: #e2e9e1;
-        } */
+    .remover-button:hover{
+        color: red;
+        border: 1px solid red;
     }
 
     img{
@@ -37,17 +53,17 @@ table{
     }
 
     td:nth-child(2){
-        width: 150px;
-        text-align: center;
-    }
-
-    td:nth-child(3){
         width: 250px;
         text-align: center;
     }
 
+    td:nth-child(3){
+        width: 170px;
+        text-align: center;
+    }
+
     td:nth-child(4), td:nth-child(5), td:nth-child(6){
-        width: 150px;
+        width: 170px;
         text-align: center;
     }
 
@@ -88,6 +104,9 @@ table{
     flex-wrap: wrap;
     justify-content: space-between;
 
+    button:hover{
+        opacity: 0.9;
+    }
 
     #coupon{
         width: 50%;
@@ -116,10 +135,6 @@ table{
             padding: 12px 20px;
         }
 
-
-        button:hover{
-            opacity: 0.9;
-        }
     }
 
 
@@ -131,43 +146,59 @@ table{
         border: 1px solid #e2e9e1;
         padding: 30px;
 
-
-
-
         h3{
             padding-bottom: 15px;
         }
-
-
-
 
         table{
             border-collapse: collapse;
             width: 100%;
             margin-bottom: 20px;
 
-
-
-
             td{
                 width: 50%;
                 border: 1px solid #e2e9e1;
                 padding: 10px;
                 font-size: 13px;
+
+                h3{
+                    padding-bottom: 0;
+                }
             }
-
-
            
         }
+
         button{
             background-color: #088178;
             color: #fff;
             padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
         }
+        
     }
 
 
    
+}
+
+#limpar-carrinho, #limpar-favorito{
+    color: #088178;
+    border: 1px solid #088178;
+    padding: 7px;
+    border-radius: 3px;
+    background: none;
+}
+
+
+#limpar-carrinho:hover, #limpar-favorito:hover{
+    background-color: #088178;
+    color: #e2e9e1;
+}
+
+#limpar-favorito{
+    width: 150px;
+    height: 30px;
 }
 
 
