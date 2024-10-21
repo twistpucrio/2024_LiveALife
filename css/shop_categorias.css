@@ -40,11 +40,12 @@ nav ul li a {
 /* quadrado do carrossel */
 .categoria {
     margin-bottom: 40px;
-    border: 2px solid pink;
+
 
 
     h1{
-        color: green;
+        color: #088178;
+        padding:2%;
     }
 
 

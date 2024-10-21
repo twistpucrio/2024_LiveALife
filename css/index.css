@@ -219,7 +219,7 @@ header{
 
 
     h1{
-        color: #088178;
+        color: #065a54;
     }
 
 
@@ -337,8 +337,9 @@ header{
     display: flex;
     justify-content: center;
     text-align: center;
-    flex-direction: column;
+    flex-direction: column; /* adicionado */
 }
+
 
 #busca-container, #ord-container{
     button{
@@ -397,6 +398,7 @@ header{
         padding: 5px;
     }
 }
+
 
 .pro-container, #prodEspecifico-container, #prodEspecifico-container-2{
     display: flex;
@@ -478,6 +480,7 @@ header{
 }
 
 
+
 #prodEspecifico-container{
     display: flex;
     flex-direction: row;
@@ -485,25 +488,6 @@ header{
     overflow-x: scroll;
     scroll-behavior: smooth;
 }
-    /* padding: 10px 10px; */
-
-    /* .categoria{
-        display: flex;
-        flex-direction: row;
-        justify-content: flex-start;
-        
-        .produto{
-            margin: 0 10px;
-        }
-    } */
-    /* .carrossel-container {
-        display: flex;
-        overflow-x: scroll;
-        scroll-behavior: smooth;
-        padding: 10px 10px;
-    } */
-
-/* } */
 
 /* Containers de Produtos */
 #prodEspecifico-container-2{
@@ -660,61 +644,68 @@ header{
 
 
 
-#banner{
+#banner {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
 
-
-
-
-    background-image: url("/img/jardinsSensoriais.png");
-
-
-
-
+    background-image: url("/img/experiencia.webp");
     width: 100%;
     height: 40vh;
     background-size: cover;
     background-position: center;
-
-
-
-
-    h4{
-        color: #fff;
-        font-size: 16px;
-    }
-
-
-
-
-    h2{
-        color: #fff;
-        font-size: 30px;
-        padding: 10px 0;
-
-
-
-
-        span{
-            color: #ef3636;
-        }
-    }
-
-
-    button:hover{
-        background: #088178;
-        color: #fff;
-    }
-
-
-
-
+    position: relative;
+    z-index: 1;
 }
 
+#banner::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Tom preto com opacidade de 50% */
+    z-index: -1; /* Fica atrás do conteúdo */
+}
+
+#banner h4 {
+    color: #ffffff;
+    font-size: 16px;
+    z-index: 2; /* Certifica que o texto fica acima da camada preta */
+}
+
+#banner h2 {
+    color: #ffffff;
+    font-size: 30px;
+    padding: 10px 0;
+    z-index: 2;
+}
+
+#banner h2 span {
+    color: #ef3636;
+}
+
+#banner button:hover {
+    background: #088178;
+    color: #fff;
+}
+
+
+/* Estiliza o container de seleção de categoria */
+#categoriaSelect {
+    width: 250px;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid #088178;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    color: #333;
+    outline: none;
+    cursor: pointer;
+}
 
 
 
@@ -758,115 +749,116 @@ header{
 
 
 
-    .banner-box{
+    .banner-box {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: flex-start;
-
-
-
-
+        position: relative; 
         background-image: url("/img/piquenique.jpg");
-
-
-
-
         width: 600px;
         height: 50vh;
         background-size: cover;
         background-position: center;
-
-
-
-
         padding: 30px;
         margin: 10px 0;
     }
-
-
-
-
-    .banner-box2{
+    
+    .banner-box::before {
+        content: ""; 
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0, 0, 0, 0.3); 
+        z-index: 1; 
+    }
+    
+    .banner-box h4, .banner-box h2, .banner-box span, .banner-box button {
+        position: relative;
+        z-index: 2; 
+    }
+    
+    .banner-box2 {
         background-image: url("/img/jantarRomantico.jpg");
     }
+    
 
-
-
-
-    .banner-box:hover button{
+    .banner-box:hover button {
         background: #088178;
         border: 1px solid #088178;
     }
+    
 }
 
 
 
 
 #banner3 {
-
-
-
-
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
     padding: 0 80px;
 
-
-
-
-    .banner-box{
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: flex-start;
-
-
-
-
-        background-image: url("/img/piquenique.jpg");
-
-
-
-
-        width: 30%;
-        height: 30vh;
-        background-size: cover;
-        background-position: center;
-
-
-
-
-        padding: 20px;
-        margin-bottom: 20px;
-    }
-
-
-
-
-    .banner-box2{
-        background-image: url("/img/canyoning.jpg");
-    }
-
-
-
-
-    .banner-box3{
-        background-image: url("/img/passeioBarco.jpg");
-    }
-
-
-
-
-    h2{
+    h2 {
         color: #ec544e;
         font-weight: 800;
         font-size: 15px;
+        position: relative; 
+        z-index: 2; 
     }
-
-
+    
+    h3 {
+        color: white;
+        position: relative; 
+        z-index: 2; 
+    }
 }
+
+.banner-box {
+    position: relative; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+
+    background-image: url("/img/piquenique.jpg");
+    width: 30%;
+    height: 30vh;
+    background-size: cover;
+    background-position: center;
+
+    padding: 20px;
+    margin-bottom: 20px;
+}
+
+.banner-box2 {
+    position: relative; 
+    background-image: url("/img/canyoning.jpg");
+}
+
+.banner-box3 {
+    position: relative; 
+    background-image: url("/img/passeioBarco.jpg");
+}
+
+
+.banner-box::before,
+.banner-box2::before,
+.banner-box3::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.3); 
+    z-index: 1; 
+}
+
+
+
 
 
 
