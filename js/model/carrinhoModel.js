@@ -11,13 +11,14 @@ const CarrinhoModel = (() => {
 
     const getCarrinho = () => carrinho;
 
-    const adicionarItem = (produto) => {
+    const adicionarItem = (produto, quantidade = 1) => {
         console.log('Adicionando produto:', produto);
         const itemExistente = carrinho.find(item => item.id === produto.id);
+    
         if (itemExistente) {
-            itemExistente.quantidade += 1;
+            itemExistente.quantidade += quantidade;  // Atualiza a quantidade com o valor passado
         } else {
-            carrinho.push({ ...produto, quantidade: 1 });
+            carrinho.push({ ...produto, quantidade });  // Adiciona o produto com a quantidade especificada
         }
         salvarCarrinho();
     };

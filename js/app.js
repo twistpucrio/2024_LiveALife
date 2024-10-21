@@ -5,10 +5,11 @@ document.addEventListener('DOMContentLoaded', () => {
     const path = window.location.pathname;
     const page = path.split("/").pop();
 
+    console.log('Página carregada:', page); // Para verificar qual página está sendo identificada
 
-    // if (page === 'produtos.html' || page === '') {
-    //     ProdutosController.init();
-    // }
+    if (page === 'produtos.html' || page === '') {
+        ProdutosController.init();
+    }
 
 
     if (page === 'index.html' || page === '') {
@@ -21,18 +22,15 @@ document.addEventListener('DOMContentLoaded', () => {
     // }
 
 
-
     // if (page === 'index.html' || page === 'produtos.html' || page === '') {
     //     ProdutosController.init();
     // }
-
 
   
     if (page === 'favorito.html') {
         FavoritoController.init();
     }
 
-    ProdutosController.init();
     CarrinhoButtonController.init();
     FavoritoButtonController.init();
    

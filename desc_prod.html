@@ -50,11 +50,10 @@
     <!-- <div id="pro-container"></div> -->
      <section id="prod-details" class="section-p1">
 
-
         <div class="single-pro-image">
             <img id="MainImg" src="/img/jantarRomantico.jpg" width="100%">
-       
-            <div class="small-img-group">
+            
+            <!-- <div class="small-img-group">
                 <div class="small-img-col">
                     <img class="small-img" src="/img/jantarRomantico.jpg" width="100%">      
                 </div>
@@ -67,36 +66,26 @@
                 <div class="small-img-col">
                     <img class="small-img" src="/img/piquenique.jpg" width="100%">      
                 </div>
-            </div>
+            </div> -->
         </div>
-
-
-
 
         <div class="single-pro-details">
             <h6>T-Shirt</h6>
             <h4>Men's Fashion T Shirt</h4>
             <h2>R$ 139.00</h2>
 
-
-
-
-            <!-- <select>
-                <option>Select Size</option>
-                <option>XL</option>
-                <option>XXL</option>
-                <option>Small</option>
-                <option>Large</option>
-            </select> -->
-            <br>
-
-
-
-
             <input type="number" value="1">
-            <button class="adicionar-carrinho-button normal">Add To Cart</button>
-            <button class="adicionar-favorito-button normal">Add</button>
-           
+            
+            <div class="btns">
+                <button id="adicionarCarrinho" class="adicionar-carrinho-button normal">
+                    <img src="img/icones/sacola_compra.png" alt="adicionar ao carrinho">
+                </button>
+                <button id="adicionarFavorito" class="adicionar-favorito-button normal">
+                    <img src="img/icones/favorito.svg" alt="adicionar aos favoritos">
+                </button>
+                
+            </div>
+            
             <h4>Product Details</h4>
             <span>
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -107,22 +96,17 @@
         </div>
      </section>
 
-
-     <section id="product1" class="section-p1">
+     
+     <div class="voltar_pagina">
+        <button><a href="javascript:void(0);" onclick="voltarPagina()">Voltar</a></button>
+     </div>
+     <!-- <section id="product1" class="section-p1">
         <h2>Featured Product</h2>
         <p>Summer Collection New Morden Design</p>
 
+        <div id="prodEspecifico-container-3"></div>
 
-        <div  class="pro-container desc-pro"></div>
-
-
-    </section>
-
-
-
-
-
-
+    </section> -->
 
 
     <!-- <button onclick="window.location.href='carrinho.html'">Ver Carrinho</button>
@@ -193,31 +177,28 @@
     <script src="js/model/carrinhoModel.js"></script>
     <script src="js/model/favoritoModel.js"></script>
     <script src="js/model/carrinhoModel.js"></script>
-
-
-
+    <script src="js/model/categEspecificaModel.js"></script>
+    <script src="js/model/desc_prod_especif.js"></script>
 
     <script src="js/view/favoritoView.js"></script>
     <script src="js/view/produtosView.js"></script>
     <script src="js/view/carrinhoButtonView.js"></script>
-    <script src="js/view/shopView.js"></script>
+    <script src="js/view/categEspecificaView.js"></script>
     <script src="js/view/favoritoButtonView.js"></script>
     <script src="js/view/carrinhoView.js"></script>
-
+    <script src="js/view/desc_prod_especif.js"></script>
 
     <script src="js/controller/carrinhoButtonController.js"></script>
     <script src="js/controller/favoritoButtonController.js"></script>
     <script src="js/controller/favoritoController.js"></script>
     <script src="js/controller/produtosController.js"></script>
-    <script src="js/controller/ShopController.js"></script>
+    <script src="js/controller/categEspecificaController.js"></script>
     <script src="js/controller/carrinhoController.js"></script>
+    <script src="js/controller/desc_prod_especif.js"></script>
 
-
-   
     <script src="js/app.js"></script>
     <script src="js/layout.js"></script>
     <script src="js/infoProdDesc.js"></script>
-
 
 </body>
 </html>

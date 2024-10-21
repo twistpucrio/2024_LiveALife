@@ -1,11 +1,28 @@
+const ProdutosController = ((model, view, carrinhoController, favoritoController) => {
+    let produtosFiltrados = []; // Variável para armazenar produtos filtrados
 
-const ProdutosController = ((model, view, carrinhoController) => {
+    const getURLParameter = (name) => {
+        return new URLSearchParams(window.location.search).get(name);
+    };
 
     const init = () => {
         model.carregarProdutos().then(() => {
             const produtos = model.getProdutos();
-            view.renderizarProdutos(produtos, adicionarAoCarrinho, adicionarAoFavorito);
-            configurarBusca();
+            const categoriaURL = getURLParameter('categoria');
+            const categoriaSelectElement = document.getElementById('categoriaSelect');
+
+            if (categoriaURL && categoriaSelectElement) {
+                categoriaSelectElement.value = categoriaURL; 
+                const criterios = { categoria: categoriaURL };
+                produtosFiltrados = model.buscarProdutos(criterios);
+                view.renderizarProdutos(produtosFiltrados, adicionarAoCarrinho, adicionarAoFavorito);
+            } else {
+                produtosFiltrados = produtos; // Armazena todos os produtos na lista filtrada
+                view.renderizarProdutos(produtos, adicionarAoCarrinho, adicionarAoFavorito);
+            }
+
+            configurarBusca(); 
+            configurarOrdenacao(); 
         });
     };
 
@@ -14,125 +31,76 @@ const ProdutosController = ((model, view, carrinhoController) => {
     };
 
     const adicionarAoFavorito = (produto) => {
-        alert("Adicionado com sucesso!");
-
         FavoritoModel.adicionarItem(produto);        
     };
 
-//     const configurarBusca = () => {
-//     const botaoBuscar = document.getElementById('botao-buscar');
-//     botaoBuscar.addEventListener('click', () => {
-//         const nome = document.getElementById('busca-nome').value.trim();
-//         let precoMin = parseFloat(document.getElementById('busca-preco-min').value);
-//         let precoMax = parseFloat(document.getElementById('busca-preco-max').value);
-//         let classInd = document.getElementById('classInd').value;
+    const configurarBusca = () => {
+        const botaoBuscar = document.getElementById('botao-buscar');
 
-//         // Verificação se precoMin é maior que precoMax
-//         if (precoMin > precoMax) {
-//             alert('O preço mínimo não pode ser maior que o preço máximo.');
-//             return;
-//         }
+        if (!botaoBuscar) {
+            console.error('Botão de busca não encontrado!'); 
+            return;
+        }
+       
+        botaoBuscar.addEventListener('click', () => {
+            const criterios = coletarCriterios();
+            
+            if (criterios.precoMax < criterios.precoMin) {
+                alert("Erro: O preço máximo não pode ser menor que o preço mínimo.");
+                document.getElementById('busca-preco-min').value = '';
+                document.getElementById('busca-preco-max').value = '';
+                return;
+            }
 
-//         // Verificação de preços negativos
-//         if (precoMin < 0 || precoMax < 0) {
-//             alert('Os preços não podem ser negativos.');
-//             return;
-//         }
+            // Aplica a filtragem e a busca
+            produtosFiltrados = model.buscarProdutos(criterios);
+            view.renderizarProdutos(produtosFiltrados, adicionarAoCarrinho, adicionarAoFavorito);
+        });
+    };
 
-//         // Coleta das categorias selecionadas
-//         const categoriasSelecionadas = [];
-//         document.querySelectorAll('.busca-categoria:checked').forEach(checkbox => {
-//             categoriasSelecionadas.push(checkbox.value);
-//         });
+    const configurarOrdenacao = () => {
+        const botaoOrdenar = document.getElementById('botao-ordenar');
 
-//         // Criando objeto de critérios
-//         const criterios = {};
+        if (!botaoOrdenar) {
+            console.error('Botão de ordenação não encontrado!'); 
+            return;
+        }
 
-//         if (nome !== '') {
-//             criterios.nome = nome;
-//         }
+        botaoOrdenar.addEventListener('click', () => {
+            const criterios = coletarCriterios();
+            
+            // Realiza a ordenação diretamente em produtosFiltrados
+            if (produtosFiltrados.length === 0) {
+                alert("Por favor, busque produtos primeiro antes de ordenar.");
+                return;
+            }
 
-//         if (categoriasSelecionadas.length > 0) {
-//             criterios.categorias = categoriasSelecionadas;
-//         }
+            const produtosOrdenados = model.ordenarProdutos(produtosFiltrados, criterios.ordenacao);
+            view.renderizarProdutos(produtosOrdenados, adicionarAoCarrinho, adicionarAoFavorito);
+        });
+    };
 
-//         if (classInd !== '') {
-//             criterios.classInd = classInd;
-//         }
-
-//         if (!isNaN(precoMin)) {
-//             criterios.precoMin = precoMin;
-//         }
-
-//         if (!isNaN(precoMax)) {
-//             criterios.precoMax = precoMax;
-//         }
-
-//         // Busca os produtos com os critérios
-//         const resultados = model.buscarProdutos(criterios);
-//         view.renderizarProdutos(resultados, carrinhoController.adicionarAoCarrinho, FavoritoController.adicionarAoFavorito);
-//     });
-// };
-
-const configurarBusca = () => {
-    const botaoBuscar = document.getElementById('botao-buscar');
-    botaoBuscar.addEventListener('click', () => {
+    const coletarCriterios = () => {
         const nome = document.getElementById('busca-nome').value.trim();
         let precoMin = parseFloat(document.getElementById('busca-preco-min').value);
         let precoMax = parseFloat(document.getElementById('busca-preco-max').value);
-        let classInd = document.getElementById('classInd').value;
-
-        // Verificação se precoMin é maior que precoMax
-        if (precoMin > precoMax) {
-            alert('O preço mínimo não pode ser maior que o preço máximo.');
-            return;
-        }
-
-        // Verificação de preços negativos
-        if (precoMin < 0 || precoMax < 0) {
-            alert('Os preços não podem ser negativos.');
-            return;
-        }
-
-        // Coleta das categorias selecionadas
-        const categoriasSelecionadas = [];
-        document.querySelectorAll('.busca-categoria:checked').forEach(checkbox => {
-            categoriasSelecionadas.push(checkbox.value);
-        });
-
-        // Criando objeto de critérios
+        const classInd = document.getElementById('indicativa').value;
+        const categoriaSelecionada = document.getElementById('categoriaSelect').value;
+        const ordenacaoSelecionada = document.getElementById('ordenacao').value; 
+    
         const criterios = {};
-
-        if (nome !== '') {
-            criterios.nome = nome;
-        }
-
-        if (categoriasSelecionadas.length > 0) {
-            criterios.categorias = categoriasSelecionadas;
-        }
-
-        if (classInd !== '') {
-            criterios.classInd = classInd;
-        }
-
-        if (!isNaN(precoMin)) {
-            criterios.precoMin = precoMin;
-        }
-
-        if (!isNaN(precoMax)) {
-            criterios.precoMax = precoMax;
-        }
-
-        // Busca os produtos com os critérios
-        const resultados = model.buscarProdutos(criterios);
-        view.renderizarProdutos(resultados, carrinhoController.adicionarAoCarrinho, FavoritoController.adicionarAoFavorito);
-    });
-};
-
-
+        
+        if (nome) criterios.nome = nome;
+        if (categoriaSelecionada && categoriaSelecionada !== 'todos') criterios.categoria = categoriaSelecionada;
+        if (!isNaN(precoMin)) criterios.precoMin = precoMin;
+        if (!isNaN(precoMax)) criterios.precoMax = precoMax;
+        if (classInd && classInd !== 'Todas') criterios.classInd = classInd; // Verifica se não é "todos"
+        if (ordenacaoSelecionada) criterios.ordenacao = ordenacaoSelecionada; 
+    
+        return criterios;
+    };
 
     return {
         init
     };
-})(ProdutosModel, ProdutosView, CarrinhoModel);
-     
+})(ProdutosModel, ProdutosView, CarrinhoModel, FavoritoModel);

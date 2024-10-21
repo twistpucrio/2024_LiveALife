@@ -1,3 +1,5 @@
+//infoProdDesc
+
 // Recuperar o produto selecionado do localStorage
 const produtoSelecionado = JSON.parse(localStorage.getItem('produtoSelecionado'));
 
@@ -11,4 +13,26 @@ if (produtoSelecionado) {
     document.querySelector('.single-pro-details h6').textContent = produtoSelecionado.categorias;
 } else {
     console.error('Nenhum produto foi encontrado no localStorage.');
+}
+
+// Adicionar ao carrinho com a quantidade selecionada
+document.getElementById('adicionarCarrinho').addEventListener('click', () => {
+    if (produtoSelecionado) {
+        // Captura a quantidade selecionada pelo usuário
+        const quantidade = parseInt(document.querySelector('.single-pro-details input[type="number"]').value);
+        
+        // Passa a quantidade ao modelo ao adicionar o item ao carrinho
+        CarrinhoModel.adicionarItem(produtoSelecionado, quantidade);
+    }
+});
+
+document.getElementById('adicionarFavorito').addEventListener('click', () => {
+    if (produtoSelecionado) { // Alterado para usar produtoSelecionado
+        FavoritoModel.adicionarItem(produtoSelecionado);
+    }
+});
+
+// Função para voltar à página anterior
+function voltarPagina() {
+    window.history.back();
 }
