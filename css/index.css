@@ -473,7 +473,7 @@ header{
 
     .pro:hover, .produto:hover{
         box-shadow: 20px 20px 30px rgba(0, 0 0, 0.06);
-        border: 1px solid red;
+        border: 1px solid rgb(17, 134, 189);
     }
 
     
