@@ -177,9 +177,6 @@ table{
         }
         
     }
-
-
-   
 }
 
 #limpar-carrinho, #limpar-favorito{
@@ -188,6 +185,7 @@ table{
     padding: 7px;
     border-radius: 3px;
     background: none;
+    margin-bottom: 20px;
 }
 
 

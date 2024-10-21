@@ -398,13 +398,23 @@ header{
     }
 }
 
-.pro-container{
+.pro-container, #prodEspecifico-container, #prodEspecifico-container-2{
     display: flex;
     justify-content: space-around;
     padding-top: 20px;
     flex-wrap: wrap;
 
-    .pro{
+    .categoria{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        
+        .produto{
+            margin: 0 10px;
+        }
+    }
+
+    .pro, .produto{
         width: 23%;
         min-width: 250px;
         padding: 10px 12px;
@@ -459,13 +469,12 @@ header{
         }
     }
 
-
-
-
-    .pro:hover{
+    .pro:hover, .produto:hover{
         box-shadow: 20px 20px 30px rgba(0, 0 0, 0.06);
         border: 1px solid red;
     }
+
+    
 }
 
 
@@ -475,9 +484,10 @@ header{
     
     overflow-x: scroll;
     scroll-behavior: smooth;
+}
     /* padding: 10px 10px; */
 
-    .categoria{
+    /* .categoria{
         display: flex;
         flex-direction: row;
         justify-content: flex-start;
@@ -485,7 +495,7 @@ header{
         .produto{
             margin: 0 10px;
         }
-    }
+    } */
     /* .carrossel-container {
         display: flex;
         overflow-x: scroll;
@@ -493,7 +503,7 @@ header{
         padding: 10px 10px;
     } */
 
-}
+/* } */
 
 /* Containers de Produtos */
 #prodEspecifico-container-2{
@@ -1069,9 +1079,51 @@ footer{
     display: none;
 }
 
+.voltar_pagina{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    margin-top: 50px;
+    button{
+        background: none;
+        border: none;
+        a{
+            text-decoration: none;
+            font-style: none;
+            color: #088178;
+            font-size: 20px;
+            border: 1px solid #088178;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    }
 
+    button:hover{
+        a{
+            background-color: #088178;
+            color: #fff;
+        }
+    }
+    
+    
+    border-bottom: 3px solid #1f5551;
+    padding: 14px 80px 14px 65px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 30px;
 
+}
 
+/* scroll */
+::-webkit-scrollbar{
+    width: 1px;
+    height: 2px;
+}
+
+::-webkit-scrollbar-thumb{
+    background: #18b091;
+}
 
 
 

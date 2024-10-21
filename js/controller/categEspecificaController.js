@@ -1,24 +1,16 @@
 const ShopController = ((model, view) => {
-    const init = () => {
+    const init = (categoriaSelecionada = 'Romântico') => {
         model.carregarProdutos().then(() => {
             const produtosPorCategoria = model.getProdutosPorCategoria();
-            
-            // Renderizar produtos por categoria
-            view.renderizarPorCategoria(produtosPorCategoria, adicionarAoCarrinho, adicionarAoFavorito);
 
-            // Filtro de categoria
-            const categoriaSelect = document.getElementById('categoriaSelect');
-            if (categoriaSelect) {
-                categoriaSelect.addEventListener('change', (event) => {
-                    const categoriaSelecionada = event.target.value;
-                    filtrarPorCategoria(categoriaSelecionada, produtosPorCategoria);
-                });
-            }
+            // Filtrar produtos pela categoria passada como parâmetro
+            filtrarPorCategoria(categoriaSelecionada, produtosPorCategoria);
 
-            // Filtro de avaliação (diretamente definido como 5.0)
-            const produtosFiltradosPorAvaliacao = filtrarProdutos(model.getTodosProdutos(), null, 5.0);
-            const produtosAgrupadosPorAvaliacao = agruparProdutosPorCategoria(produtosFiltradosPorAvaliacao);
+            // Se precisar filtrar por avaliação também (definido como 5.0)
+            const produtosFiltradosPorAvaliacao = filtrarProdutosPorAvaliacao(model.getTodosProdutos(), 5.0);
+            const produtosAgrupadosPorAvaliacao = agruparProdutosPorAvaliacao(produtosFiltradosPorAvaliacao);
             
+            // Renderizar produtos filtrados por avaliação no segundo container
             view.renderizarPorAvaliacao(produtosAgrupadosPorAvaliacao, adicionarAoCarrinho, adicionarAoFavorito);
         });
     };
@@ -46,25 +38,20 @@ const ShopController = ((model, view) => {
         }
     };
 
-    // Função de filtro por avaliação e/ou categoria
-    const filtrarProdutos = (produtos, categoriaFiltro, avaliacaoFiltro) => {
-        return produtos.filter(produto => {
-            const categoriaMatch = categoriaFiltro ? produto.categorias.includes(categoriaFiltro) : true;
-            const avaliacaoMatch = produto.avaliacao === avaliacaoFiltro;
-            return categoriaMatch && avaliacaoMatch;
-        });
+    // Função para filtrar produtos apenas por avaliação
+    const filtrarProdutosPorAvaliacao = (produtos, avaliacaoFiltro) => {
+        return produtos.filter(produto => produto.avaliacao === avaliacaoFiltro);
     };
 
-    // Função para agrupar produtos filtrados por categoria
-    const agruparProdutosPorCategoria = (produtos) => {
+    // Função para agrupar produtos por avaliação
+    const agruparProdutosPorAvaliacao = (produtos) => {
         const produtosAgrupados = {};
         produtos.forEach(produto => {
-            produto.categorias.forEach(categoria => {
-                if (!produtosAgrupados[categoria]) {
-                    produtosAgrupados[categoria] = [];
-                }
-                produtosAgrupados[categoria].push(produto);
-            });
+            const avaliacao = produto.avaliacao.toString();
+            if (!produtosAgrupados[avaliacao]) {
+                produtosAgrupados[avaliacao] = [];
+            }
+            produtosAgrupados[avaliacao].push(produto);
         });
         return produtosAgrupados;
     };

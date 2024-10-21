@@ -12,7 +12,7 @@
     "descricao": ["Jantar romântico com seu parceiro em restaurante com menu especial, música ao vivo e à luz de velas."], "alt":["jantar romântico à luz de velas com vinho e rosas."], "avaliacao": 4.7},
 
     { "id": 5, "nome": "Passeio de Barco", "preco": 150, "imagem": "img/passeioBarco.jpg", "categorias":["Romântico"], "classificacao":"18+",
-    "descricao": ["Passeio de barco ao pôr do sol no litoral do Rio de Janeiro, com direito à vinho, Champagne, tábua de pães e frios e foundue de chocolate com frutas."],"alt":["barco navegando no por do sol."], "avaliacao": 5.0},
+    "descricao": ["Passeio de barco ao pôr do sol no litoral do Rio de Janeiro, com direito à vinho, Champagne, tábua de pães e frios e foundue de chocolate com frutas."],"alt":["barco navegando no por do sol."], "avaliacao": 4.6},
 
     { "id": 6, "nome": "Piquenique", "preco": 200, "imagem": "img/piquenique.jpg", "categorias":["Romântico"], "classificacao":"18+",
     "descricao": ["Piquenique no parque preparado com cestas personalizadas com o que você e o seu amor mais gostam."],"alt":["picnic com cesta em um parque cheio de árvores."], "avaliacao": 4.2},
@@ -33,7 +33,7 @@
     "descricao": ["Explore diversas opções de comida em uma feira culinária."], "alt":["Feira com barracas de comida."], "avaliacao": 4.6},
 
     { "id": 12, "nome": "Aula de Culinária", "preco": 200, "imagem": "img/aulaCulinaria.png", "categorias":["Gastronômico"], "classificacao":"12+",
-    "descricao": ["Aprenda a cozinhar pratos deliciosos em uma aula de culinária."], "alt":["Pessoa cozinhando."], "avaliacao": 5.0},
+    "descricao": ["Aprenda a cozinhar pratos deliciosos em uma aula de culinária."], "alt":["Pessoa cozinhando."], "avaliacao": 4.6},
 
     { "id": 13, "nome": "Passeio de Barco", "preco": 150, "imagem": "img/passeioBarco.jpg", "categorias":["Romântico"], "classificacao":"18+",
     "descricao": ["Passeio de barco ao pôr do sol no litoral do Rio de Janeiro, com direito à vinho, Champagne, tábua de pães e frios e foundue de chocolate com frutas."],"alt":["barco navegando no por do sol."], "avaliacao": 4.9},
@@ -48,7 +48,7 @@
     "descricao": ["Caminhada guiada em trilhas na montanha com paisagens deslumbrantes."], "alt":["Caminhada em trilha montanhosa."], "avaliacao": 4.8},
 
     { "id": 17, "nome": "Aula de Natação", "preco": 180, "imagem": "img/aulaNatacao.jpg", "categorias":["Esporte"], "classificacao":"Livre",
-    "descricao": ["Aprenda a nadar em aulas personalizadas."], "alt":["Aula de natação em piscina."], "avaliacao": 5.0},
+    "descricao": ["Aprenda a nadar em aulas personalizadas."], "alt":["Aula de natação em piscina."], "avaliacao": 4.8},
 
     { "id": 18, "nome": "Escalada Indoor", "preco": 200, "imagem": "img/escaladaIndoor.jpg", "categorias":["Esporte"], "classificacao":"12+",
     "descricao": ["Escalada em paredes internas com diferentes níveis de dificuldade."], "alt":["Pessoas escalando em parede interna."], "avaliacao": 4.6}

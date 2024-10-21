@@ -4,6 +4,11 @@ const ShopView = (() => {
         renderizarEmContainer(container, produtosPorCategoria, adicionarAoCarrinhoCallback, adicionarAoFavoritoCallback);
     };
 
+    const renderizarPorCategoria2 = (produtosPorCategoria, adicionarAoCarrinhoCallback, adicionarAoFavoritoCallback) => {
+        const container = document.getElementById('prodEspecifico-container-3');
+        renderizarEmContainer(container, produtosPorCategoria, adicionarAoCarrinhoCallback, adicionarAoFavoritoCallback);
+    };
+
     const renderizarPorAvaliacao = (produtosPorAvaliacao, adicionarAoCarrinhoCallback, adicionarAoFavoritoCallback) => {
         const container = document.getElementById('prodEspecifico-container');
         renderizarEmContainer(container, produtosPorAvaliacao, adicionarAoCarrinhoCallback, adicionarAoFavoritoCallback);
@@ -16,9 +21,6 @@ const ShopView = (() => {
         Object.keys(produtosPorCategoriaOuAvaliacao).forEach(key => {
             const categoriaOuAvaliacaoDiv = document.createElement('div');
             categoriaOuAvaliacaoDiv.classList.add('categoria');
-            
-            // const carrosselDiv = document.createElement('div');
-            // carrosselDiv.classList.add('carrossel-container');
 
             const produtos = produtosPorCategoriaOuAvaliacao[key];
 
@@ -38,11 +40,30 @@ const ShopView = (() => {
                         <button data-id="${produto.id}" class="adicionar-favorito-button"><img src="img/icones/favorito.svg" alt=""></button>
                     </div>
                 `;
-                categoriaOuAvaliacaoDiv.appendChild(produtoDiv); // Adicione cada produto à categoria ou avaliação
+
+                // Adiciona o evento de clique na imagem para salvar o produto no localStorage e redirecionar
+                const imagemProduto = produtoDiv.querySelector('.img_pro');
+                imagemProduto.addEventListener('click', () => {
+                    if (produto.id && produto.nome && produto.preco && produto.imagem && produto.descricao) {
+                        // Salva as informações do produto no localStorage
+                        const produtoInfo = {
+                            id: produto.id,
+                            nome: produto.nome,
+                            preco: produto.preco,
+                            imagem: produto.imagem,
+                            alt: produto.alt,
+                            descricao: produto.descricao,
+                            categorias: produto.categorias
+                        };
+
+                        localStorage.setItem('produtoSelecionado', JSON.stringify(produtoInfo));
+                    }
+                    window.location.href = 'desc_prod.html';        
+                });
+
+                categoriaOuAvaliacaoDiv.appendChild(produtoDiv); // Adiciona cada produto à categoria ou avaliação
             });
 
-            // categoriaOuAvaliacaoDiv.appendChild(carrosselDiv);
-            // container.appendChild(categoriaOuAvaliacaoDiv);
             container.appendChild(categoriaOuAvaliacaoDiv); // Adiciona a categoria ou avaliação ao container
         });
 
@@ -50,7 +71,7 @@ const ShopView = (() => {
         const botoesAdicionarCarrinho = container.querySelectorAll('.adicionar-carrinho-button');
         botoesAdicionarCarrinho.forEach(botao => {
             botao.addEventListener('click', (event) => {
-                const produtoId = parseInt(event.target.getAttribute('data-id'));
+                const produtoId = parseInt(event.currentTarget.getAttribute('data-id'));
                 Object.keys(produtosPorCategoriaOuAvaliacao).forEach(key => {
                     const produtoBusca = produtosPorCategoriaOuAvaliacao[key].find(p => p.id === produtoId);
                     if (produtoBusca) {
@@ -63,7 +84,7 @@ const ShopView = (() => {
         const botoesAdicionarFavorito = container.querySelectorAll('.adicionar-favorito-button');
         botoesAdicionarFavorito.forEach(botao => {
             botao.addEventListener('click', (event) => {
-                const produtoId = parseInt(event.target.getAttribute('data-id'));
+                const produtoId = parseInt(event.currentTarget.getAttribute('data-id'));
                 Object.keys(produtosPorCategoriaOuAvaliacao).forEach(key => {
                     const produtoBusca = produtosPorCategoriaOuAvaliacao[key].find(p => p.id === produtoId);
                     if (produtoBusca) {
@@ -76,6 +97,7 @@ const ShopView = (() => {
 
     return {
         renderizarPorCategoria,
-        renderizarPorAvaliacao
+        renderizarPorAvaliacao,
+        renderizarPorCategoria2
     };
 })();

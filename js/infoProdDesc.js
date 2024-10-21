@@ -15,9 +15,14 @@ if (produtoSelecionado) {
     console.error('Nenhum produto foi encontrado no localStorage.');
 }
 
+// Adicionar ao carrinho com a quantidade selecionada
 document.getElementById('adicionarCarrinho').addEventListener('click', () => {
-    if (produtoSelecionado) { // Alterado para usar produtoSelecionado
-        CarrinhoModel.adicionarItem(produtoSelecionado);
+    if (produtoSelecionado) {
+        // Captura a quantidade selecionada pelo usuário
+        const quantidade = parseInt(document.querySelector('.single-pro-details input[type="number"]').value);
+        
+        // Passa a quantidade ao modelo ao adicionar o item ao carrinho
+        CarrinhoModel.adicionarItem(produtoSelecionado, quantidade);
     }
 });
 
@@ -26,3 +31,8 @@ document.getElementById('adicionarFavorito').addEventListener('click', () => {
         FavoritoModel.adicionarItem(produtoSelecionado);
     }
 });
+
+// Função para voltar à página anterior
+function voltarPagina() {
+    window.history.back();
+}
