@@ -66,8 +66,15 @@ p {
     margin: 40px 0;
 }
 
+h3{
+    display: inline;
+}
 
-
+.estrelaAvaliacao{
+    display:inline;
+    font-size: xx-large;
+    color: rgb(248, 184, 25);
+}
 
 button.normal{
     font-size: 14px;
