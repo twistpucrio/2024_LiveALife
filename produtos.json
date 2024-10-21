@@ -41,16 +41,24 @@
     { "id": 14, "nome": "Piquenique", "preco": 200, "imagem": "img/piquenique.jpg", "categorias":["Romântico"], "classificacao":"18+",
     "descricao": ["Piquenique no parque preparado com cestas personalizadas com o que você e o seu amor mais gostam."],"alt":["picnic com cesta em um parque cheio de árvores."], "avaliacao": 4.3},
 
-    { "id": 15, "nome": "Aula de Surf", "preco": 250, "imagem": "img/aulaSurf.jpg", "categorias":["Esporte"], "classificacao":"12+",
+    { "id": 15, "nome": "Aula de Surf", "preco": 250, "imagem": "img/aulaSurf.png", "categorias":["Esporte"], "classificacao":"12+",
     "descricao": ["Aulas de surf com instrutores experientes na praia."], "alt":["Surfista pegando uma onda."], "avaliacao": 5.0},
 
-    { "id": 16, "nome": "Caminhada na Montanha", "preco": 120, "imagem": "img/caminhadaMontanha.jpg", "categorias":["Esporte"], "classificacao":"Livre",
+    { "id": 16, "nome": "Caminhada na Montanha", "preco": 120, "imagem": "img/caminhadaMontanha.png", "categorias":["Esporte"], "classificacao":"Livre",
     "descricao": ["Caminhada guiada em trilhas na montanha com paisagens deslumbrantes."], "alt":["Caminhada em trilha montanhosa."], "avaliacao": 4.8},
 
-    { "id": 17, "nome": "Aula de Natação", "preco": 180, "imagem": "img/aulaNatacao.jpg", "categorias":["Esporte"], "classificacao":"Livre",
+    { "id": 17, "nome": "Aula de Natação", "preco": 180, "imagem": "img/aulaNatacao.png", "categorias":["Esporte"], "classificacao":"Livre",
     "descricao": ["Aprenda a nadar em aulas personalizadas."], "alt":["Aula de natação em piscina."], "avaliacao": 4.8},
 
-    { "id": 18, "nome": "Escalada Indoor", "preco": 200, "imagem": "img/escaladaIndoor.jpg", "categorias":["Esporte"], "classificacao":"12+",
-    "descricao": ["Escalada em paredes internas com diferentes níveis de dificuldade."], "alt":["Pessoas escalando em parede interna."], "avaliacao": 4.6}
+    { "id": 18, "nome": "Escalada Indoor", "preco": 200, "imagem": "img/escaladaIndoor.png", "categorias":["Esporte"], "classificacao":"12+",
+    "descricao": ["Escalada em paredes internas com diferentes níveis de dificuldade."], "alt":["Pessoas escalando em parede interna."], "avaliacao": 4.6},
 
+    { "id": 19, "nome": "Wakeboard", "preco": 150, "imagem": "img/wakeboard.jpg", "categorias":["aventura"], "classificacao":"12+",
+    "descricao": [" Esporte aquático onde o praticante é puxado por uma lancha enquanto desliza sobre a água"], "alt":["Pessoa sendo puxada na água."], "avaliacao": 4.6},
+   
+    { "id": 20, "nome": "Spa para casais", "preco": 200, "imagem": "img/spa.png", "categorias":["romance"], "classificacao":"14+",
+    "descricao": ["Massagens e tratamentos relaxantes."], "alt":["Spa com 2 camas, rosas e velas."], "avaliacao": 4.6},
+
+    { "id": 21, "nome": "Tirolesa ", "preco": 150, "imagem": "img/tiroles.webp", "categorias":["aventura"], "classificacao":"12+","descricao": ["Descer montanhas ou florestas suspenso por cabos de aço."],"alt":["Tirolesa."], "avaliacao": 4.6},
+    { "id": 22, "nome": "Mergulho autônomo (scuba diving)", "preco": 200, "imagem": "img/mergulho.webp", "categorias":["aventura"],"classificacao":"12+","descricao": ["Explorar o fundo do mar e descobrir recifes, naufrágios e vida marinha."],"alt":["picnic com cesta em um parque cheio de árvores."], "avaliacao": 4.6}
 ]
