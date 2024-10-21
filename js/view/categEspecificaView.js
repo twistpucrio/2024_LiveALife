@@ -17,8 +17,8 @@ const ShopView = (() => {
             const categoriaOuAvaliacaoDiv = document.createElement('div');
             categoriaOuAvaliacaoDiv.classList.add('categoria');
             
-            const carrosselDiv = document.createElement('div');
-            carrosselDiv.classList.add('carrossel-container');
+            // const carrosselDiv = document.createElement('div');
+            // carrosselDiv.classList.add('carrossel-container');
 
             const produtos = produtosPorCategoriaOuAvaliacao[key];
 
@@ -38,11 +38,12 @@ const ShopView = (() => {
                         <button data-id="${produto.id}" class="adicionar-favorito-button"><img src="img/icones/favorito.svg" alt=""></button>
                     </div>
                 `;
-                carrosselDiv.appendChild(produtoDiv);
+                categoriaOuAvaliacaoDiv.appendChild(produtoDiv); // Adicione cada produto à categoria ou avaliação
             });
 
-            categoriaOuAvaliacaoDiv.appendChild(carrosselDiv);
-            container.appendChild(categoriaOuAvaliacaoDiv);
+            // categoriaOuAvaliacaoDiv.appendChild(carrosselDiv);
+            // container.appendChild(categoriaOuAvaliacaoDiv);
+            container.appendChild(categoriaOuAvaliacaoDiv); // Adiciona a categoria ou avaliação ao container
         });
 
         // Eventos de clique para adicionar ao carrinho e favoritos

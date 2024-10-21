@@ -334,16 +334,75 @@ header{
 
 
 #product1{
+    display: flex;
+    justify-content: center;
     text-align: center;
+    flex-direction: column;
 }
 
+#busca-container, #ord-container{
+    button{
+        background: none;
+        border: 1px solid #088178;
+        color: #088178;
+
+        padding: 5px;
+        border-radius: 5px;
+
+        margin-left: 15px;
+    }
+
+    button:hover{
+        background-color: #088178;
+        color: #fff;
+    }
+}
+
+#busca-container{
+    border: 1px solid #088178;
+    border-radius: 20px;
+    padding: 5px;
+    margin: 20px 20px;
+
+    width: 600px;
+
+    div, h3{
+        padding: 10px;
+        color: #088178;
+    }
+
+    input, select{
+        padding: 5px;
+        color: #088178;
+        border: 1px solid #088178;
+        border-radius: 5px;
+    }
+
+}
+
+#ord-container{
+    border: 1px solid #088178;
+    margin: 20px 20px;
+    border-radius: 20px;
+    padding: 20px;
+
+    width: 600px;
+    color: #088178;
+
+    #ordenacao{
+        margin-top: 15px;
+        color: #088178;
+
+        border-color: #088178;
+        padding: 5px;
+    }
+}
 
 .pro-container{
     display: flex;
     justify-content: space-around;
     padding-top: 20px;
     flex-wrap: wrap;
-
 
     .pro{
         width: 23%;
@@ -352,35 +411,21 @@ header{
         border: 1px solid #cce7d0;
         border-radius: 20px;
 
-
-
-
         /* cursor: pointer; */
         box-shadow: 20px 20px 30px rgba(0, 0 0, 0.02);
         margin: 15px 0;
         transition: 0.2s ease;
 
-
-
-
         position: relative;
-
-
-
 
         img{
             width: 100%;
             border-radius: 20px;
         }
 
-
-
-
         img:hover{
             opacity: 0.9;
         }
-
-
 
         button{
             img {
@@ -390,7 +435,6 @@ header{
                 font-weight: 500;
                 color:#088178;
                 border: 1px solid #cce7d0;
-
 
                 padding: 5px;
                 position: absolute;
@@ -404,12 +448,9 @@ header{
 
         .adicionar-carrinho-button{
             img {
-                right: 75px;
+                right: 85px;
             }
         }
-
-
-
 
         .adicionar-favorito-button{
             img {
@@ -430,20 +471,34 @@ header{
 
 #prodEspecifico-container{
     display: flex;
+    flex-direction: row;
     
-    .carrossel-container {
+    overflow-x: scroll;
+    scroll-behavior: smooth;
+    /* padding: 10px 10px; */
+
+    .categoria{
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        
+        .produto{
+            margin: 0 10px;
+        }
+    }
+    /* .carrossel-container {
         display: flex;
         overflow-x: scroll;
         scroll-behavior: smooth;
         padding: 10px 10px;
-    }
+    } */
 
 }
 
 /* Containers de Produtos */
 #prodEspecifico-container-2{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     padding-top: 20px;
     flex-wrap: wrap;
 
@@ -509,15 +564,9 @@ header{
         border-radius: 20px;
     }
 
-
-
-
     img:hover{
         opacity: 0.9;
     }
-
-
-
 
     button{
         img {
@@ -527,7 +576,6 @@ header{
             font-weight: 500;
             color:#088178;
             border: 1px solid #cce7d0;
-
 
             padding: 5px;
             position: absolute;

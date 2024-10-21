@@ -246,7 +246,15 @@
     }
 
 
-   
+    #busca-container{
+        width: 550px;
+    
+    }
+    
+    #ord-container{
+        width: 550px;
+       
+    }
 }
 
 
