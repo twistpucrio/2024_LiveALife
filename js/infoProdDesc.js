@@ -36,3 +36,14 @@ document.getElementById('adicionarFavorito').addEventListener('click', () => {
 function voltarPagina() {
     window.history.back();
 }
+
+// Seleciona o input de quantidade
+const quantidadeInput = document.querySelector('input[type="number"]');
+
+// Adiciona um evento de mudança (change) para verificar o valor
+quantidadeInput.addEventListener('change', function() {
+    // Se o valor for menor que 1, define como 1
+    if (this.value < 1) {
+        this.value = 1;
+    }
+});

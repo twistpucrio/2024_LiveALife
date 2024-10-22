@@ -35,11 +35,11 @@
     { "id": 12, "nome": "Aula de Culinária", "preco": 200, "imagem": "img/aulaCulinaria.png", "categorias":["Gastronômico"], "classificacao":"12+",
     "descricao": ["Aprenda a cozinhar pratos deliciosos em uma aula de culinária."], "alt":["Pessoa cozinhando."], "avaliacao": 4.6},
 
-    { "id": 13, "nome": "Passeio de Barco", "preco": 150, "imagem": "img/passeioBarco.jpg", "categorias":["Romântico"], "classificacao":"18+",
-    "descricao": ["Passeio de barco ao pôr do sol no litoral do Rio de Janeiro, com direito à vinho, Champagne, tábua de pães e frios e foundue de chocolate com frutas."],"alt":["barco navegando no por do sol."], "avaliacao": 4.9},
+    { "id": 13, "nome": "Sessão de cinema ao ar livre", "preco": 100, "imagem": "img/cinema_ArLivre.png", "categorias":["Romântico"], "classificacao":"18+",
+    "descricao": ["Desfrute de uma noite romântica sob as estrelas, assistindo a clássicos do cinema ao ar livre em um ambiente aconchegante, com lanches gourmet e uma atmosfera encantadora."],"alt":["sessão de cinema ao ar livre"], "avaliacao": 4.9},
 
-    { "id": 14, "nome": "Piquenique", "preco": 200, "imagem": "img/piquenique.jpg", "categorias":["Romântico"], "classificacao":"18+",
-    "descricao": ["Piquenique no parque preparado com cestas personalizadas com o que você e o seu amor mais gostam."],"alt":["picnic com cesta em um parque cheio de árvores."], "avaliacao": 4.3},
+    { "id": 14, "nome": "Escapada de fim de semana em chalé", "preco": 500, "imagem": "img/chalé.png", "categorias":["Romântico"], "classificacao":"18+",
+    "descricao": ["Viva um fim de semana romântico em um chalé aconchegante à beira de um lago, cercado por paisagens serenas. Desfrute de momentos a dois em meio à natureza, com o som suave das águas e o conforto de um refúgio encantador."],"alt":["calé isolado na lagoa"], "avaliacao": 5.0},
 
     { "id": 15, "nome": "Aula de Surf", "preco": 250, "imagem": "img/aulaSurf.png", "categorias":["Esporte"], "classificacao":"12+",
     "descricao": ["Aulas de surf com instrutores experientes na praia."], "alt":["Surfista pegando uma onda."], "avaliacao": 5.0},
@@ -53,12 +53,12 @@
     { "id": 18, "nome": "Escalada Indoor", "preco": 200, "imagem": "img/escaladaIndoor.png", "categorias":["Esporte"], "classificacao":"12+",
     "descricao": ["Escalada em paredes internas com diferentes níveis de dificuldade."], "alt":["Pessoas escalando em parede interna."], "avaliacao": 4.6},
 
-    { "id": 19, "nome": "Wakeboard", "preco": 150, "imagem": "img/wakeboard.jpg", "categorias":["aventura"], "classificacao":"12+",
+    { "id": 19, "nome": "Wakeboard", "preco": 150, "imagem": "img/wakeboard.jpg", "categorias":["Aventura"], "classificacao":"12+",
     "descricao": [" Esporte aquático onde o praticante é puxado por uma lancha enquanto desliza sobre a água"], "alt":["Pessoa sendo puxada na água."], "avaliacao": 4.6},
    
-    { "id": 20, "nome": "Spa para casais", "preco": 200, "imagem": "img/spa.png", "categorias":["romance"], "classificacao":"14+",
+    { "id": 20, "nome": "Spa para casais", "preco": 200, "imagem": "img/spa.png", "categorias":["Romântico"], "classificacao":"14+",
     "descricao": ["Massagens e tratamentos relaxantes."], "alt":["Spa com 2 camas, rosas e velas."], "avaliacao": 4.6},
 
-    { "id": 21, "nome": "Tirolesa ", "preco": 150, "imagem": "img/tiroles.webp", "categorias":["aventura"], "classificacao":"12+","descricao": ["Descer montanhas ou florestas suspenso por cabos de aço."],"alt":["Tirolesa."], "avaliacao": 4.6},
-    { "id": 22, "nome": "Mergulho autônomo (scuba diving)", "preco": 200, "imagem": "img/mergulho.webp", "categorias":["aventura"],"classificacao":"12+","descricao": ["Explorar o fundo do mar e descobrir recifes, naufrágios e vida marinha."],"alt":["picnic com cesta em um parque cheio de árvores."], "avaliacao": 4.6}
+    { "id": 21, "nome": "Tirolesa ", "preco": 150, "imagem": "img/tiroles.webp", "categorias":["Aventura"], "classificacao":"12+","descricao": ["Descer montanhas ou florestas suspenso por cabos de aço."],"alt":["Tirolesa."], "avaliacao": 4.6},
+    { "id": 22, "nome": "Mergulho autônomo (scuba diving)", "preco": 200, "imagem": "img/mergulho.webp", "categorias":["Aventura"],"classificacao":"12+","descricao": ["Explorar o fundo do mar e descobrir recifes, naufrágios e vida marinha."],"alt":["picnic com cesta em um parque cheio de árvores."], "avaliacao": 4.6}
 ]

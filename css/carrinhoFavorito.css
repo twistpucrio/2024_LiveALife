@@ -206,5 +206,54 @@ footer{
 
 
 
+/* mensagem - Compra Finalizada */
 
+.mensagem-finalizacao {
+    text-align: center;
+    margin-top: 50px;
+    animation: fadeIn 1s ease-in-out;
+}
 
+.mensagem-finalizacao h2 {
+    font-size: 2.5rem;
+    color: #4CAF50; /* Cor verde para representar sucesso */
+}
+
+.mensagem-finalizacao p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Animação de fade-in */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.btn-voltar-home {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4CAF50; /* Cor verde */
+    border: none;
+    color: white;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.btn-voltar-home a {
+    color: white;
+    text-decoration: none;
+}
+
+.btn-voltar-home:hover {
+    background-color: #45a049; /* Efeito hover */
+}

@@ -33,6 +33,7 @@ const ShopView = (() => {
                         <div class="des">
                             <span id="categorias-${produto.id}">${produto.categorias.join(', ')}</span>
                             <h5 id="nome-${produto.id}">${produto.nome}</h5>
+                            <p class="estrelaAvaliacao">&#9733;</p>
                             <h3 id="avaliacao-${produto.id}">${produto.avaliacao}</h3>
                             <h4 id="preco-${produto.id}">R$ ${produto.preco}</h4>
                         </div>
