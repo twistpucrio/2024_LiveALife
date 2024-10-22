@@ -223,13 +223,9 @@ header{
     }
 
 
-
-
     h1{
         color: #065a54;
     }
-
-
 
 
     button{
@@ -244,7 +240,10 @@ header{
         font-weight: 700;
         font-size: 30px;
 
-
+        a{
+            text-decoration: none;
+            color: #088178;
+        }
 
 
     }
@@ -372,7 +371,7 @@ header{
     padding: 5px;
     margin: 20px 20px;
 
-    width: 600px;
+    width: 700px;
 
     div, h3{
         padding: 10px;
@@ -524,12 +523,6 @@ header{
     margin-bottom: 30px;
 }
 
-/* .categoria h1 {
-    text-align: center;
-    font-size: 24px;
-    color: #088178;
-} */
-
 
 
 .produto{
@@ -553,11 +546,7 @@ header{
     transition: 0.2s ease;
 
 
-
-
     position: relative;
-
-
 
 
     img{
@@ -589,8 +578,6 @@ header{
             right: 75px;
         }
     }
-
-
 
 
     .adicionar-favorito-button{
@@ -708,7 +695,7 @@ header{
     font-size: 16px;
     border: 2px solid #088178;
     border-radius: 5px;
-    background-color: #f9f9f9;
+    background-color: #fff;
     color: #333;
     outline: none;
     cursor: pointer;
@@ -880,7 +867,7 @@ header{
     background-position: 50% 50%;
     background-color: #041e42;
 
-
+    margin-top: 200px;
 
 
     h4{
@@ -888,9 +875,6 @@ header{
         font-weight: 700;
         color: #fff;
     }
-
-
-
 
     p{
         font-size: 14px;
@@ -905,16 +889,9 @@ header{
         }
     }
 
-
-
-
     .form{
         display: flex;
         width: 40%;
-
-
-
-
 
 
         input{
@@ -926,9 +903,6 @@ header{
             border-radius: 4px;
             outline: none;
 
-
-
-
             border-top-right-radius: 0;
             border-bottom-right-radius: 0;
         }
@@ -939,29 +913,17 @@ header{
             color:#fff;
             white-space: nowrap;
 
-
-
-
             border-top-left-radius: 0;
             border-bottom-left-radius: 0;
         }
-
-
     }
-
-
 }
-
-
 
 
 footer{
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-
-
-
 
     .col{
         display: flex;
@@ -970,9 +932,6 @@ footer{
         align-items: flex-start;
         margin-bottom: 20px;
     }
-
-
-
 
     .logo{
         margin-bottom: 30px;
@@ -1105,7 +1064,7 @@ footer{
     }
     
     
-    border-bottom: 3px solid #1f5551;
+    border-bottom: 2px solid #1f5551;
     padding: 14px 80px 14px 65px;
     background-repeat: no-repeat;
     cursor: pointer;
