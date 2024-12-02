@@ -9,7 +9,7 @@ const FavoritoButtonView = (() => {
             botaoFavorito.forEach((botaoFavorito) => {
                 botaoFavorito.innerHTML = `
                     <button id="ver-favorito">
-                        <img src="img/icones/favorito.svg">
+                        <img src="/img/icones/favorito.svg">
                         <div class="text_favorito">${numeroDeItens}</div> <!-- Mostra o número de itens -->
                     </button>
                 `;
