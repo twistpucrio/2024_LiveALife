@@ -37,8 +37,8 @@ const ShopView = (() => {
                             <h3 id="avaliacao-${produto.id}">${produto.avaliacao}</h3>
                             <h4 id="preco-${produto.id}">R$ ${produto.preco}</h4>
                         </div>
-                        <button data-id="${produto.id}" class="adicionar-carrinho-button"><img src="img/icones/sacola_compra.png" alt=""></button>
-                        <button data-id="${produto.id}" class="adicionar-favorito-button"><img src="img/icones/favorito.svg" alt=""></button>
+                        <button data-id="${produto.id}" class="adicionar-carrinho-button"><img src="/img/icones/sacola_compra.png" alt=""></button>
+                        <button data-id="${produto.id}" class="adicionar-favorito-button"><img src="/img/icones/favorito.svg" alt=""></button>
                     </div>
                 `;
 
