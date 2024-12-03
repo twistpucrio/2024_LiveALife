@@ -10,7 +10,7 @@ const CarrinhoButtonView = (() => {
             botoesCarrinho.forEach((botaoCarrinho) => {
                 botaoCarrinho.innerHTML = `
                     <button id="ver-carrinho">
-                        <img  src="img/icones/sacola_compra.png">
+                        <img  src="/img/icones/sacola_compra.png">
                         <div class="text_carrinho">${numeroDeItens}</div>
                     </button>
                 `;
