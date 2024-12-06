@@ -203,7 +203,7 @@ header{
 
 /* HOME PAGE */
 #hero{
-    background-image: url("/img/escalada.jpg"); /* tratar essa imagem no adobe*/
+    background-image: url("../img/escalada.jpg"); /* tratar essa imagem no adobe*/
     height: 90vh;
     width: 100%;
     background-size: cover;
@@ -645,7 +645,7 @@ header{
     align-items: center;
     text-align: center;
 
-    background-image: url("/img/experiencia.webp");
+    background-image: url("../img/experiencia.webp");
     width: 100%;
     height: 40vh;
     background-size: cover;
@@ -749,7 +749,7 @@ header{
         justify-content: center;
         align-items: flex-start;
         position: relative; 
-        background-image: url("/img/piquenique.jpg");
+        background-image: url("../img/piquenique.jpg");
         width: 600px;
         height: 50vh;
         background-size: cover;
@@ -775,7 +775,7 @@ header{
     }
     
     .banner-box2 {
-        background-image: url("/img/jantarRomantico.jpg");
+        background-image: url("../img/jantarRomantico.jpg");
     }
     
 
@@ -817,7 +817,7 @@ header{
     justify-content: center;
     align-items: flex-start;
 
-    background-image: url("/img/piquenique.jpg");
+    background-image: url("../img/piquenique.jpg");
     width: 30%;
     height: 30vh;
     background-size: cover;
@@ -829,12 +829,12 @@ header{
 
 .banner-box2 {
     position: relative; 
-    background-image: url("/img/canyoning.jpg");
+    background-image: url("../img/canyoning.jpg");
 }
 
 .banner-box3 {
     position: relative; 
-    background-image: url("/img/passeioBarco.jpg");
+    background-image: url("../img/passeioBarco.jpg");
 }
 
 

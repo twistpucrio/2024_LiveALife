@@ -3,7 +3,7 @@ var MainImg = document.getElementById("MainImg");
 var smallImg = document.getElementsByClassName("small-img");
 const bar = document.getElementById("bar");
 const nav = document.getElementById("navbar");
-const close = document.getElementsByClassName("close")
+const close = document.querySelector(".close")
 
 
 if (bar){
@@ -46,7 +46,8 @@ if (close){
 
 /* pou-up */
 // Lógica para mostrar o carrinho ao clicar no ícone
-document.getElementById('botao-carrinho').addEventListener('click', (event) => {
+let btnCarrinho = document.querySelector('.botao-carrinho');
+btnCarrinho.addEventListener('click', (event) => {
     event.preventDefault();  // Previne o redirecionamento
     const carrinhoContainer = document.getElementById('carrinho-container');
     carrinhoContainer.style.display = carrinhoContainer.style.display === 'none' ? 'block' : 'none';
