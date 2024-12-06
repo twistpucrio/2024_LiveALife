@@ -16,7 +16,8 @@ if (produtoSelecionado) {
 }
 
 // Adicionar ao carrinho com a quantidade selecionada
-document.getElementById('adicionarCarrinho').addEventListener('click', () => {
+let btnAddCarrinho = document.querySelector('#adicionarCarrinho');
+btnAddCarrinho.addEventListener('click', () => {
     if (produtoSelecionado) {
         // Captura a quantidade selecionada pelo usuário
         const quantidade = parseInt(document.querySelector('.single-pro-details input[type="number"]').value);

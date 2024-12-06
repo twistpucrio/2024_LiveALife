@@ -32,7 +32,7 @@ table{
     .remover-button{
         width: 30px;
         height: 30px;
-        background-image: url("/img/icones/close.svg"); 
+        background-image: url("../img/icones/close.svg"); 
         border: 1px solid #088178;
         border-radius: 50%;
         color: #088178;
